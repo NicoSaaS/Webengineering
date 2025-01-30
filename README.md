@@ -10,8 +10,8 @@
         - Bewertung
         - Trailerlink / YT
         - Anzeige wo die Filme laufen (YT/Netflix/Prime/Disney) evtl. verlinkung
-    - Film-Vorschlöge
-    - Favouritenliste
+    - Film-Vorschläge
+    - Favoritenliste
         - Favoriten hinzufügen
         - Favouriten löschen
     - Watchlist
