@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/form-styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Profil von {{firstName}} {{lastName}}</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <section class="profile-info">
+                <div class="profile-item">
+                    <strong>Vorname:</strong>
+                    <p>{{firstName}}</p>
+                </div>
+                <div class="profile-item">
+                    <strong>Nachname:</strong>
+                    <p>{{lastName}}</p>
+                </div>
+                <div class="profile-item">
+                    <strong>Benutzername:</strong>
+                    <p>{{username}}</p>
+                </div>
+                <div class="profile-item">
+                    <strong>Email:</strong>
+                    <p>{{email}}</p>
+                </div>
+                <div class="profile-item">
+                    <strong>Geschlecht:</strong>
+                    <p>{{gender}}</p>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <a href="/logout" class="btn">Logout</a>
+                <form action="/delete-account" method="POST">
+                    <button type="submit" class="delete-btn" onclick="return confirm('Bist du sicher, dass du deinen Account löschen möchtest?')">Account löschen</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

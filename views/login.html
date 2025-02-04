@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Gemeinsame Styles -->
+    <link rel="stylesheet" href="/css/form-styles.css"> <!-- Formular-spezifische Styles -->
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    
+    <main>
+        <div class="form-container">
+            <h2>Willkommen zurück!</h2>
+            <form action="/login" method="POST">
+                <div class="input-container">
+                    <label for="username">Benutzername:</label>
+                    <input type="text" id="username" name="username" class="input-field" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Passwort:</label>
+                    <input type="password" id="password" name="password" class="input-field" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Einloggen</button>
+                </div>
+            </form>
+
+            <p>Noch kein Konto? <a href="/register" class="register-link">Registriere dich hier.</a></p>
+            <a href="/" class="back-btn">Zurück zur Startseite</a>
+        </div>
+    </main>
+</body>
+</html>

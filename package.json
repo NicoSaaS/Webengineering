@@ -1,5 +1,31 @@
 {
+  "name": "musicbib",
+  "version": "1.0.0",
+  "description": "A music libary web app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoSaaS/MusicBib.git"
+  },
+  "keywords": [
+    "muisc",
+    "library",
+    "web"
+  ],
+  "author": "NicoSaaS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicoSaaS/MusicBib/issues"
+  },
+  "homepage": "https://github.com/NicoSaaS/MusicBib#readme",
   "dependencies": {
-    "@fontsource/norwester": "^5.1.0"
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.1",
+    "pug": "^3.0.3"
   }
 }
