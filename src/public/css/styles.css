@@ -14,7 +14,7 @@ body {
 header {
     background-color: #333;
     color: white;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -26,8 +26,7 @@ header {
 }
 
 h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 25px;
 }
 
 nav {
@@ -35,14 +34,14 @@ nav {
     justify-content: center;
     gap: 15px;
     margin-top: 10px;
-    position: relative; /* Wichtig für die Positionierung des Profil-Icons */
+    position: relative;
 }
 
 a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 10px 8px;
     border-radius: 30px;
     transition: all 0.3s ease;
     font-weight: bold;
@@ -62,10 +61,9 @@ a:hover {
 }
 
 .profile-icon {
-    position: absolute;  /* Absolute Positionierung */
-    top: 20px;           /* Etwas Abstand vom oberen Rand */
-    right: 20px;         /* Etwas Abstand vom rechten Rand */
-    font-size: 24px;     /* Größe des Symbols */
+    margin-left: auto;
+    display: flex;
+    justify-content: right;
     color: white;        /* Weiße Farbe für das Symbol */
     transition: color 0.3s ease;
 }
@@ -284,4 +282,15 @@ main {
 
 form {
     width: 100%;
+}
+
+.nav_left{
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+}
+
+.body_container{
+    padding: 10px;
+    padding-left: 25px;
 }

@@ -27,7 +27,11 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/register', (req, res) => {
-  res.render('register', { title: 'Login' });
+  res.render('register', { title: 'Register' });
+});
+
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About' });
 });
 
 
