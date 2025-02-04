@@ -37,3 +37,9 @@ Darauf achten:
     - Helper Funktionen
     - Kurze, verständliche Kommentare
 - Ordnerstruktur
+
+## Einzelne Punkte:
+- Homepage(Page)
+- Filmvorschau(Page)
+- Filmranking(Page)
+- Such/Filterfunktion
