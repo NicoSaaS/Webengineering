@@ -1,0 +1,50 @@
+doctype html
+html(lang="de")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Registrieren
+    link(rel="stylesheet", href="/css/styles.css")
+    link(rel="stylesheet", href="/css/form-styles.css")
+  body
+    header
+      h1 Registriere dich
+    
+    main
+      .form-container
+        h2 Erstelle ein neues Konto
+        form(action="/register", method="POST")
+          .input-container
+            label(for="firstName") Vorname:
+            input(type="text", id="firstName", name="firstName", class="input-field", required)
+          
+          .input-container
+            label(for="lastName") Nachname:
+            input(type="text", id="lastName", name="lastName", class="input-field", required)
+          
+          .input-container
+            label(for="gender") Geschlecht:
+            select(id="gender", name="gender", class="input-field", required)
+              option(value="male") Männlich
+              option(value="female") Weiblich
+              option(value="other") Andere
+          
+          .input-container
+            label(for="email") E-Mail:
+            input(type="email", id="email", name="email", class="input-field", required)
+          
+          .input-container
+            label(for="username") Benutzername:
+            input(type="text", id="username", name="username", class="input-field", required)
+          
+          .input-container
+            label(for="password") Passwort:
+            input(type="password", id="password", name="password", class="input-field", required)
+          
+          .form-actions
+            button(type="submit", class="btn") Registrieren
+
+        p Hast du schon ein Konto? 
+          a.register-link(href="/login") Melde dich hier an.
+        
+        a.back-btn(href="/") Zurück zur Startseite

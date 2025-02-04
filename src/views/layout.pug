@@ -1,31 +1,20 @@
 doctype html
-html(lang="en")
+html(lang="de")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Welcome to CineCanvas
     link(rel="stylesheet", href="/css/styles.css")
-    title= title || 'CineCanvas'
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
   body
     header
-      h1 CineCanvas
-      button#loginBtn.login-btn Login
-    nav
-      ul
-        li: a(href="/") Home
-        li: a(href="/about") About
-    block content
-    footer
-      p &copy; 2025 CineCanvas
+      .header-container
+        h1 Welcome to CineCanvas!
+        nav
+          a.button(href="/login") Login
+          a.button.primary(href="/register") Registrieren
+          a.profile-icon(href="/profile")
+            i.fas.fa-user
+    
+        block content
 
-    div#loginModal.modal
-      div.modal-content
-        span.close &times;
-        h2 Login
-        form
-          label(for="username") Username:
-          input(type="text" id="username" name="username" required)
-          label(for="password") Password:
-          input(type="password" id="password" name="password" required)
-          button(type="submit") Login
-
-    script(src="/js/scripts.js")  /

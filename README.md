@@ -43,3 +43,7 @@ Darauf achten:
 - Filmvorschau(Page)
 - Filmranking(Page)
 - Such/Filterfunktion
+
+
+npm install express pug
+npm install express-session
