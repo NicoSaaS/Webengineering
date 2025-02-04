@@ -11,7 +11,7 @@
         - Trailerlink / YT
         - Anzeige wo die Filme laufen (YT/Netflix/Prime/Disney) evtl. verlinkung
     - Film-Vorschläge
-    - Favoritenliste
+    - Favouritenliste
         - Favoriten hinzufügen
         - Favouriten löschen
     - Watchlist
