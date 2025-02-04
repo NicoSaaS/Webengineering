@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title CineCanvas
+    link(rel="stylesheet" href="/public/css/styles.css")
+  body
+    header
+      h1 CineCanvas
+      button#loginBtn.login-btn Login
+    nav
+      ul
+        li: a(href="#") Home
+        li: a(href="pages/About.html") About
+        li: a(href="#") Canvas
+        li: a(href="#") Search
+    main
+      section
+        h2 About This Page
+        p This is a sample page that combines HTML and CSS.
+    footer
+      p &copy; 2025 My Website
+    // The Modal
+    div#loginModal.modal
+      div.modal-content
+        span.close &times;
+        h2 Login
+        form
+          label(for="username") Username:
+          input(type="text" id="username" name="username" required)
+          label(for="password") Password:
+          input(type="password" id="password" name="password" required)
+          button(type="submit") Login
+    script(src="/public/js/scripts.js")
