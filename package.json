@@ -1,6 +1,10 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.21.2",
     "pug": "^3.0.3"
+=======
+    "@fontsource/norwester": "^5.1.0"
+>>>>>>> a20560b8cede920fa2af451bc95bf8c7d4030112
   }
 }
