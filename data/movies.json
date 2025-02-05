@@ -1,27 +1,198 @@
 [
-    {
-      "title": "Inception",
-      "image": "/img/inception.jpg",
-      "ranking": 1,
-      "description": "A thrilling sci-fi film by Christopher Nolan."
-    },
-    {
-      "title": "The Matrix",
-      "image": "/img/matrix.jpg",
-      "ranking": 2,
-      "description": "A groundbreaking sci-fi classic."
-    },
-    {
-      "title": "The Dark Knight",
-      "image": "/img/dark_knight.jpg",
-      "ranking": 3,
-      "description": "A dark Batman film by Christopher Nolan."
-    },
-    {
-      "title": "Tenet",
-      "image": "/img/tenet.jpg",
-      "ranking": 4,
-      "description": "A complex time-bending thriller by Christopher Nolan."
-    }
-  ]
-  
+  {
+    "title": "Inception",
+    "image": "/img/inception.jpg",
+    "ranking": 1,
+    "description": "A thrilling sci-fi film by Christopher Nolan.",
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "The Matrix",
+    "image": "/img/matrix.jpg",
+    "ranking": 2,
+    "description": "A groundbreaking sci-fi classic.",
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "The Dark Knight",
+    "image": "/img/darkknight.jpg",
+    "ranking": 3,
+    "description": "A dark Batman film by Christopher Nolan.",
+    "genre": "Action"
+  },
+  {
+    "title": "Tenet",
+    "image": "/img/tenet.jpg",
+    "ranking": 4,
+    "description": "A complex time-bending thriller by Christopher Nolan.",
+    "genre": "Thriller"
+  },
+  {
+    "title": "Paddington in Peru",
+    "image": "/img/paddingtoninperu.jpg",
+    "ranking": 5,
+    "description": "Paddington's adventure in Peru.",
+    "genre": "Family"
+  },
+  {
+    "title": "Rogue One",
+    "image": "/img/rogueone.jpg",
+    "ranking": 6,
+    "description": "A Star Wars story about the mission to steal the Death Star plans.",
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "Schuh des Manitu",
+    "image": "/img/schuhdesmanitu.jpg",
+    "ranking": 7,
+    "description": "A German comedy film parodying Westerns.",
+    "genre": "Comedy"
+  },
+  {
+    "title": "Scream",
+    "image": "/img/scream.jpg",
+    "ranking": 8,
+    "description": "A horror film that revitalized the slasher genre.",
+    "genre": "Horror"
+  },
+  {
+    "title": "Super Mario Bros: The Movie",
+    "image": "/img/supermariobrosthemovie.jpg",
+    "ranking": 9,
+    "description": "A film adaptation of the popular video game series.",
+    "genre": "Adventure"
+  },
+  {
+    "title": "WALL-E",
+    "image": "/img/walle.jpg",
+    "ranking": 10,
+    "description": "A Pixar film about a small waste-collecting robot.",
+    "genre": "Animation"
+  },
+  {
+    "title": "Interstellar",
+    "image": "/img/interstellar.jpg",
+    "ranking": 11,
+    "description": "A space exploration epic by Christopher Nolan.",
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "Blade Runner 2049",
+    "image": "/img/bladerunner.jpg",
+    "ranking": 12,
+    "description": "A visually stunning sequel to the original Blade Runner.",
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "Arrival",
+    "image": "/img/arrival.jpg",
+    "ranking": 13,
+    "description": "A thought-provoking alien contact film directed by Denis Villeneuve.",
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "John Wick",
+    "image": "/img/johnwick.jpg",
+    "ranking": 14,
+    "description": "A high-octane action film starring Keanu Reeves.",
+    "genre": "Action"
+  },
+  {
+    "title": "Mad Max: Fury Road",
+    "image": "/img/madmaxfuryroad.jpg",
+    "ranking": 15,
+    "description": "A post-apocalyptic action masterpiece.",
+    "genre": "Action"
+  },
+  {
+    "title": "Skyfall",
+    "image": "/img/skyfall.jpg",
+    "ranking": 16,
+    "description": "A stylish James Bond film with intense action.",
+    "genre": "Action"
+  },
+  {
+    "title": "Coco",
+    "image": "/img/coco.jpg",
+    "ranking": 17,
+    "description": "A vibrant Pixar film exploring Mexican traditions.",
+    "genre": "Animation"
+  },
+  {
+    "title": "Zoomania",
+    "image": "/img/zoomania.jpg",
+    "ranking": 18,
+    "description": "A fun animated film with a clever detective storyline.",
+    "genre": "Animation"
+  },
+  {
+    "title": "The Lego Movie",
+    "image": "/img/legomovie.jpg",
+    "ranking": 19,
+    "description": "A playful adventure with humor for all ages.",
+    "genre": "Animation"
+  },
+  {
+    "title": "Hot Fuzz",
+    "image": "/img/hotfuzz.jpg",
+    "ranking": 20,
+    "description": "A British action-comedy with sharp wit.",
+    "genre": "Comedy"
+  },
+  {
+    "title": "The Grand Budapest Hotel",
+    "image": "/img/grandbudapesthotel.jpg",
+    "ranking": 21,
+    "description": "A quirky Wes Anderson film full of charm.",
+    "genre": "Comedy"
+  },
+  {
+    "title": "Superbad",
+    "image": "/img/superbad.jpg",
+    "ranking": 22,
+    "description": "A hilarious coming-of-age teen comedy.",
+    "genre": "Comedy"
+  },
+  {
+    "title": "Get Out",
+    "image": "/img/getout.jpg",
+    "ranking": 23,
+    "description": "A smart, socially conscious horror film.",
+    "genre": "Horror"
+  },
+  {
+    "title": "Hereditary",
+    "image": "/img/hereditary.jpg",
+    "ranking": 24,
+    "description": "A chilling psychological horror film.",
+    "genre": "Horror"
+  },
+  {
+    "title": "A Quiet Place",
+    "image": "/img/aquietplace.jpg",
+    "ranking": 25,
+    "description": "A suspenseful thriller about survival in silence.",
+    "genre": "Horror"
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "image": "/img/herrderringediegefaehrten.jpg",
+    "ranking": 26,
+    "description": "An epic fantasy journey.",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "image": "/img/fluchderkarribik.jpg",
+    "ranking": 27,
+    "description": "A swashbuckling adventure.",
+    "genre": "Adventure"
+  },
+  {
+    "title": "Jurassic Park",
+    "image": "/img/jurassicpark.jpg",
+    "ranking": 28,
+    "description": "A thrilling dinosaur-filled classic.",
+    "genre": "Adventure"
+  }
+]
