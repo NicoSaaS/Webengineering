@@ -106,16 +106,28 @@ app.post('/delete-account', (req, res) => {
 
 app.get('/', (req, res) => {
     const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
-    fs.readFile(moviesFilePath, 'utf8', (err, data) => {
+    const seriesFilePath = path.join(__dirname, '..', 'data', 'series.json');
+    fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
         if (err) {
             return res.status(500).send('Fehler beim Laden der Filme');
         }
+    
+        fs.readFile(seriesFilePath, 'utf8', (err, seriesData) => {
+            if (err) {
+                return res.status(500).send('Fehler beim Laden der Serien');
+            }
 
-        let movies = JSON.parse(data);
+        let movies = JSON.parse(movieData);
+        let series = JSON.parse(seriesData);
+
         movies.sort((a, b) => a.ranking - b.ranking);
-        res.render('index', { movies: movies });
+        series.sort((a, b) => a.ranking - b.ranking);
+        
+        res.render('index', { movies: movies, series: series });
+        });
     });
 });
+
 
 app.listen(3000, () => {
     console.log('Server läuft auf http://localhost:3000');

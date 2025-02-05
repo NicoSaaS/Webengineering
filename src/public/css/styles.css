@@ -295,21 +295,27 @@ form {
     padding-left: 25px;
 }
 
-.movie_cover{
+.media_cover{
     width: 100%;
     max-width: 170px;
     height: 250px;
 }
 
-.movie_cover:hover{
+.media_cover:hover{
     transform: scale(1.05);
     cursor: pointer;
 }
 
-.movie_list{
+.media_list{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     list-style: none;
     padding: 0;
+}
+
+.media_heading{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
