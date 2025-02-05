@@ -319,3 +319,11 @@ form {
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
+.searchField_placement{
+    padding: 10px 8px;
+}
+
+.searchField_container{
+    padding-inline: 4rem;
+}
