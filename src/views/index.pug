@@ -1,3 +1,14 @@
 extends layout.pug
 
 block content
+    div.body_container
+        h3 Movie Ranking of the Month 
+            br
+            ul.movie_list
+                each movie in movies
+                    li
+                        h4= movie.ranking + ". " + movie.title
+                        img.movie_cover(src=movie.image, alt=movie.title)
+        h3 Series Ranking of the Month
+            br
+            p1 test

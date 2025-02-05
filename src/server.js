@@ -18,10 +18,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.get('/', (req, res) => {
-    res.render('index', { title: 'Home' });
-});
-
 app.get('/login', (req, res) => {
     res.render('login', { title: 'Login' });
 });
@@ -48,7 +44,6 @@ app.get('/profile', (req, res) => {
     }
 });
 
-// Login-Post-Route
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
     const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
@@ -107,6 +102,19 @@ app.post('/delete-account', (req, res) => {
     } else {
         res.redirect('/login');
     }
+});
+
+app.get('/', (req, res) => {
+    const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
+    fs.readFile(moviesFilePath, 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).send('Fehler beim Laden der Filme');
+        }
+
+        let movies = JSON.parse(data);
+        movies.sort((a, b) => a.ranking - b.ranking);
+        res.render('index', { movies: movies });
+    });
 });
 
 app.listen(3000, () => {
