@@ -8,11 +8,11 @@ block content
                 each movie in movies
                     li
                         h4= movie.ranking + ". "
-                        img.movie_cover(src=movie.image, alt=movie.title)
+                        img.media_cover(src=movie.image, alt=movie.title)
         h3 Series Ranking of the Month
             br
             ul.media_list
                 each serie in series
                     li
-                        h4= serie.ranking + ". " + serie.title
+                        h4= serie.ranking + ". "
                         img.media_cover(src=serie.image, alt=serie.title)
