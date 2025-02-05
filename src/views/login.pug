@@ -1,0 +1,30 @@
+doctype html
+html(lang="de")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Login
+    link(rel="stylesheet", href="/css/styles.css")
+  body
+    header
+      h1 Login
+    
+    main
+      .form-container
+        h2 Willkommen zurück!
+        form(action="/login", method="POST")
+          .input-container
+            label(for="username") Benutzername:
+            input(type="text", id="username", name="username", class="input-field", required)
+          
+          .input-container
+            label(for="password") Passwort:
+            input(type="password", id="password", name="password", class="input-field", required)
+          
+          .form-actions
+            button(type="submit", class="btn") Einloggen
+        
+        p Noch kein Konto? 
+          a.register-link(href="/register") Registriere dich hier.
+        
+        a.back-btn(href="/") Zurück zur Startseite
