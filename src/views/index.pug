@@ -1,4 +1,8 @@
 extends layout.pug
+block searchField
+    form.searchField_placement(action="/search", method="get")
+        input(type="text", name="query", placeholder="Search movies or series")
+        button(type="submit") Search
 
 block content
     div.body_container

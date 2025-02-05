@@ -319,3 +319,19 @@ form {
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
+.searchField_placement{
+    padding: 10px 8px;
+}
+
+.searchField_placement input[type="text"]{
+    padding: 0.2rem 1rem;
+    width: 40%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+a.active{
+    background-color: #1e90ff;
+    color: blue;
+}
