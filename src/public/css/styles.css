@@ -294,3 +294,22 @@ form {
     padding: 10px;
     padding-left: 25px;
 }
+
+.movie_cover{
+    width: 100%;
+    max-width: 170px;
+    height: 250px;
+}
+
+.movie_cover:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.movie_list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}

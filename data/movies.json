@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Inception",
+      "image": "/img/inception.jpg",
+      "ranking": 1,
+      "description": "A thrilling sci-fi film by Christopher Nolan."
+    },
+    {
+      "title": "The Matrix",
+      "image": "/img/matrix.jpg",
+      "ranking": 2,
+      "description": "A groundbreaking sci-fi classic."
+    },
+    {
+      "title": "The Dark Knight",
+      "image": "/img/dark_knight.jpg",
+      "ranking": 3,
+      "description": "A dark Batman film by Christopher Nolan."
+    },
+    {
+      "title": "Tenet",
+      "image": "/img/tenet.jpg",
+      "ranking": 4,
+      "description": "A complex time-bending thriller by Christopher Nolan."
+    }
+  ]
+  
