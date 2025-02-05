@@ -1,7 +1,7 @@
 extends layout.pug
 block searchField
     form.searchField_placement(action="/search", method="get")
-        input.searchField_container(type="text", name="query", placeholder="Search movies or series")
+        input(type="text", name="query", placeholder="Search movies or series")
         button(type="submit") Search
 
 block content

@@ -324,6 +324,9 @@ form {
     padding: 10px 8px;
 }
 
-.searchField_container{
-    padding-inline: 4rem;
+.searchField_placement input[type="text"]{
+    padding: 0.2rem 1rem;
+    width: 40%;
+    box-sizing: border-box;
+    text-align: left;
 }
