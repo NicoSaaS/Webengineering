@@ -26,12 +26,35 @@ app.get('/register', (req, res) => {
     res.render('register', { title: 'Register' });
 });
 
-app.get('/about', (req, res) => {
-    res.render('about', { title: 'About' });
+app.get('/movies', (req, res) => {
+    const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
+    
+    fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
+        if (err) {
+            return res.status(500).send('Fehler beim Laden der Filme');
+        }
+
+        let movies = JSON.parse(movieData);
+        const groupedMovies = [];
+        const letters = new Set();
+        movies.forEach((movie) => {
+            const firstLetter = movie.title.charAt(0).toUpperCase();
+            letters.add(firstLetter);
+        });
+        letters.forEach(letter => {
+            const moviesInGroup = movies.filter(movie => movie.title.charAt(0).toUpperCase() === letter);
+            groupedMovies.push({ letter, movies: moviesInGroup });
+        });
+
+        // Übergib die gruppierten Filme an das Pug-Template
+        res.render('movies', { title: 'Movies', groupedMovies, active_tab: 'movies' });
+    });
 });
 
+
+
 app.get('/watchlist', (req, res) => {
-    res.render('watchlist', { title: 'Watchlist' });
+    res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist' });
 });
 
 
@@ -123,7 +146,7 @@ app.get('/', (req, res) => {
         movies.sort((a, b) => a.ranking - b.ranking);
         series.sort((a, b) => a.ranking - b.ranking);
         
-        res.render('index', { movies: movies, series: series });
+        res.render('index', { movies: movies, series: series, active_tab: 'home' });
         });
     });
 });
