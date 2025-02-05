@@ -303,6 +303,7 @@ form {
 
 .movie_cover:hover{
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 .movie_list{
