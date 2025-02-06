@@ -59,6 +59,7 @@ app.get('/watchlist', (req, res) => {
 
 
 app.get('/profile', (req, res) => {
+    debugger;
     if (req.session.user) {
         const { firstName, lastName, username, email, gender } = req.session.user;
         res.render('profile', { firstName, lastName, username, email, gender });
@@ -68,6 +69,7 @@ app.get('/profile', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
+    debugger;
     const { username, password } = req.body;
     const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
 
