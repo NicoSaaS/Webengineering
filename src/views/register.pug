@@ -7,11 +7,13 @@ html(lang="de")
     link(rel="stylesheet", href="/css/styles.css")
   body
     header
-      h1 Registriere dich
+      h2 Registriere dich
     
     main
       .form-container
         h2 Erstelle ein neues Konto
+        if errorMessage
+          p.error-message(style="color: red;") #{errorMessage}
         form(action="/register", method="POST")
           .input-container
             label(for="firstName") Vorname:
@@ -43,7 +45,7 @@ html(lang="de")
           .form-actions
             button(type="submit", class="btn") Registrieren
 
-        p Hast du schon ein Konto? 
+        p.marginBottom Hast du schon ein Konto? 
           a.register-link(href="/login") Melde dich hier an.
         
         a.back-btn(href="/") Zurück zur Startseite

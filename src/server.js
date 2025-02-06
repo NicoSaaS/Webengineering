@@ -59,7 +59,6 @@ app.get('/watchlist', (req, res) => {
 
 
 app.get('/profile', (req, res) => {
-    debugger;
     if (req.session.user) {
         const { firstName, lastName, username, email, gender } = req.session.user;
         res.render('profile', { firstName, lastName, username, email, gender });
@@ -69,7 +68,6 @@ app.get('/profile', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-    debugger;
     const { username, password } = req.body;
     const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
 
@@ -85,19 +83,22 @@ app.post('/login', (req, res) => {
 
 
 app.post('/register', (req, res) => {
-    const { firstName, lastName, gender, email, username, password } = req.body;
+    const { firstName, lastName, gender, email, username, password} = req.body;
     const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
-
     const userExists = users.some(user => user.username === username || user.email === email);
 
     if (userExists) {
-        res.send('Benutzername oder E-Mail existiert bereits!');
+        return res.render('register', { 
+            title: 'Register',
+            errorMessage: 'Benutzername oder E-Mail bereits vergeben. Bitte versuche es erneut.' 
+        });
     } else {
-        users.push({ firstName, lastName, gender, email, username, password });
+        const newUser = users.push({ firstName, lastName, gender, email, username, password });
 
         fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2));
 
-        res.send('Registrierung erfolgreich!');
+        req.session.user = newUser;
+        res.render('profile', { firstName, lastName, username, email, gender });
     }
 });
 
