@@ -57,6 +57,10 @@ a,
     color: #1e90ff;
 }
 
+.nav_left li a.back-btn:hover {
+    color: var(--fontColor3);
+}
+
 i {
     padding: 9px 25px;
     background-color: #2d699b;
@@ -261,7 +265,6 @@ main {
 
 .back-btn {
     display: inline-block;
-    margin-top: 20px;
     text-decoration: none;
     font-size: 16px;
     color: var(--fontColor3);
@@ -272,6 +275,7 @@ main {
 
 .back-btn:hover {
     background-color: var(--buttonBackgroundColor1);
+    color: var(--fontColor3);
     opacity: 0.8;
 }
 
@@ -407,4 +411,8 @@ form {
 
 .whiteFontColor{
     color: var(--fontColor3)
+}
+
+.marginBottom{
+    margin-bottom: 20px;
 }

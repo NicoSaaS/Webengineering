@@ -6,9 +6,12 @@ html(lang="de")
     title Profil
     link(rel="stylesheet", href="/css/styles.css")
   body
-    header
-      .header-container
-        h1 Profil von #{firstName} #{lastName}
+    header 
+      h3 Profil von #{firstName} #{lastName}
+      nav
+        ul.nav_left
+          li
+            a.back-btn(href="/") Zurück zur Startseite
 
     main
       .profile-container
