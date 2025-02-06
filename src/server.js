@@ -36,17 +36,17 @@ app.get('/movies', (req, res) => {
 
         let movies = JSON.parse(movieData);
         const groupedMovies = [];
-        const letters = new Set();
+        var letters = new Set();
         movies.forEach((movie) => {
             const firstLetter = movie.title.charAt(0).toUpperCase();
             letters.add(firstLetter);
         });
+        letters = [...letters].sort();
         letters.forEach(letter => {
             const moviesInGroup = movies.filter(movie => movie.title.charAt(0).toUpperCase() === letter);
             groupedMovies.push({ letter, movies: moviesInGroup });
         });
 
-        // Übergib die gruppierten Filme an das Pug-Template
         res.render('movies', { title: 'Movies', groupedMovies, active_tab: 'movies' });
     });
 });

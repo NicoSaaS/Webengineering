@@ -1,3 +1,15 @@
+:root{
+    --backgroundColor1: #000000;
+    --backgroundColor2: #5c6268;
+    --backgroundColor3: #1e90ff;
+    --fontColor1: blue;
+    --fontColor2: black;
+    --fontColor3: white;
+    --buttonBackgroundColor1: #1e90ff;
+    --buttonBackgroundColor2: #c0392b;
+    --buttonHoverColor1: #1c7ed6;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +25,10 @@ header {
     align-items: center;
     padding: 30px 5%;
     background-color: #333;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: var(--fontColor3);
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 li,
@@ -57,22 +71,26 @@ i:hover {
     background-color: #204870;
 }
 
-a.active {
-    color: #1e90ff;
+a.active{
+    background-color: var(--backgroundColor3);
+    color: var(--fontColor1);
 }
 
 /* .searchField_placement {
-    padding: 10px 8px;
-}
+  a {
+      color: var(--fontColor3);
+      text-decoration: none;
+      font-size: 16px;
+      padding: 10px 8px;
+  }
 
-.searchField_placement input[type="text"] {
-    padding: 0.2rem 1rem;
-    width: 40%;
-    box-sizing: border-box;
-    text-align: left;
+  .searchField_placement input[type="text"]{
+      padding: 0.2rem 1rem;
+      width: 40%;
+      box-sizing: border-box;
+      text-align: left;
+  }
 } */
-
-/* BODY */
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -100,7 +118,19 @@ body {
 
 .button.primary {
     background-color: #333;
-    color: white;
+    color: var(--fontColor3);
+}
+
+.profile-icon {
+    margin-left: auto;
+    display: flex;
+    justify-content: right;
+    color: var(--fontColor3);
+    transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+    color: #1e90ff;
 }
 
 main {
@@ -200,22 +230,18 @@ main {
 }
 
 .btn {
-    background-color: #1e90ff;
+    background-color: var(--buttonBackgroundColor1);
     padding: 12px 30px;
     font-size: 18px;
-    color: white;
+    color: var(--fontColor3);
     border-radius: 30px;
     width: 100%;
     text-align: center;
     border: none;
     display: inline-flex;
-    /* Flexbox für gleiche Höhe */
     justify-content: center;
-    /* Zentriert den Text horizontal */
     align-items: center;
-    /* Zentriert den Text vertikal */
     height: 50px;
-    /* Gleiche Höhe wie der Delete-Button */
     cursor: pointer;
     text-decoration: none;
 }
@@ -226,28 +252,24 @@ main {
 }
 
 .delete-btn {
-    background-color: #e74c3c;
+    background-color: var(--buttonBackgroundColor2);
     padding: 12px 30px;
     font-size: 18px;
-    color: white;
+    color: var(--fontColor3);
     border-radius: 30px;
     width: 100%;
     text-align: center;
     border: none;
     display: inline-flex;
-    /* Flexbox für gleiche Höhe */
     justify-content: center;
-    /* Zentriert den Text horizontal */
     align-items: center;
-    /* Zentriert den Text vertikal */
     height: 50px;
-    /* Gleiche Höhe wie der Logout-Button */
     cursor: pointer;
     text-decoration: none;
 }
 
 .delete-btn:hover {
-    background-color: #c0392b;
+    background-color: var(--buttonBackgroundColor2);
     opacity: 0.9;
 }
 
@@ -256,14 +278,14 @@ main {
     margin-top: 20px;
     text-decoration: none;
     font-size: 16px;
-    color: #fff;
+    color: var(--fontColor3);
     background-color: #333;
     padding: 12px 30px;
     border-radius: 30px;
 }
 
 .back-btn:hover {
-    background-color: #1e90ff;
+    background-color: var(--buttonBackgroundColor1);
     opacity: 0.8;
 }
 
@@ -278,7 +300,6 @@ main {
     text-decoration: underline;
 }
 
-/* Profil-spezifisches Styling */
 .profile-container {
     background-color: white;
     padding: 40px;
@@ -342,7 +363,13 @@ form {
     padding: 0;
 }
 
-.media_modal {
+.media_heading{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.media_modal{
     width: 100%;
     max-width: 170px;
     height: 250px;
@@ -383,7 +410,7 @@ form {
 }
 
 .close-btn {
-    color: #aaa;
+    color: var(--buttonBackgroundColor2);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -391,7 +418,7 @@ form {
 
 .close-btn:hover,
 .close-btn:focus {
-    color: black;
+    color: var(--buttonBackgroundColor2);
     text-decoration: none;
     cursor: pointer;
 }
