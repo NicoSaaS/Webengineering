@@ -51,7 +51,30 @@ app.get('/movies', (req, res) => {
     });
 });
 
+app.get('/series', (req, res) => {
+    const serieFilePath = path.join(__dirname, '..', 'data', 'series.json');
+    
+    fs.readFile(serieFilePath, 'utf8', (err, serieData) => {
+        if (err) {
+            return res.status(500).send('Fehler beim Laden der Serien');
+        }
 
+        let series = JSON.parse(serieData);
+        const groupedSeries = []; // Korrigiere den Namen zu 'groupedSeries'
+        var letters = new Set();
+        series.forEach((serie) => {
+            const firstLetter = serie.title.charAt(0).toUpperCase();
+            letters.add(firstLetter);
+        });
+        letters = [...letters].sort();
+        letters.forEach(letter => {
+            const seriesInGroup = series.filter(serie => serie.title.charAt(0).toUpperCase() === letter);
+            groupedSeries.push({ letter, series: seriesInGroup });
+        });
+
+        res.render('series', { title: 'Series', groupedSerie: groupedSeries, active_tab: 'series' }); // 'groupedSerie' korrekt übergeben
+    });
+});
 
 app.get('/watchlist', (req, res) => {
     res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist' });

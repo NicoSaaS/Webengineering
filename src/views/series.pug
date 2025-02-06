@@ -1,0 +1,10 @@
+extends layout.pug
+
+block content
+  div.body_container
+    each group in groupedSerie 
+        h4.whiteFontColor= group.letter
+        ul.media_list
+          each serie in group.series 
+            li
+              img.media_cover(src=serie.image, alt=serie.title)
