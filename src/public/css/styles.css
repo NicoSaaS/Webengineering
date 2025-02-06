@@ -4,6 +4,7 @@
     --backgroundColor3: #1e90ff;
     --fontColor1: blue;
     --fontColor2: black;
+    --fontColor3: white;
     --buttonBackgroundColor1: #1e90ff;
     --buttonBackgroundColor2: #c0392b;
     --buttonHoverColor1: #1c7ed6;
@@ -24,7 +25,7 @@ body {
 
 header {
     background-color: #333;
-    color: white;
+    color: var(--fontColor3);
     padding: 10px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -49,7 +50,7 @@ nav {
 }
 
 a {
-    color: #fff;
+    color: var(--fontColor3);
     text-decoration: none;
     font-size: 16px;
     padding: 10px 8px;
@@ -68,19 +69,19 @@ a:hover {
 
 .button.primary {
     background-color: #333;
-    color: white;
+    color: var(--fontColor3);
 }
 
 .profile-icon {
     margin-left: auto;
     display: flex;
     justify-content: right;
-    color: white;        /* Weiße Farbe für das Symbol */
+    color: var(--fontColor3);
     transition: color 0.3s ease;
 }
 
 .profile-icon:hover {
-    color: #1e90ff;      /* Blau beim Hover */
+    color: #1e90ff;
 }
 
 main {
@@ -183,7 +184,7 @@ main {
     background-color: var(--buttonBackgroundColor1);
     padding: 12px 30px;
     font-size: 18px;
-    color: white;
+    color: var(--fontColor3);
     border-radius: 30px;
     width: 100%;
     text-align: center;
@@ -205,7 +206,7 @@ main {
     background-color: var(--buttonBackgroundColor2);
     padding: 12px 30px;
     font-size: 18px;
-    color: white;
+    color: var(--fontColor3);
     border-radius: 30px;
     width: 100%;
     text-align: center;
@@ -228,7 +229,7 @@ main {
     margin-top: 20px;
     text-decoration: none;
     font-size: 16px;
-    color: #fff;
+    color: var(--fontColor3);
     background-color: #333;
     padding: 12px 30px;
     border-radius: 30px;
