@@ -138,5 +138,68 @@
     "ranking": 20,
     "description": "A British action-comedy with sharp wit.",
     "genre": "Comedy"
+  },
+  {
+    "title": "The Grand Budapest Hotel",
+    "image": "/img/moviecovers/grandbudapesthotel.jpg",
+    "ranking": 21,
+    "description": "A quirky Wes Anderson film full of charm.",
+    "genre": "Comedy"
+  },
+  {
+    "title": "Superbad",
+    "image": "/img/moviecovers/superbad.jpg",
+    "ranking": 22,
+    "description": "A hilarious coming-of-age teen comedy.",
+    "genre": "Comedy"
+  },
+  {
+    "title": "Get Out",
+    "image": "/img/moviecovers/getout.jpg",
+    "ranking": 23,
+    "description": "A smart, socially conscious horror film.",
+    "genre": "Horror"
+  },
+  {
+    "title": "Hereditary",
+    "image": "/img/moviecovers/hereditary.jpg",
+    "ranking": 24,
+    "description": "A chilling psychological horror film.",
+    "genre": "Horror"
+  },
+  {
+    "title": "A Quiet Place",
+    "image": "/img/moviecovers/aquietplace.jpg",
+    "ranking": 25,
+    "description": "A suspenseful thriller about survival in silence.",
+    "genre": "Horror"
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "image": "/img/moviecovers/herrderringediegefaehrten.jpg",
+    "ranking": 26,
+    "description": "An epic fantasy journey.",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "image": "/img/moviecovers/fluchderkarribik.jpg",
+    "ranking": 27,
+    "description": "A swashbuckling adventure.",
+    "genre": "Adventure"
+  },
+  {
+    "title": "Jurassic Park",
+    "image": "/img/moviecovers/jurassicpark.jpg",
+    "ranking": 28,
+    "description": "A thrilling dinosaur-filled classic.",
+    "genre": "Adventure"
+  },
+  {
+    "title": "21 Jump Street",
+    "image": "/img/moviecovers/21jumpstreet.jpg",
+    "ranking": 29,
+    "description": "A comedy about two cops who go undercover in a Highschool.",
+    "genre": "Comedy"
   }
 ]
