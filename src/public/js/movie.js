@@ -10,10 +10,11 @@ function showMovieDetails(event) {
     const modal = document.getElementById("movieModal");
     const closeButton = document.querySelector(".close-btn");
 
-    document.getElementById("movie-title").textContent = movieTitle;
-    document.getElementById("movie-image").src = movieImage;
-    document.getElementById("movie-description").textContent = "Description: " + movieDescription;
-    document.getElementById("movie-genre").textContent = "Genre: " + movieGenre;
+    document.getElementById("media-title").textContent = movieTitle;
+    document.getElementById("media-image").src = movieImage;
+    document.getElementById("media-description").textContent = "Description: " + movieDescription;
+    document.getElementById("media-genre").textContent = "Genre: " + movieGenre;
+    document.getElementById("media-ranking").textContent = "Ranking: " + movieData.ranking;
 
     modal.style.display = "block";
 
