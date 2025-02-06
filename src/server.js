@@ -46,7 +46,6 @@ app.get('/movies', (req, res) => {
             groupedMovies.push({ letter, movies: moviesInGroup });
         });
 
-        // Übergib die gruppierten Filme an das Pug-Template
         res.render('movies', { title: 'Movies', groupedMovies, active_tab: 'movies' });
     });
 });

@@ -1,3 +1,14 @@
+:root{
+    --backgroundColor1: #000000;
+    --backgroundColor2: #5c6268;
+    --backgroundColor3: #1e90ff;
+    --fontColor1: blue;
+    --fontColor2: black;
+    --buttonBackgroundColor1: #1e90ff;
+    --buttonBackgroundColor2: #c0392b;
+    --buttonHoverColor1: #1c7ed6;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -169,7 +180,7 @@ main {
 }
 
 .btn {
-    background-color: #1e90ff;
+    background-color: var(--buttonBackgroundColor1);
     padding: 12px 30px;
     font-size: 18px;
     color: white;
@@ -177,10 +188,10 @@ main {
     width: 100%;
     text-align: center;
     border: none;
-    display: inline-flex;      /* Flexbox für gleiche Höhe */
-    justify-content: center;   /* Zentriert den Text horizontal */
-    align-items: center;       /* Zentriert den Text vertikal */
-    height: 50px;              /* Gleiche Höhe wie der Delete-Button */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
     cursor: pointer;
     text-decoration: none;
 }
@@ -191,7 +202,7 @@ main {
 }
 
 .delete-btn {
-    background-color: #e74c3c;
+    background-color: var(--buttonBackgroundColor2);
     padding: 12px 30px;
     font-size: 18px;
     color: white;
@@ -199,16 +210,16 @@ main {
     width: 100%;
     text-align: center;
     border: none;
-    display: inline-flex;      /* Flexbox für gleiche Höhe */
-    justify-content: center;   /* Zentriert den Text horizontal */
-    align-items: center;       /* Zentriert den Text vertikal */
-    height: 50px;              /* Gleiche Höhe wie der Logout-Button */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
     cursor: pointer;
     text-decoration: none;
 }
 
 .delete-btn:hover {
-    background-color: #c0392b;
+    background-color: var(--buttonBackgroundColor2);
     opacity: 0.9;
 }
 
@@ -224,7 +235,7 @@ main {
 }
 
 .back-btn:hover {
-    background-color: #1e90ff;
+    background-color: var(--buttonBackgroundColor1);
     opacity: 0.8;
 }
 
@@ -239,7 +250,6 @@ main {
     text-decoration: underline;
 }
 
-/* Profil-spezifisches Styling */
 .profile-container {
     background-color: white;
     padding: 40px;
@@ -332,8 +342,8 @@ form {
 }
 
 a.active{
-    background-color: #1e90ff;
-    color: blue;
+    background-color: var(--backgroundColor3);
+    color: var(--fontColor1);
 }
 
 .media_modal{
@@ -377,7 +387,7 @@ a.active{
 }
 
 .close-btn {
-    color: #aaa;
+    color: var(--buttonBackgroundColor2);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -385,7 +395,7 @@ a.active{
 
 .close-btn:hover,
 .close-btn:focus {
-    color: black;
+    color: var(--buttonBackgroundColor2);
     text-decoration: none;
     cursor: pointer;
 }
