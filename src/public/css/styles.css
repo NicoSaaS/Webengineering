@@ -5,6 +5,7 @@
     --fontColor1: blue;
     --fontColor2: black;
     --fontColor3: white;
+    --fontColor4: #1e90ff;
     --buttonBackgroundColor1: #1e90ff;
     --buttonBackgroundColor2: #c0392b;
     --buttonHoverColor1: #1c7ed6;
@@ -23,12 +24,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 5%;
+    padding: 20px 5%;
     background-color: #333;
     color: var(--fontColor3);
-    padding: 10px 0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 li,
@@ -72,8 +71,7 @@ i:hover {
 }
 
 a.active{
-    background-color: var(--backgroundColor3);
-    color: var(--fontColor1);
+    color: var(--fontColor4);
 }
 
 /* .searchField_placement {
@@ -119,18 +117,6 @@ body {
 .button.primary {
     background-color: #333;
     color: var(--fontColor3);
-}
-
-.profile-icon {
-    margin-left: auto;
-    display: flex;
-    justify-content: right;
-    color: var(--fontColor3);
-    transition: color 0.3s ease;
-}
-
-.profile-icon:hover {
-    color: #1e90ff;
 }
 
 main {
@@ -363,12 +349,6 @@ form {
     padding: 0;
 }
 
-.media_heading{
-    font-size: 30px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
 .media_modal{
     width: 100%;
     max-width: 170px;
@@ -421,4 +401,8 @@ form {
     color: var(--buttonBackgroundColor2);
     text-decoration: none;
     cursor: pointer;
+}
+
+.whiteFontColor{
+    color: var(--fontColor3)
 }
