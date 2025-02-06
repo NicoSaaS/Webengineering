@@ -1,8 +1,10 @@
 extends layout.pug
+
 //- block searchField
 //-     form.searchField_placement(action="/search", method="get")
 //-         input(type="text", name="query", placeholder="Search movies or series")
 //-         button(type="submit") Search
+
 
 block content
     div.body_container
@@ -18,22 +20,30 @@ block content
                             data-movie=JSON.stringify(movie),
                             onclick="showMovieDetails(event)"
                         )
+
         h3 Series Ranking of the Month
             br
             ul.media_list
                 each serie in series
                     li
                         h4= serie.ranking + ". "
-                        img.media_cover(src=serie.image, alt=serie.title)
+                        img.media_cover(
+                            src=serie.image, 
+                            alt=serie.title, 
+                            data-serie=JSON.stringify(serie),
+                            onclick="showSerieDetails(event)"
+                        )
+
     div(id="movieModal", style="display: none;")
         div.modal-content
             span.close-btn &times;
             .modal-body
-                img.media_modal(id="movie-image", src="")
-                .movie-details
-                    h2(id="movie-title")
-                    p(id="movie-description")
-                    p(id="movie-genre")
-                    p(id="movie-ranking")
+                img.media_modal(id="media-image", src="")
+                .media-details
+                    h2(id="media-title")
+                    p(id="media-description")
+                    p(id="media-genre")
+                    p(id="media-ranking")
 
     script(src="/js/movie.js")
+    script(src="/js/serie.js")

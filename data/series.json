@@ -1,20 +1,135 @@
 [
     {
         "title": "F.R.I.E.N.D.S",
-        "image": "/img/friends.jpg",
+        "image": "/img/seriescovers/friends.jpg",
         "ranking": 1,
-        "description": "A crime drama series about a 40-year-old man who becomes the oldest rookie in the Los Angeles police force."
+        "description": "A classic sitcom about six friends in New York navigating life, love, and hilarious misadventures.",
+        "genre": "Comedy"
     },
     {
         "title": "Squid Game",
-        "image": "/img/squid_game.jpg",
+        "image": "/img/seriescovers/squid_game.jpg",
         "ranking": 2,
-        "description": "A cult classic sitcom about six friends in New York navigating life, love, and everyday challenges."
+        "description": "A South Korean thriller where financially desperate individuals compete in deadly children's games for a massive cash prize.",
+        "genre": "Thriller"
     },
     {
         "title": "The Rookie",
-        "image": "/img/the_rookie.jpg",
+        "image": "/img/seriescovers/the_rookie.jpg",
         "ranking": 3,
-        "description": "A South Korean thriller where desperate individuals compete in deadly games for a massive cash prize."
+        "description": "A crime drama about a 40-year-old man who becomes the oldest rookie in the Los Angeles police force.",
+        "genre": "Crime, Drama"
+    },
+    {
+        "title": "Arcane",
+        "image": "/img/seriescovers/arcane.jpg",
+        "ranking": 4,
+        "description": "A visually stunning animated series exploring the origins of League of Legends champions in the city of Piltover and the undercity Zaun.",
+        "genre": "Animation, Fantasy"
+    },
+    {
+        "title": "Black Mirror",
+        "image": "/img/seriescovers/blackmirror.jpg",
+        "ranking": 5,
+        "description": "A thought-provoking anthology series exploring the dark side of technology and human nature.",
+        "genre": "Sci-Fi, Thriller"
+    },
+    {
+        "title": "Breaking Bad",
+        "image": "/img/seriescovers/breakingbad.jpg",
+        "ranking": 6,
+        "description": "A gripping drama following a high school chemistry teacher turned methamphetamine producer.",
+        "genre": "Crime, Drama"
+    },
+    {
+        "title": "Community",
+        "image": "/img/seriescovers/community.jpg",
+        "ranking": 7,
+        "description": "A meta-humor-filled sitcom about an unlikely group of students at a community college.",
+        "genre": "Comedy"
+    },
+    {
+        "title": "Doctor Who",
+        "image": "/img/seriescovers/drwho.jpg",
+        "ranking": 8,
+        "description": "A long-running sci-fi series following the adventures of the Doctor, a time-traveling alien exploring the universe.",
+        "genre": "Sci-Fi, Adventure"
+    },
+    {
+        "title": "DuckTales",
+        "image": "/img/seriescovers/ducktales.jpg",
+        "ranking": 9,
+        "description": "An animated adventure following Scrooge McDuck and his nephews on treasure-hunting quests.",
+        "genre": "Animation, Adventure"
+    },
+    {
+        "title": "Family Guy",
+        "image": "/img/seriescovers/familyguy.jpg",
+        "ranking": 10,
+        "description": "An animated sitcom about the Griffin family and their satirical take on American life.",
+        "genre": "Animation, Comedy"
+    },
+    {
+        "title": "For All Mankind",
+        "image": "/img/seriescovers/forallmankind.jpg",
+        "ranking": 11,
+        "description": "An alternate history drama exploring what would have happened if the Soviet Union had landed on the Moon first.",
+        "genre": "Sci-Fi, Drama"
+    },
+    {
+        "title": "Game of Thrones",
+        "image": "/img/seriescovers/gameofthrones.jpg",
+        "ranking": 12,
+        "description": "A fantasy epic based on George R.R. Martin's novels, depicting the power struggles between noble families.",
+        "genre": "Fantasy, Drama"
+    },
+    {
+        "title": "Gravity Falls",
+        "image": "/img/seriescovers/gravityfalls.jpg",
+        "ranking": 13,
+        "description": "A mystery-filled animated series following twins Dipper and Mabel in a strange Oregon town.",
+        "genre": "Animation, Adventure"
+    },
+    {
+        "title": "Police Squad!",
+        "image": "/img/seriescovers/policesquad.jpg",
+        "ranking": 14,
+        "description": "A hilarious parody of police procedurals starring Leslie Nielsen.",
+        "genre": "Comedy"
+    },
+    {
+        "title": "Stranger Things",
+        "image": "/img/seriescovers/strangerthings.jpg",
+        "ranking": 15,
+        "description": "A supernatural thriller about a group of kids uncovering government secrets and strange occurrences in their town.",
+        "genre": "Sci-Fi, Horror"
+    },
+    {
+        "title": "The Mandalorian",
+        "image": "/img/seriescovers/themandalorian.jpg",
+        "ranking": 16,
+        "description": "A Star Wars series following the journey of a lone bounty hunter in the galaxy's outer reaches.",
+        "genre": "Sci-Fi, Adventure"
+    },
+    {
+        "title": "The Simpsons",
+        "image": "/img/seriescovers/thesimpsons.jpg",
+        "ranking": 17,
+        "description": "A satirical animated sitcom about the everyday lives of the Simpson family.",
+        "genre": "Animation, Comedy"
+    },
+    {
+        "title": "The Witcher",
+        "image": "/img/seriescovers/thewitcher.jpg",
+        "ranking": 18,
+        "description": "A fantasy series following the monster hunter Geralt of Rivia as he navigates a war-torn world.",
+        "genre": "Fantasy, Adventure"
+    },
+    {
+        "title": "Tulsa King",
+        "image": "/img/seriescovers/tulsaking.jpg",
+        "ranking": 19,
+        "description": "A crime drama starring Sylvester Stallone as a mob boss rebuilding his empire in Tulsa.",
+        "genre": "Crime, Drama"
     }
 ]
