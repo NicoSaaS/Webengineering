@@ -3,7 +3,7 @@ extends layout.pug
 block content
   div.body_container
     each group in groupedMovies
-        h4= group.letter
+        h4.whiteFontColor= group.letter
         ul.media_list
           each movie in group.movies
             li

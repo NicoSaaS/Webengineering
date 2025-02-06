@@ -8,16 +8,19 @@ html(lang="de")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
   body
     header
-      .header-container
-        h1.nav_left CineCanvas
+        h1 CineCanvas
         nav
-          a(href="/" class=active_tab === 'home' ? 'active' : '') Home
-          a(href="/movies" class=active_tab === 'movies' ? 'active' : '') Movies
-          a(href="/watchlist" class=active_tab === 'watchlist' ? 'active' : '') Watchlist
-          block searchField
-          a.profile-icon(href="/profile")
-            i.fas.fa-user
-    
+          ul.nav_left
+            li 
+              a(href="/" class=active_tab === 'home' ? 'active' : '') Home
+            li
+              a(href="/movies" class=active_tab === 'movies' ? 'active' : '') Movies
+            li
+              a(href="/watchlist" class=active_tab === 'watchlist' ? 'active' : '') Watchlist
+              //- block searchField
+            li
+              a.profile-icon(href="/profile")
+                i.fas.fa-user
 
     block content
 
