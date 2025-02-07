@@ -7,7 +7,7 @@ function showSerieDetails(event) {
     const serieGenre = serieData.genre;
     const serieImage = serieData.image;
 
-    const modal = document.getElementById("movieModal");
+    const modal = document.getElementById("mediaPopup");
     const closeButton = document.querySelector(".close-btn");
 
     document.getElementById("media-title").textContent = serieTitle;

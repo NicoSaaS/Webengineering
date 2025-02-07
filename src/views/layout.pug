@@ -9,6 +9,8 @@ html(lang="de")
   body
     header
         h1 CineCanvas
+        button.menu-toggle(onclick="toggleMenu()") ☰
+        input#menu-checkbox(type="checkbox" hidden)
         nav
           ul.nav_left
             li 
@@ -26,3 +28,4 @@ html(lang="de")
 
     block content
 
+    script(src="/js/header.js")
