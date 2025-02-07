@@ -16,20 +16,34 @@ block content
                 each serie in series
                     li(data-movie=JSON.stringify(serie))
                         h4= serie.ranking + ". "
+                        img.media_cover(
+                            src=serie.image, 
+                            alt=serie.title, 
+                            data-serie=JSON.stringify(serie),
+                            onclick="showSerieDetails(event)"
+                        )
+
+    div.popup(id="mediaPopup")
+        div.popup-body
                         img.media_cover(src=serie.image, alt=serie.title, onclick="showMovieDetails(event)")
     div(id="movieModal", style="display: none;")
         div.modal-content
             span.close-btn &times;
             button.bookmarkButton(data-movie="", onclick="addWatchlist(event)")
                 img(src="/img/bookmark.png", alt="Bookmark")
-            .modal-body
-                img.media_modal(id="media-image", src="")
-                .media-details
-                    h2(id="media-title")
-                    p(id="media-description")
-                    p(id="media-genre")
-                    p(id="media-ranking")
+            .popup-content
+                img.media_image(id="media-image", src="")
+                .media-information
+                    .media-general-info
+                        h2(id="media-title")
+                        p(id="media-description")
+                        .media-specific-info
+                            p(id="media-genre")
+                            p(id="media-ranking")
+                            a(id="media-trailer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank") Schau dir hier den Trailer an!
+
 
     script(src="/js/movie.js")
     script(src="/js/serie.js")
     script(src="/js/watchlist.js")
+    script(src="/js/header.js")

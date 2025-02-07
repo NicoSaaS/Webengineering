@@ -1,7 +1,8 @@
-:root{
+:root {
     --backgroundColor1: #000000;
     --backgroundColor2: #5c6268;
-    --backgroundColor3: #1e90ff;
+    --backgroundColor3: #a1a1a1;
+    --backgroundColor4: #1e90ff;
     --fontColor1: blue;
     --fontColor2: black;
     --fontColor3: white;
@@ -24,20 +25,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    position: relative;
+    padding: 2vh 5vw;
     background-color: #333;
     color: var(--fontColor3);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-li,
-a,
-.profile-icon {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: white;
-    text-decoration: none;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .nav_left {
@@ -57,6 +53,16 @@ a,
     color: #1e90ff;
 }
 
+li,
+a,
+.profile-icon {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    color: white;
+    text-decoration: none;
+}
+
 .nav_left li a.back-btn:hover {
     color: var(--fontColor3);
 }
@@ -74,8 +80,47 @@ i:hover {
     background-color: #204870;
 }
 
-a.active{
+a.active {
     color: var(--fontColor4);
+}
+
+/* For Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav_left {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 2vh 0;
+    }
+
+    .nav_left li {
+        padding: 1.5vh 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #menu-checkbox:checked~.nav_left {
+        display: flex;
+    }
 }
 
 /* .searchField_placement {
@@ -124,34 +169,34 @@ body {
 }
 
 main {
-    padding: 50px 20px;
+    padding: 5vh 2vw;
     text-align: center;
 }
 
 .intro h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    margin-bottom: 2vh;
     color: #333;
 }
 
 .intro p {
-    font-size: 18px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: #666;
 }
 
 .features {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 4vw;
+    margin-top: 4vh;
 }
 
 .feature-card {
     background-color: white;
-    padding: 30px;
+    padding: 5%;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 280px;
+    width: clamp(200px, 20vw, 300px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -161,8 +206,8 @@ main {
 }
 
 .feature-card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: clamp(1.2rem, 1.8vw, 2rem);
+    margin-bottom: 1vh;
     color: #333;
 }
 
@@ -173,13 +218,13 @@ main {
 @media screen and (max-width: 768px) {
     .features {
         flex-direction: column;
-        gap: 20px;
+        gap: 2vh;
     }
 }
 
 .form-container {
     background-color: white;
-    padding: 40px;
+    padding: 5%;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -194,7 +239,7 @@ main {
 }
 
 .input-container {
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
 }
 
 .input-container label {
@@ -221,8 +266,8 @@ main {
 
 .btn {
     background-color: var(--buttonBackgroundColor1);
-    padding: 12px 30px;
-    font-size: 18px;
+    padding: 1.5vh 3vw;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: var(--fontColor3);
     border-radius: 30px;
     width: 100%;
@@ -336,10 +381,8 @@ form {
 
 .media_cover {
     width: 100%;
-    max-width: 170px;
-    min-width: 170px;
-    max-height: 250px;
-    min-height: 250px;	
+    max-width: clamp(100px, 15vw, 170px);
+    height: auto;
 }
 
 .media_cover:hover {
@@ -350,54 +393,123 @@ form {
 .media_list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 2vw;
     list-style: none;
     padding: 0;
 }
 
-.media_modal{
-    width: 100%;
-    max-width: 170px;
-    height: 250px;
-}
-
-#movieModal {
+.popup {
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
+    align-items: center;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
-    display: none;
+    padding: 2vh;
 }
 
-.modal-content {
+.popup-body {
+    display: flex;
+    flex-direction: column;
     background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
+    margin: 10vh auto;
+    border-radius: 8px;
+    box-shadow: -6px 6px 10px rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    max-height: 40vh;
     position: relative;
 }
 
-.modal-body {
+.popup-content {
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
-.movie-details {
+.media_image {
+    width: auto;
+    height: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.media-information {
+    width: 100%;
+    height: 100%;
+    max-width: auto;
+    max-height: 360px;
     text-align: left;
+    margin-top: 5vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+.media-general-info {
+    width: 100%;
+    height: fit-content;
+    max-width: auto;
+    max-height: auto;
+    text-align: left;
+}
+
+#media-title {
+    font-size: clamp(2vh, 3vw, 5vh);
+    color: #333;
+}
+
+#media-description {
+    font-size: 2vh;
+    color: #333;
+}
+
+.media-specific-info {
+    width: 100%;
+    height: fit-content;
+    max-width: auto;
+    margin-top: 3vh;
+    margin-right: 2vh;
+
+}
+
+#media-genre {
+    font-size: 2vh;
+    color: #333;
+}
+
+#media-ranking {
+    font-size: 2vh;
+    color: #333;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Verhältnis */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .close-btn {
     color: var(--buttonBackgroundColor2);
-    float: right;
+    position: absolute;
+    top: 0px;
+    right: 20px;
     font-size: 28px;
     font-weight: bold;
 }
@@ -409,7 +521,7 @@ form {
     cursor: pointer;
 }
 
-.whiteFontColor{
+.whiteFontColor {
     color: var(--fontColor3)
 }
 
