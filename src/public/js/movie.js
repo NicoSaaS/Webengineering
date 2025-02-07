@@ -1,5 +1,6 @@
 function showMovieDetails(event) {
-    const movieElement = event.target;
+    debugger;
+    const movieElement = event.target.closest('li');;
     const movieData = JSON.parse(movieElement.getAttribute("data-movie"));
 
     const movieTitle = movieData.title;
@@ -15,6 +16,11 @@ function showMovieDetails(event) {
     document.getElementById("media-description").textContent = "Description: " + movieDescription;
     document.getElementById("media-genre").textContent = "Genre: " + movieGenre;
     document.getElementById("media-ranking").textContent = "Ranking: " + movieData.ranking;
+    
+    const bookmarkButton = modal.querySelector('.bookmarkButton');
+    const bookmarkImg = bookmarkButton.querySelector('img');
+    bookmarkButton.setAttribute('data-movie', JSON.stringify(movieData));
+    bookmarkImg.src = movieData.watchlist === 1 ? "/img/selected_bookmark.png" : "/img/bookmark.png";
 
     modal.style.display = "block";
 

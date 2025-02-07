@@ -1,42 +1,27 @@
 extends layout.pug
 
-//- block searchField
-//-     form.searchField_placement(action="/search", method="get")
-//-         input(type="text", name="query", placeholder="Search movies or series")
-//-         button(type="submit") Search
-
-
 block content
     div.body_container
         h3.whiteFontColor Movie Ranking of the Month 
             br
             ul.media_list
                 each movie in movies
-                    li
+                    li(data-movie=JSON.stringify(movie))
                         h4= movie.ranking + ". "
-                        img.media_cover(
-                            src=movie.image, 
-                            alt=movie.title, 
-                            data-movie=JSON.stringify(movie),
-                            onclick="showMovieDetails(event)"
-                        )
+                        img.media_cover(src=movie.image, alt=movie.title, onclick="showMovieDetails(event)")
 
         h3.whiteFontColor Series Ranking of the Month
             br
             ul.media_list
                 each serie in series
-                    li
+                    li(data-movie=JSON.stringify(serie))
                         h4= serie.ranking + ". "
-                        img.media_cover(
-                            src=serie.image, 
-                            alt=serie.title, 
-                            data-serie=JSON.stringify(serie),
-                            onclick="showSerieDetails(event)"
-                        )
-
+                        img.media_cover(src=serie.image, alt=serie.title, onclick="showMovieDetails(event)")
     div(id="movieModal", style="display: none;")
         div.modal-content
             span.close-btn &times;
+            button.bookmarkButton(data-movie="", onclick="addWatchlist(event)")
+                img(src="/img/bookmark.png", alt="Bookmark")
             .modal-body
                 img.media_modal(id="media-image", src="")
                 .media-details
@@ -47,3 +32,4 @@ block content
 
     script(src="/js/movie.js")
     script(src="/js/serie.js")
+    script(src="/js/watchlist.js")
