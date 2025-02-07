@@ -416,3 +416,25 @@ form {
 .marginBottom{
     margin-bottom: 20px;
 }
+
+.bookmarkButton{
+    cursor: pointer;
+    background: none;
+    border-width: 0;
+}
+
+.bookmarkButton{
+    cursor: pointer;
+    background: none;
+    border-width: 0;
+}
+
+.bookmarkButton img:hover{
+    content: url('/img/hovered_bookmark.png');
+    border-radius: 0.4;
+}
+
+.bookmarkButton img{
+    width: 2rem;
+    height: 2rem;
+}
