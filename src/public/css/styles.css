@@ -63,6 +63,10 @@ a,
     text-decoration: none;
 }
 
+.nav_left li a.back-btn:hover {
+    color: var(--fontColor3);
+}
+
 i {
     padding: 9px 25px;
     background-color: #2d699b;
@@ -306,7 +310,6 @@ main {
 
 .back-btn {
     display: inline-block;
-    margin-top: 20px;
     text-decoration: none;
     font-size: 16px;
     color: var(--fontColor3);
@@ -317,6 +320,7 @@ main {
 
 .back-btn:hover {
     background-color: var(--buttonBackgroundColor1);
+    color: var(--fontColor3);
     opacity: 0.8;
 }
 
@@ -519,4 +523,30 @@ form {
 
 .whiteFontColor {
     color: var(--fontColor3)
+}
+
+.marginBottom{
+    margin-bottom: 20px;
+}
+
+.bookmarkButton{
+    cursor: pointer;
+    background: none;
+    border-width: 0;
+}
+
+.bookmarkButton{
+    cursor: pointer;
+    background: none;
+    border-width: 0;
+}
+
+.bookmarkButton img:hover{
+    content: url('/img/hovered_bookmark.png');
+    border-radius: 0.4;
+}
+
+.bookmarkButton img{
+    width: 2rem;
+    height: 2rem;
 }
