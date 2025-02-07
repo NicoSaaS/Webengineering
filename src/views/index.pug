@@ -25,22 +25,20 @@ block content
 
     div.popup(id="mediaPopup")
         div.popup-body
-                        img.media_cover(src=serie.image, alt=serie.title, onclick="showMovieDetails(event)")
-    div(id="movieModal", style="display: none;")
-        div.modal-content
-            span.close-btn &times;
-            button.bookmarkButton(data-movie="", onclick="addWatchlist(event)")
-                img(src="/img/bookmark.png", alt="Bookmark")
-            .popup-content
-                img.media_image(id="media-image", src="")
-                .media-information
-                    .media-general-info
-                        h2(id="media-title")
-                        p(id="media-description")
-                        .media-specific-info
-                            p(id="media-genre")
-                            p(id="media-ranking")
-                            a(id="media-trailer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank") Schau dir hier den Trailer an!
+            div(id="movieModal", style="display: none;")
+                div.modal-content
+                    span.close-btn &times;
+                    button.bookmarkButton(data-movie="", onclick="addWatchlist(event)")
+                        img(src="/img/bookmark.png", alt="Bookmark")
+                    .popup-content
+                        img.media_image(id="media-image", src="")
+                        .media-information
+                            .media-general-info
+                                h2(id="media-title")
+                                p(id="media-description")
+                                .media-specific-info
+                                    p(id="media-genre")
+                                    p(id="media-ranking")
 
 
     script(src="/js/movie.js")
