@@ -1,205 +1,442 @@
 [
   {
+    "id": 0,
     "title": "Inception",
     "image": "/img/moviecovers/inception.jpg",
     "ranking": 1,
     "description": "A thrilling sci-fi film by Christopher Nolan.",
-    "genre": "Sci-Fi"
+    "genre": "Sci-Fi" ,
+    "director": "Christopher Nolan",
+    "released": "2010",
+    "watchlist": 0   
   },
   {
+    "id": 1,
     "title": "The Matrix",
     "image": "/img/moviecovers/matrix.jpg",
     "ranking": 2,
     "description": "A groundbreaking sci-fi classic.",
-    "genre": "Sci-Fi"
+    "genre": "Sci-Fi",
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "released": "1999",
+    "watchlist": 0
   },
   {
+    "id": 2,
     "title": "The Dark Knight",
     "image": "/img/moviecovers/darkknight.jpg",
     "ranking": 3,
     "description": "A dark Batman film by Christopher Nolan.",
-    "genre": "Action"
+    "genre": "Action",
+    "director": "Christopher Nolan",
+    "released": "2008",
+    "watchlist": 0
   },
   {
+    "id": 3,
     "title": "Tenet",
     "image": "/img/moviecovers/tenet.jpg",
     "ranking": 4,
     "description": "A complex time-bending thriller by Christopher Nolan.",
-    "genre": "Thriller"
+    "genre": "Thriller",
+    "director": "Christopher Nolan",
+    "released": "2020",
+    "watchlist": 0
   },
   {
+    "id": 4,
     "title": "Paddington in Peru",
     "image": "/img/moviecovers/paddingtoninperu.jpg",
     "ranking": 5,
     "description": "Paddington's adventure in Peru.",
-    "genre": "Family"
+    "genre": "Family",
+    "director": "Paul King",
+    "released": "2023",
+    "watchlist": 0
   },
   {
+    "id": 5,
     "title": "Rogue One",
     "image": "/img/moviecovers/rogueone.jpg",
     "ranking": 6,
     "description": "A Star Wars story about the mission to steal the Death Star plans.",
-    "genre": "Sci-Fi"
+    "genre": "Sci-Fi",
+    "director": "Gareth Edwards",
+    "released": "2016",
+    "watchlist": 0
   },
   {
+    "id": 6,
     "title": "Schuh des Manitu",
     "image": "/img/moviecovers/schuhdesmanitu.jpg",
     "ranking": 7,
     "description": "A German comedy film parodying Westerns.",
-    "genre": "Comedy"
+    "genre": "Comedy",
+    "director": "Michael Herbig",
+    "released": "2001",
+    "watchlist": 0
   },
   {
+    "id": 7,
     "title": "Scream",
     "image": "/img/moviecovers/scream.jpg",
     "ranking": 8,
     "description": "A horror film that revitalized the slasher genre.",
-    "genre": "Horror"
+    "genre": "Horror",
+    "director": "Wes Craven",
+    "released": "1996",
+    "watchlist": 0
   },
   {
+    "id": 8,
     "title": "Super Mario Bros: The Movie",
     "image": "/img/moviecovers/supermariobrosthemovie.jpg",
     "ranking": 9,
     "description": "A film adaptation of the popular video game series.",
-    "genre": "Adventure"
+    "genre": "Adventure",
+    "director": "Shigeru Miyamoto, Chris Meledandri",
+    "released": "2023",
+    "watchlist": 0
   },
   {
+    "id": 9,
     "title": "WALL-E",
     "image": "/img/moviecovers/walle.jpg",
     "ranking": 10,
     "description": "A Pixar film about a small waste-collecting robot.",
-    "genre": "Animation"
+    "genre": "Animation",
+    "director": "Jim Morris, John Lasseter, Lindsey Collins",
+    "released": "2008",
+    "watchlist": 0
   },
   {
+    "id": 10,
     "title": "Interstellar",
     "image": "/img/moviecovers/interstellar.jpg",
     "ranking": 11,
     "description": "A space exploration epic by Christopher Nolan.",
-    "genre": "Sci-Fi"
+    "genre": "Sci-Fi",
+    "director": "Christopher Nolan",
+    "released": "2014",
+    "watchlist": 0
   },
   {
+    "id": 11,
     "title": "Blade Runner 2049",
     "image": "/img/moviecovers/bladerunner.jpg",
     "ranking": 12,
     "description": "A visually stunning sequel to the original Blade Runner.",
-    "genre": "Sci-Fi"
+    "genre": "Sci-Fi",
+    "director": "Denis Villeneuve",
+    "released": "2017",
+    "watchlist": 0
   },
   {
+    "id": 12,
     "title": "Arrival",
     "image": "/img/moviecovers/arrival.jpg",
     "ranking": 13,
     "description": "A thought-provoking alien contact film directed by Denis Villeneuve.",
-    "genre": "Sci-Fi"
+    "genre": "Sci-Fi",
+    "director": "Denis Villeneuve",
+    "released": "2016",
+    "watchlist": 0
   },
   {
+    "id": 13,
     "title": "John Wick",
     "image": "/img/moviecovers/johnwick.jpg",
     "ranking": 14,
     "description": "A high-octane action film starring Keanu Reeves.",
-    "genre": "Action"
+    "genre": "Action",
+    "director": "Chad Stahelski, David Leitch",
+    "released": "2014",
+    "watchlist": 0
   },
   {
+    "id": 14,
     "title": "Mad Max: Fury Road",
     "image": "/img/moviecovers/madmaxfuryroad.jpg",
     "ranking": 15,
     "description": "A post-apocalyptic action masterpiece.",
-    "genre": "Action"
+    "genre": "Action",
+    "director": "George Miller",
+    "released": "2015",
+    "watchlist": 0
   },
   {
+    "id": 15,
     "title": "Skyfall",
     "image": "/img/moviecovers/skyfall.jpg",
     "ranking": 16,
     "description": "A stylish James Bond film with intense action.",
-    "genre": "Action"
+    "genre": "Action",
+    "director": "Sam Mendes",
+    "released": "2012",
+    "watchlist": 0
   },
   {
+    "id": 16,
     "title": "Coco",
     "image": "/img/moviecovers/coco.jpg",
     "ranking": 17,
     "description": "A vibrant Pixar film exploring Mexican traditions.",
-    "genre": "Animation"
+    "genre": "Animation",
+    "director": "Lee Unkrich, Adrian Molina",
+    "released": "2017",
+    "watchlist": 0
   },
   {
+    "id": 17,
     "title": "Zoomania",
     "image": "/img/moviecovers/zoomania.jpg",
     "ranking": 18,
     "description": "A fun animated film with a clever detective storyline.",
-    "genre": "Animation"
+    "genre": "Animation",
+    "director": "Byron Howard, Rich Moore, Jared Bush",
+    "released": "2016",
+    "watchlist": 0
   },
   {
+    "id": 18,
     "title": "The Lego Movie",
     "image": "/img/moviecovers/legomovie.jpg",
     "ranking": 19,
     "description": "A playful adventure with humor for all ages.",
-    "genre": "Animation"
+    "genre": "Animation",
+    "director": "Phil Lord, Christopher Miller",
+    "released": "2014",
+    "watchlist": 0
   },
   {
+    "id": 19,
     "title": "Hot Fuzz",
     "image": "/img/moviecovers/hotfuzz.jpg",
     "ranking": 20,
     "description": "A British action-comedy with sharp wit.",
-    "genre": "Comedy"
+    "genre": "Comedy",
+    "director": "Edgar Wright",
+    "released": "2007",
+    "watchlist": 0
   },
   {
+    "id": 20,
     "title": "The Grand Budapest Hotel",
     "image": "/img/moviecovers/grandbudapesthotel.jpg",
     "ranking": 21,
     "description": "A quirky Wes Anderson film full of charm.",
-    "genre": "Comedy"
+    "genre": "Comedy",
+    "director": "Wes Anderson",
+    "released": "2014",
+    "watchlist": 0
   },
   {
+    "id": 21,
     "title": "Superbad",
     "image": "/img/moviecovers/superbad.jpg",
     "ranking": 22,
     "description": "A hilarious coming-of-age teen comedy.",
-    "genre": "Comedy"
+    "genre": "Comedy",
+    "director": "Greg Mottola",
+    "released": "2007",
+    "watchlist": 0
   },
   {
+    "id": 22,
     "title": "Get Out",
     "image": "/img/moviecovers/getout.jpg",
     "ranking": 23,
     "description": "A smart, socially conscious horror film.",
-    "genre": "Horror"
+    "genre": "Horror",
+    "director": "Jordan Peele",
+    "released": "2017",
+    "watchlist": 0
   },
   {
+    "id": 23,
     "title": "Hereditary",
     "image": "/img/moviecovers/hereditary.jpg",
     "ranking": 24,
     "description": "A chilling psychological horror film.",
-    "genre": "Horror"
+    "genre": "Horror",
+    "director": "Ari Aster",
+    "released": "2018",
+    "watchlist": 0
   },
   {
+    "id": 24,
     "title": "A Quiet Place",
     "image": "/img/moviecovers/aquietplace.jpg",
     "ranking": 25,
     "description": "A suspenseful thriller about survival in silence.",
-    "genre": "Horror"
+    "genre": "Horror",
+    "director": "John Krasinski",
+    "released": "2018",
+    "watchlist": 0
   },
   {
+    "id": 25,
     "title": "The Lord of the Rings: The Fellowship of the Ring",
     "image": "/img/moviecovers/herrderringediegefaehrten.jpg",
     "ranking": 26,
     "description": "An epic fantasy journey.",
-    "genre": "Fantasy"
+    "genre": "Fantasy",
+    "director": "Peter Jackson",
+    "released": "2001",
+    "watchlist": 0
   },
   {
+    "id": 26,
     "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
     "image": "/img/moviecovers/fluchderkarribik.jpg",
     "ranking": 27,
     "description": "A swashbuckling adventure.",
-    "genre": "Adventure"
+    "genre": "Adventure",
+    "director": "Gore Verbinski",
+    "released": "2003",
+    "watchlist": 0
   },
   {
+    "id": 27,
     "title": "Jurassic Park",
     "image": "/img/moviecovers/jurassicpark.jpg",
     "ranking": 28,
     "description": "A thrilling dinosaur-filled classic.",
-    "genre": "Adventure"
+    "genre": "Adventure",
+    "director": "Steven Spielberg",
+    "released": "1993",
+    "watchlist": 0
   },
   {
+    "id": 28,
     "title": "21 Jump Street",
     "image": "/img/moviecovers/21jumpstreet.jpg",
     "ranking": 29,
     "description": "A comedy about two cops who go undercover in a Highschool.",
-    "genre": "Comedy"
+    "genre": "Comedy",
+    "director": "Phil Lord, Christopher Miller",
+    "released": "2012",
+    "watchlist": 0
+  },
+  {
+    "id": 29,
+    "title": "Sonic the Hedgehog 3",
+    "image": "/img/moviecovers/sonic3.jpg",
+    "ranking": 30,
+    "description": "A film adaptation of the popular video game series.",
+    "genre": "Action",
+    "director": "Jeff Fowler",
+    "released": "2022",
+    "watchlist": 0
+  },
+  {
+    "id": 30,
+    "title": "Der Marsianer",
+    "image": "/img/moviecovers/dermarsianer.jpg",
+    "ranking": 31,
+    "description": "A film adaptation of the popular book by Andy Weir.",
+    "genre": "Action",
+    "director": "Ridley Scott",
+    "released": "2015",
+    "watchlist": 0
+  },
+  { 
+    "id": 31,
+    "title": "2012",
+    "image": "/img/moviecovers/2012.jpg",
+    "ranking": 32,
+    "description": "An apocalyptic Story about Humanity.",
+    "genre": "Apocalyptic",
+    "director": "Roland Emmerich",
+    "released": "2009",
+    "watchlist": 0
+  },
+  {
+    "id": 32,
+    "title": "Ironman",
+    "image": "/img/moviecovers/ironman.jpg",
+    "ranking": 33,
+    "description": "A film adaptation of the popular comics.",
+    "genre": "Action",
+    "director": "Jon Favreau",
+    "released": "2008",
+    "watchlist": 0
+  },
+  {
+    "id": 33,
+    "title": "Ready Player One",
+    "image": "/img/moviecovers/readyplayerone.jpg",
+    "ranking": 34,
+    "description": "A film adaptation of the popular book.",
+    "genre": "Action",
+    "director": "Steven Spielberg",
+    "released": "2018",
+    "watchlist": 0
+  },
+  {
+    "id": 34,
+    "title": "Avengers Endgame",
+    "image": "/img/moviecovers/avengersendgame.jpg",
+    "ranking": 35,
+    "description": "A film adaptation of the popular book.",
+    "genre": "Action",
+    "director": "Anthony Russo, Joe Russo",
+    "released": "2019",
+    "watchlist": 0
+  },
+  {
+    "id": 35,
+    "title": "Cars",
+    "image": "/img/moviecovers/cars.jpg",
+    "ranking": 36,
+    "description": "An animated adventure about a race car named Lightning McQueen.",
+    "genre": "Animation",
+    "director": "John Lasseter",
+    "released": "2006",
+    "watchlist": 0
+  },
+  {
+    "id": 36,
+    "title": "Atlantis: The Lost Empire",
+    "image": "/img/moviecovers/atlantis.jpg",
+    "ranking": 37,
+    "description": "A Disney adventure about the search for the lost city of Atlantis.",
+    "genre": "Animation",
+    "director": "Gary Trousdale, Kirk Wise",
+    "released": "2001",
+    "watchlist": 0
+  },
+  {
+    "id": 37,
+    "title": "Die nackte Kanone",
+    "image": "/img/moviecovers/dienacktekanone.jpg",
+    "ranking": 38,
+    "description": "A hilarious crime comedy starring Leslie Nielsen.",
+    "genre": "Comedy",
+    "director": "David Zucker",
+    "released": "1988",
+    "watchlist": 0
+  },
+  {
+    "id": 38,
+    "title": "Le Mans 66",
+    "image": "/img/moviecovers/lemans66.jpg",
+    "ranking": 39,
+    "description": "A biographical drama about Ford's battle against Ferrari at Le Mans.",
+    "genre": "Drama",
+    "director": "James Mangold",
+    "released": "2019",
+    "watchlist": 0
+  },
+  {
+    "id": 39,
+    "title": "The Founder",
+    "image": "/img/moviecovers/thefounder.jpg",
+    "ranking": 40,
+    "description": "The story of Ray Kroc and the rise of McDonald's.",
+    "genre": "Drama",
+    "director": "John Lee Hancock",
+    "released": "2016",
+    "watchlist": 0
   }
 ]
