@@ -26,19 +26,20 @@ block content
     div.popup(id="mediaPopup")
         div.popup-body
             div(id="movieModal", style="display: none;")
-                div.modal-content
-                    span.close-btn &times;
-                    button.bookmarkButton(data-movie="", onclick="addWatchlist(event)")
-                        img(src="/img/bookmark.png", alt="Bookmark")
-                    .popup-content
-                        img.media_image(id="media-image", src="")
-                        .media-information
-                            .media-general-info
+            div.modal-content
+                span.close-btn &times;
+                .popup-content
+                    img.media_image(id="media-image", src="")
+                    .media-information
+                        .media-general
+                            .media-header
                                 h2(id="media-title")
-                                p(id="media-description")
-                                .media-specific-info
-                                    p(id="media-genre")
-                                    p(id="media-ranking")
+                                button.bookmarkButton(data-movie="", onclick="addWatchlist(event)")
+                                    img(src="/img/bookmark.png", alt="Bookmark")
+                            p(id="media-description")
+                            .media-specific-info
+                                p(id="media-genre")
+                                p(id="media-ranking")
 
 
     script(src="/js/movie.js")
