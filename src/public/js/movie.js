@@ -1,5 +1,4 @@
 function showMovieDetails(event) {
-    debugger;
     const movieElement = event.target.closest('li');;
     const movieData = JSON.parse(movieElement.getAttribute("data-movie"));
 
