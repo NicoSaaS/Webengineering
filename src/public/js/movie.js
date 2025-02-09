@@ -1,7 +1,7 @@
 function showMovieDetails(event) {
     const movieElement = event.target.closest('li');
     const movieData = JSON.parse(movieElement.getAttribute("data-movie"));
-    const movieId = movieData.id; // Film-ID holen
+    const movieId = movieData.id;
 
     const movieTitle = movieData.title;
     const movieDescription = movieData.description;
@@ -21,13 +21,12 @@ function showMovieDetails(event) {
     const bookmarkImg = bookmarkButton.querySelector('img');
     bookmarkButton.setAttribute('data-movie', JSON.stringify(movieData));
 
-    // Watchlist prüfen
     fetch('/get-user-watchlist', { method: 'GET' })
         .then(response => response.json())
         .then(data => {
             const user = data.user;
             if (user && user.watchlist) {
-                const isInWatchlist = user.watchlist.includes(movieId); // Überprüfen, ob die Film-ID in der Watchlist ist
+                const isInWatchlist = user.watchlist.includes(movieId);
                 bookmarkImg.src = isInWatchlist ? "/img/selected_bookmark.png" : "/img/bookmark.png";
             } else {
                 bookmarkImg.src = "/img/bookmark.png";
@@ -35,7 +34,6 @@ function showMovieDetails(event) {
         })
         .catch(error => console.error("Fehler beim Abrufen der Watchlist:", error));
 
-    // Bookmark-Button klicken zum Hinzufügen/Entfernen aus der Watchlist
     bookmarkButton.onclick = function () {
         fetch('/toggle-watchlist', {
             method: 'POST',
@@ -44,7 +42,6 @@ function showMovieDetails(event) {
         })
         .then(response => response.json())
         .then(data => {
-            // Nachdem die Watchlist aktualisiert wurde, das Bild anpassen
             const isInWatchlist = data.watchlist.includes(movieId);
             bookmarkImg.src = isInWatchlist ? "/img/selected_bookmark.png" : "/img/bookmark.png";
         })
