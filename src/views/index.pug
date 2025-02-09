@@ -34,7 +34,7 @@ block content
                         .media-general
                             .media-header
                                 h2(id="media-title")
-                                button.bookmarkButton(data-movie="", onclick="addWatchlist(event)")
+                                button.bookmarkButton(data-movie=JSON.stringify(movie), onclick="addWatchlist(event)")
                                     img(src="/img/bookmark.png", alt="Bookmark")
                             p(id="media-description")
                             .media-specific-info

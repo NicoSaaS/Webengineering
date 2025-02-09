@@ -1,6 +1,16 @@
-extends layout.pug 
+extends layout.pug
 
 block content
-  div.body_container
-    h1 Watchlist
-    p This is the watchlist page for CineCanvas.
+    h2.whiteFontColor Deine Watchlist
+
+    if watchlist && watchlist.length > 0
+        ul
+            each movie in watchlist
+                li
+                    h3= movie.title || "Filmdetails nicht gefunden"
+                    if movie.image
+                        img(src=movie.image, alt=movie.title)
+                    if movie.description
+                        p= movie.description
+    else
+        p Deine Watchlist ist leer.

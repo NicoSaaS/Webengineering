@@ -94,5 +94,30 @@
     "email": "00@de",
     "username": "00",
     "password": "0"
+  },
+  {
+    "firstName": "33",
+    "lastName": "33",
+    "gender": "male",
+    "email": "33@de",
+    "username": "33",
+    "password": "33",
+    "watchlist": [
+      {
+        "id": 3,
+        "title": "Tenet",
+        "image": "/img/moviecovers/tenet.jpg",
+        "ranking": 4,
+        "description": "A complex time-bending thriller by Christopher Nolan.",
+        "genre": "Thriller",
+        "director": "Christopher Nolan",
+        "released": "2020",
+        "watchlist": 1
+      },
+      {
+        "id": 2
+      },
+      2
+    ]
   }
 ]
