@@ -380,9 +380,10 @@ form {
 }
 
 .media_cover {
-    width: 100%;
-    max-width: clamp(100px, 15vw, 170px);
-    height: auto;
+    max-width: 170px;
+    min-width: 170px;
+    max-height: 250px;
+    min-height: 250px;
 }
 
 .media_cover:hover {
