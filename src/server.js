@@ -77,10 +77,6 @@ app.get('/series', (req, res) => {
     });
 });
 
-app.get('/watchlist', (req, res) => {
-    res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist' });
-});
-
 
 app.get('/profile', (req, res) => {
     if (req.session.user) {
@@ -169,7 +165,6 @@ app.get('/', (req, res) => {
 
         let movies = JSON.parse(movieData);
         let series = JSON.parse(seriesData);
-
         movies.sort((a, b) => a.ranking - b.ranking);
         series.sort((a, b) => a.ranking - b.ranking);
         
@@ -200,18 +195,17 @@ app.post('/watchlist', (req, res) => {
 
 app.get('/watchlist', (req, res) => {
     const user = req.session.user;
-
     if (!user || !user.watchlist) {
         return res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist', watchlist: [] });
     }
     const userWatchlistIds = user.watchlist;
     const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
+
     fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
         if (err) {
             console.error("Fehler beim Laden der Filme:", err);
             return res.status(500).send('Fehler beim Laden der Filme');
         }
-
         const movies = JSON.parse(movieData);
         const userWatchlistMovies = movies.filter(movie => userWatchlistIds.includes(movie.id));
 
