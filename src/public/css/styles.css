@@ -58,9 +58,12 @@ a,
 .profile-icon {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    font-size: 18px;
     color: white;
     text-decoration: none;
+    padding-left: 10px;
+    padding-top: 5px;
+
 }
 
 .nav_left li a.back-btn:hover {
