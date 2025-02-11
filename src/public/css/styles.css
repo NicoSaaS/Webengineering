@@ -528,6 +528,16 @@ form {
     color: #333;
 }
 
+#media-director {
+    font-size: 2vh;
+    color: #333;
+}
+
+#media-released {
+    font-size: 2vh;
+    color: #333;
+}
+
 .close-btn {
     color: var(--buttonBackgroundColor2);
     position: absolute;
