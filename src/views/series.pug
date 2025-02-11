@@ -17,16 +17,16 @@ block content
                 .popup-content
                     img.media_image(id="media-image", src="")
                     .media-information
-                        .media-general
-                            .media-header
-                                h2(id="media-title")
-                                button.bookmarkButton(data-movie=JSON.stringify(movie))
-                                    img(src="/img/bookmark.png", alt="Bookmark")
-                            p(id="media-description")
-                            .media-specific-info
-                                p(id="media-genre")
-                                p(id="media-ranking")
-                                p(id="media-director")
-                                p(id="media-released")
+                        .media-header
+                            button.bookmarkButton(data-movie=JSON.stringify(movie))
+                                img(src="/img/bookmark.png", alt="Bookmark")
+                            h2(id="media-title")
+                        p(id="media-description")
+                        .media-specific-info
+                            p(id="media-genre")
+                            p(id="media-ranking")
+                            p(id="media-director")
+                            p(id="media-released")
+
 
   script(src="/js/serie.js")
