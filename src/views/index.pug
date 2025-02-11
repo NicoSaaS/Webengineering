@@ -1,8 +1,8 @@
 extends layout.pug
 
 block content
-    div.body_container
-        h3.whiteFontColor Movie Ranking of the Month 
+    div.body_container.marginLeft
+        h3.whiteFontColor.marginTop Movie Ranking of the Month 
             br
             ul.media_list
                 each movie in movies
@@ -20,8 +20,7 @@ block content
                             src=serie.image, 
                             alt=serie.title, 
                             data-serie=JSON.stringify(serie),
-                            onclick="showSerieDetails(event)"
-                        )
+                            onclick="showSerieDetails(event)")
 
     div.popup(id="mediaPopup")
         div.popup-body
