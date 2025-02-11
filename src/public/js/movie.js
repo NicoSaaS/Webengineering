@@ -49,8 +49,7 @@ function showMovieDetails(event) {
                 window.location.reload();
             }
         })
-        
-        .catch(error => console.error("Fehler beim Aktualisieren der Watchlist:", error));
+        .catch(alert("Log in to add Movies to the watchlist"));
     };
 
     modal.style.display = "block";
