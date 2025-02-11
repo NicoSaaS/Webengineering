@@ -25,5 +25,23 @@
       3,
       9
     ]
+  },
+  {
+    "firstName": "22",
+    "lastName": "22",
+    "gender": "male",
+    "email": "22@de",
+    "username": "22",
+    "password": "22",
+    "watchlist": []
+  },
+  {
+    "firstName": "66",
+    "lastName": "66",
+    "gender": "male",
+    "email": "66@de",
+    "username": "66",
+    "password": "66",
+    "watchlist": []
   }
 ]

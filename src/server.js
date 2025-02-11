@@ -113,12 +113,12 @@ app.post('/register', (req, res) => {
             errorMessage: 'Benutzername oder E-Mail bereits vergeben. Bitte versuche es erneut.' 
         });
     } else {
-        const newUser = users.push({ firstName, lastName, gender, email, username, password, watchlist: [] });
-
+        const newUser = { firstName, lastName, gender, email, username, password, watchlist: [] };
+        users.push(newUser);
         fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2));
-
         req.session.user = newUser;
         res.render('profile', { firstName, lastName, username, email, gender });
+        
     }
 });
 
