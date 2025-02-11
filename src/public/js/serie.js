@@ -35,6 +35,8 @@ function showSerieDetails(event) {
     const bookmarkImg = bookmarkButton.querySelector('img');
     bookmarkButton.setAttribute('data-serie', JSON.stringify(serieData));
 
+    document.body.style.overflow = "hidden";
+
     fetch('/get-user-watchlist', { method: 'GET' })
         .then(response => response.json())
         .then(data => {
@@ -70,11 +72,13 @@ function showSerieDetails(event) {
 
     closeButton.onclick = function() {
         modal.style.display = "none";
+        document.body.style.overflow = "auto";
     };
 
     window.onclick = function(event) {
         if (event.target === modal) {
             modal.style.display = "none";
+            document.body.style.overflow = "auto";
         }
     };
 }

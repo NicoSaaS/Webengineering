@@ -3,27 +3,27 @@ html(lang="de")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Profil
+    title Profile
     link(rel="stylesheet", href="/css/styles.css")
   body
     header 
-      h2 Profil von #{firstName}
+      h2 Profile from #{firstName}
       .nav_right
-        a.back-btn(href="/") Zurück zur Startseite
+        a.back-btn(href="/") Return to home
 
     main
       .profile-container
         section.profile-info
           .profile-item
-            strong Vorname:
+            strong First Name:
             p #{firstName}
           
           .profile-item
-            strong Nachname:
+            strong Last Name:
             p #{lastName}
           
           .profile-item
-            strong Benutzername:
+            strong Username:
             p #{username}
           
           .profile-item
@@ -31,7 +31,7 @@ html(lang="de")
             p #{email}
           
           .profile-item
-            strong Geschlecht:
+            strong Gender:
             p #{gender}
 
         .form-actions
