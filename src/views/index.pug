@@ -14,13 +14,9 @@ block content
             br
             ul.media_list
                 each serie in series
-                    li(data-movie=JSON.stringify(serie))
+                    li(data-serie=JSON.stringify(serie))
                         h4= serie.ranking + ". "
-                        img.media_cover(
-                            src=serie.image, 
-                            alt=serie.title, 
-                            data-serie=JSON.stringify(serie),
-                            onclick="showSerieDetails(event)")
+                        img.media_cover(src=serie.image, alt=serie.title, onclick="showSerieDetails(event)")
 
     div.popup(id="mediaPopup")
         div.popup-body

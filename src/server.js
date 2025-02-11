@@ -12,6 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
+
 app.use(session({
     secret: 'secret-key',
     resave: false,
@@ -19,13 +20,16 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+
 app.get('/login', (req, res) => {
     res.render('login', { title: 'Login' });
 });
 
+
 app.get('/register', (req, res) => {
     res.render('register', { title: 'Register' });
 });
+
 
 app.get('/movies', (req, res) => {
     const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
@@ -51,6 +55,7 @@ app.get('/movies', (req, res) => {
         res.render('movies', { title: 'Movies', groupedMovies, active_tab: 'movies' });
     });
 });
+
 
 app.get('/series', (req, res) => {
     const serieFilePath = path.join(__dirname, '..', 'data', 'series.json');
@@ -87,6 +92,7 @@ app.get('/profile', (req, res) => {
     }
 });
 
+
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
     const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
@@ -113,7 +119,7 @@ app.post('/register', (req, res) => {
             errorMessage: 'Benutzername oder E-Mail bereits vergeben. Bitte versuche es erneut.' 
         });
     } else {
-        const newUser = { firstName, lastName, gender, email, username, password, watchlist: [] };
+        const newUser = { firstName, lastName, gender, email, username, password, "movie-watchlist": [], "series-watchlist": [] };
         users.push(newUser);
         fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2));
         req.session.user = newUser;
@@ -184,14 +190,14 @@ app.post('/watchlist', (req, res) => {
     }
     const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
     const currentUserIndex = users.findIndex(u => u.username === user.username);
-    const movieIndex = users[currentUserIndex].watchlist.findIndex((m) => m.id === movie.id);
+    const movieIndex = users[currentUserIndex]["movie-watchlist"].findIndex((m) => m.id === movie.id);
     if (movieIndex !== -1) {
-        users[currentUserIndex].watchlist.splice(movieIndex, 1);
+        users[currentUserIndex]["movie-watchlist"].splice(movieIndex, 1);
     } else {
-        users[currentUserIndex].watchlist.push({ id: movie.id });
+        users[currentUserIndex]["movie-watchlist"].push({ id: movie.id });
     }
     fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2));
-    res.json({ success: true, watchlist: users[currentUserIndex].watchlist });
+    res.json({ success: true, watchlist: users[currentUserIndex]["movie-watchlist"] });
 });
 
 
@@ -203,25 +209,40 @@ app.get('/watchlist', (req, res) => {
     const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
     const currentUser = users.find(user => user.username === req.session.user.username);
 
-    if (!currentUser || !currentUser.watchlist) {
-        return res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist', watchlist: [] });
+    if (!currentUser) {
+        return res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist', movies: [], series: [] });
     }
 
     const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
+    const seriesFilePath = path.join(__dirname, '..', 'data', 'series.json');
+
     fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
         if (err) {
             console.error("Fehler beim Laden der Filme:", err);
             return res.status(500).send('Fehler beim Laden der Filme');
         }
 
-        const movies = JSON.parse(movieData);
-        const userWatchlistMovies = movies.filter(movie => currentUser.watchlist.includes(movie.id));
-        req.session.user.watchlist = currentUser.watchlist;
+        fs.readFile(seriesFilePath, 'utf8', (err, seriesData) => {
+            if (err) {
+                console.error("Fehler beim Laden der Serien:", err);
+                return res.status(500).send('Fehler beim Laden der Serien');
+            }
 
-        res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist', watchlist: userWatchlistMovies });
+            const movies = JSON.parse(movieData);
+            const series = JSON.parse(seriesData);
+
+            const userWatchlistMovies = movies.filter(movie => currentUser["movie-watchlist"]?.includes(movie.id));
+            const userWatchlistSeries = series.filter(serie => currentUser["series-watchlist"]?.includes(serie.id));
+
+            res.render('watchlist', { 
+                title: 'Watchlist', 
+                active_tab: 'watchlist', 
+                movies: userWatchlistMovies, 
+                series: userWatchlistSeries 
+            });
+        });
     });
 });
-
 
 
 app.get('/get-user-watchlist', (req, res) => {
@@ -240,7 +261,7 @@ app.get('/get-user-watchlist', (req, res) => {
 });
 
 
-app.post('/toggle-watchlist', (req, res) => {
+app.post('/toggle-movies-watchlist', (req, res) => {
     if (req.session.user) {
         const movieId = parseInt(req.body.movieId);
         const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
@@ -248,18 +269,21 @@ app.post('/toggle-watchlist', (req, res) => {
 
         if (currentUserIndex !== -1) {
             const currentUser = users[currentUserIndex];
-            const index = currentUser.watchlist.indexOf(movieId);
+            if (!currentUser["movie-watchlist"]) {
+                currentUser["movie-watchlist"] = [];
+            }
+            const index = currentUser["movie-watchlist"].indexOf(movieId);
 
             if (index === -1) {
-                currentUser.watchlist.push(movieId);
+                currentUser["movie-watchlist"].push(movieId);
             } else {
-                currentUser.watchlist.splice(index, 1);
+                currentUser["movie-watchlist"].splice(index, 1);
             }
 
             users[currentUserIndex] = currentUser;
             fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2));
 
-            res.json({ watchlist: currentUser.watchlist });
+            res.json({ "movie-watchlist": currentUser["movie-watchlist"] });
         } else {
             res.status(404).send({ error: 'Benutzer nicht gefunden' });
         }
@@ -268,6 +292,37 @@ app.post('/toggle-watchlist', (req, res) => {
     }
 });
 
+
+app.post('/toggle-series-watchlist', (req, res) => {
+    if (req.session.user) {
+        const serieId = parseInt(req.body.serieId);
+        const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
+        const currentUserIndex = users.findIndex(u => u.username === req.session.user.username);
+
+        if (currentUserIndex !== -1) {
+            const currentUser = users[currentUserIndex];
+            if (!currentUser["series-watchlist"]) {
+                currentUser["series-watchlist"] = [];
+            }
+            const index = currentUser["series-watchlist"].indexOf(serieId);
+
+            if (index === -1) {
+                currentUser["series-watchlist"].push(serieId);
+            } else {
+                currentUser["series-watchlist"].splice(index, 1);
+            }
+
+            users[currentUserIndex] = currentUser;
+            fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2));
+
+            res.json({ "series-watchlist": currentUser["series-watchlist"] });
+        } else {
+            res.status(404).send({ error: 'Benutzer nicht gefunden' });
+        }
+    } else {
+        res.status(401).send({ error: 'Nicht eingeloggt' });
+    }
+});
 
 
 app.listen(3000, () => {
