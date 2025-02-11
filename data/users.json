@@ -25,10 +25,14 @@
     "username": "user1",
     "password": "user1",
     "movie-watchlist": [
-      28
+      28,
+      1,
+      2,
+      4
     ],
     "series-watchlist": [
-      3
+      3,
+      2
     ]
   }
 ]
