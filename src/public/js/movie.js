@@ -16,6 +16,8 @@ function showMovieDetails(event) {
     document.getElementById("media-description").textContent = movieDescription;
     document.getElementById("media-genre").textContent = "Genre: " + movieGenre;
     document.getElementById("media-ranking").textContent = "Ranking: " + movieData.ranking;
+    document.getElementById("media-director").textContent = "Director: " + movieData.director;
+    document.getElementById("media-released").textContent = "Released: " + movieData.released;
 
     const bookmarkButton = modal.querySelector('.bookmarkButton');
     const bookmarkImg = bookmarkButton.querySelector('img');

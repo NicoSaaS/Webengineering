@@ -10,7 +10,7 @@ block content
                 ul.movie-list
                     each movie in movies
                         li.movie-item(data-movie=JSON.stringify(movie))
-                            .movie-cover
+                            .media_cover
                                 img.media_cover(src=movie.image, alt=movie.title)
                             .movie-details
                                 h3= movie.title
@@ -19,14 +19,15 @@ block content
                                 button.bookmarkButton(data-movie=JSON.stringify(movie))
                                     img(src="/img/bookmark.png", alt="Watchlist")
 
+
             if series.length > 0
                 h3.whiteFontColor Serien
                 ul.serie-list
                     each serie in series
                         li.serie-item(data-serie=JSON.stringify(serie))
-                            .serie-cover
+                            .media_cover
                                 img.media_cover(src=serie.image, alt=serie.title)
-                            .serie-details
+                            .media_details
                                 h3= serie.title
                                 p= serie.description
                                 p Genre: #{serie.genre}

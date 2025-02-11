@@ -28,6 +28,8 @@ function showSerieDetails(event) {
     document.getElementById("media-description").textContent = "Description: " + serieDescription;
     document.getElementById("media-genre").textContent = "Genre: " + serieGenre;
     document.getElementById("media-ranking").textContent = "Ranking: " + serieData.ranking;
+    document.getElementById("media-director").textContent = "Director: " + serieData.director;
+    document.getElementById("media-released").textContent = "Released: " + serieData.released;
 
     const bookmarkButton = modal.querySelector('.bookmarkButton');
     const bookmarkImg = bookmarkButton.querySelector('img');

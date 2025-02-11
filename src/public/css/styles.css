@@ -351,6 +351,7 @@ main {
     color: #1e90ff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .register-link:hover {
@@ -522,6 +523,16 @@ form {
 }
 
 #media-ranking {
+    font-size: 2vh;
+    color: #333;
+}
+
+#media-director {
+    font-size: 2vh;
+    color: #333;
+}
+
+#media-released {
     font-size: 2vh;
     color: #333;
 }
