@@ -7,8 +7,7 @@
         "description": "A classic sitcom about six friends in New York navigating life, love, and hilarious misadventures.",
         "genre": "Comedy",
         "director": "Marta Kauffman, David Crane",
-        "released": "1994",
-        "watchlist": 0
+        "released": "1994"
     },
     {
         "id": 1,
@@ -18,8 +17,7 @@
         "description": "A South Korean thriller where financially desperate individuals compete in deadly children's games for a massive cash prize.",
         "genre": "Thriller",
         "director": "Hwang Dong-hyuk",
-        "released": "2021",
-        "watchlist": 0
+        "released": "2021"
     },
     {
         "id": 2,
@@ -29,8 +27,7 @@
         "description": "A crime drama about a 40-year-old man who becomes the oldest rookie in the Los Angeles police force.",
         "genre": "Crime, Drama",
         "director": "Alexi Hawley",
-        "released": "2018",
-        "watchlist": 0
+        "released": "2018"
     },
     {
         "id": 3,
@@ -40,8 +37,7 @@
         "description": "A visually stunning animated series exploring the origins of League of Legends champions in the city of Piltover and the undercity Zaun.",
         "genre": "Animation, Fantasy",
         "director": "Christian Linke, Alex Yee, JB Blanc",
-        "released": "2021",
-        "watchlist": 0
+        "released": "2021"
     },
     {
         "id": 4,
@@ -51,8 +47,7 @@
         "description": "A thought-provoking anthology series exploring the dark side of technology and human nature.",
         "genre": "Sci-Fi, Thriller",
         "director": "Charlie Brooker",
-        "released": "2011",
-        "watchlist": 0
+        "released": "2011"
     },
     {
         "id": 5,
@@ -62,8 +57,7 @@
         "description": "A gripping drama following a high school chemistry teacher turned methamphetamine producer.",
         "genre": "Crime, Drama",
         "director": "Vince Gilligan",
-        "released": "2008",
-        "watchlist": 0
+        "released": "2008"
     },
     {
         "id": 6,
@@ -73,8 +67,7 @@
         "description": "A meta-humor-filled sitcom about an unlikely group of students at a community college.",
         "genre": "Comedy",
         "director": "Dan Harmon",
-        "released": "2009",
-        "watchlist": 0
+        "released": "2009"
     },
     {
         "id": 7,
@@ -84,8 +77,7 @@
         "description": "A long-running sci-fi series following the adventures of the Doctor, a time-traveling alien exploring the universe.",
         "genre": "Sci-Fi, Adventure",
         "director": "Sydney Newman, C. E. Webber, Donald Wilson",
-        "released": "1963",
-        "watchlist": 0
+        "released": "1963"
     },
     {
         "id": 8,
@@ -95,8 +87,7 @@
         "description": "An animated adventure following Scrooge McDuck and his nephews on treasure-hunting quests.",
         "genre": "Animation, Adventure",
         "director": "Jymn Magon, Bob Hathcock, Alan Zaslove",
-        "released": "1987",
-        "watchlist": 0
+        "released": "1987"
     },
     {
         "id": 9,
@@ -106,8 +97,7 @@
         "description": "An animated sitcom about the Griffin family and their satirical take on American life.",
         "genre": "Animation, Comedy",
         "director": "Seth MacFarlane, David Zuckerman",
-        "released": "1999",
-        "watchlist": 0
+        "released": "1999"
     },
     {
         "id": 10,
@@ -117,8 +107,7 @@
         "description": "An alternate history drama exploring what would have happened if the Soviet Union had landed on the Moon first.",
         "genre": "Sci-Fi, Drama",
         "director": "Ronald D. Moore, Ben Nedivi, Matt Wolpert",
-        "released": "2019",
-        "watchlist": 0
+        "released": "2019"
     },
     {
         "id": 11,
@@ -128,8 +117,7 @@
         "description": "A fantasy epic based on George R.R. Martin's novels, depicting the power struggles between noble families.",
         "genre": "Fantasy, Drama",
         "director": "David Benioff, D.B. Weiss, George R.R. Martin, etc.",
-        "released": "2011",
-        "watchlist": 0
+        "released": "2011"
     },
     {
         "id": 12,
@@ -139,8 +127,7 @@
         "description": "A mystery-filled animated series following twins Dipper and Mabel in a strange Oregon town.",
         "genre": "Animation, Adventure",
         "director": "Alex Hirsch",
-        "released": "2012",
-        "watchlist": 0
+        "released": "2012"
     },
     {
         "id": 13,
@@ -150,8 +137,7 @@
         "description": "A hilarious parody of police procedurals starring Leslie Nielsen.",
         "genre": "Comedy",
         "director": "Jim Abrahams, David Zucker, Jerry Zucker",
-        "released": "1982",
-        "watchlist": 0
+        "released": "1982"
     },
     {
         "id": 14,
@@ -161,8 +147,7 @@
         "description": "A supernatural thriller about a group of kids uncovering government secrets and strange occurrences in their town.",
         "genre": "Sci-Fi, Horror",
         "director": "The Duffer Brothers",
-        "released": "2016",
-        "watchlist": 0
+        "released": "2016"
     },
     {
         "id": 15,
@@ -172,8 +157,7 @@
         "description": "A Star Wars series following the journey of a lone bounty hunter in the galaxy's outer reaches.",
         "genre": "Sci-Fi, Adventure",
         "director": "Jon Favreau, Dave Filoni, Rick Famuyiwa, etc.",
-        "released": "2019",
-        "watchlist": 0
+        "released": "2019"
     },
     {
         "id": 16,
@@ -183,8 +167,7 @@
         "description": "A satirical animated sitcom about the everyday lives of the Simpson family.",
         "genre": "Animation, Comedy",
         "director": "Matt Groening, James L. Brooks, Sam Simon",
-        "released": "1989",
-        "watchlist": 0
+        "released": "1989"
     },
     {
         "id": 17,
@@ -194,8 +177,7 @@
         "description": "A fantasy series following the monster hunter Geralt of Rivia as he navigates a war-torn world.",
         "genre": "Fantasy, Adventure",
         "director": "Alik Sakharov, Alex Garcia Lopez, Charlotte Brändström, etc.",
-        "released": "2019",
-        "watchlist": 0
+        "released": "2019"
     },
     {
         "id": 18,
@@ -205,7 +187,6 @@
         "description": "A crime drama starring Sylvester Stallone as a mob boss rebuilding his empire in Tulsa.",
         "genre": "Crime, Drama",
         "director": "Sylvester Stallone",
-        "released": "2022",
-        "watchlist": 0
+        "released": "2022"
     }
 ]

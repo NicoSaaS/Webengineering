@@ -5,15 +5,13 @@ block content
         h2.whiteFontColor Deine Watchlist
 
         if watchlist && watchlist.length > 0
-            ul.movie-list
+            ul.media_list
                 each movie in watchlist
                     li.movie-item(data-movie=JSON.stringify(movie))
+                        h3= movie.title
                         .movie-cover
                             img.media_cover(src=movie.image, alt=movie.title)
-                        .movie-details
-                            h3= movie.title
-                            p= movie.description
-                            p Genre: #{movie.genre}
+                            
                             button.bookmarkButton(data-movie=JSON.stringify(movie))
                                 img(src="/img/bookmark.png", alt="Watchlist")
 
