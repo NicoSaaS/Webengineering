@@ -11,5 +11,17 @@
       4,
       2
     ]
+  },
+  {
+    "firstName": "user1",
+    "lastName": "user1",
+    "gender": "male",
+    "email": "user@sample.de",
+    "username": "user1",
+    "password": "user1",
+    "watchlist": [
+      3,
+      9
+    ]
   }
 ]
