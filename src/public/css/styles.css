@@ -396,8 +396,11 @@ form {
 .media_cover {
     width: 100%;
     max-width: clamp(100px, 15vw, 170px);
-    height: auto;
+    aspect-ratio: 170 / 250;
+    object-fit: cover;
+    display: block;
 }
+
 
 .media_cover:hover {
     transform: scale(1.05);
