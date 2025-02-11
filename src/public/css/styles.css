@@ -470,6 +470,7 @@ form {
     flex-direction: row;
     height: fit-content;
     align-items: center;
+    width: fit-content;
 }
 
 .bookmarkButton {
@@ -494,44 +495,48 @@ form {
 }
 
 #media-title {
-    font-size: clamp(2vh, 3vw, 4vh);
+    font-size: clamp(2.2vh, 3vw, 4vh);
     color: #333;
     max-width: fit-content;
     margin-left: 1vw;
 }
 
 #media-description {
-    font-size: clamp(1.5vh, 1.5vw, 2vh);
+    font-size: clamp(1.8vh, 1.5vw, 2vh);
     color: #333;
+    max-width: fit-content;
 }
 
 .media-specific-info {
-    width: 100%;
+    width: fit-content;
     height: fit-content;
-    max-width: auto;
     margin-top: 3vh;
     margin-right: 2vh;
 
 }
 
 #media-genre {
-    font-size: clamp(1.5vh, 1.5vw, 2vh);
+    font-size: clamp(1.8vh, 1.5vw, 2vh);
     color: #333;
+    width: fit-content;
 }
 
 #media-ranking {
-    font-size: clamp(1.5vh, 1.5vw, 2vh);
+    font-size: clamp(1.8vh, 1.5vw, 2vh);
     color: #333;
+    width: fit-content;
 }
 
 #media-director {
-    font-size: clamp(1.5vh, 1.5vw, 2vh);
+    font-size: clamp(1.8vh, 1.5vw, 2vh);
     color: #333;
+    width: fit-content;
 }
 
 #media-released {
-    font-size: clamp(1.5vh, 1.5vw, 2vh);
+    font-size: clamp(1.8vh, 1.5vw, 2vh);
     color: #333;
+    width: fit-content;
 }
 
 .close-btn {
