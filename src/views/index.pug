@@ -10,7 +10,7 @@ block content
                         h4= movie.ranking + ". "
                         img.media_cover(src=movie.image, alt=movie.title, onclick="showMovieDetails(event)")
 
-        h3.whiteFontColor Series Ranking of the Month
+        h3.whiteFontColor.marginTop Series Ranking of the Month
             br
             ul.media_list
                 each serie in series
@@ -34,7 +34,7 @@ block content
                         .media-general
                             .media-header
                                 h2(id="media-title")
-                                button.bookmarkButton(data-movie="", onclick="addWatchlist(event)")
+                                button.bookmarkButton(data-movie=JSON.stringify(movie), onclick="addWatchlist(event)")
                                     img(src="/img/bookmark.png", alt="Bookmark")
                             p(id="media-description")
                             .media-specific-info

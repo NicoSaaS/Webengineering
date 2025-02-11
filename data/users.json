@@ -1,98 +1,15 @@
 [
   {
-    "firstName": "Hannes",
-    "lastName": "Klas",
+    "firstName": "33",
+    "lastName": "33",
     "gender": "male",
-    "email": "hannes@test.de",
-    "username": "hannes11",
-    "password": "hannes"
-  },
-  {
-    "firstName": "user",
-    "lastName": "user",
-    "gender": "male",
-    "email": "user@de.com",
-    "username": "user",
-    "password": "user"
-  },
-  {
-    "firstName": "user1",
-    "lastName": "user1",
-    "gender": "male",
-    "email": "user1@de.com",
-    "username": "user1",
-    "password": "user1"
-  },
-  {
-    "firstName": "user1",
-    "lastName": "user1",
-    "gender": "male",
-    "email": "user3@de.com",
-    "username": "user3",
-    "password": "user2"
-  },
-  {
-    "firstName": "user0",
-    "lastName": "user0",
-    "gender": "male",
-    "email": "user0@de.de",
-    "username": "user0",
-    "password": "user0"
-  },
-  {
-    "firstName": "1",
-    "lastName": "1",
-    "gender": "male",
-    "email": "1@d.de",
-    "username": "1",
-    "password": "1"
-  },
-  {
-    "firstName": "2",
-    "lastName": "2",
-    "gender": "male",
-    "email": "2@de.com",
-    "username": "2",
-    "password": "2"
-  },
-  {
-    "firstName": "3",
-    "lastName": "3",
-    "gender": "male",
-    "email": "3@de.com",
-    "username": "3",
-    "password": "3"
-  },
-  {
-    "firstName": "4",
-    "lastName": "4",
-    "gender": "male",
-    "email": "4@de.com",
-    "username": "4",
-    "password": "4"
-  },
-  {
-    "firstName": "7",
-    "lastName": "7",
-    "gender": "male",
-    "email": "7@de",
-    "username": "7",
-    "password": "7"
-  },
-  {
-    "firstName": "0",
-    "lastName": "0",
-    "gender": "male",
-    "email": "0@de",
-    "username": "0",
-    "password": "0"
-  },
-  {
-    "firstName": "0",
-    "lastName": "0",
-    "gender": "male",
-    "email": "00@de",
-    "username": "00",
-    "password": "0"
+    "email": "33@de",
+    "username": "33",
+    "password": "33",
+    "watchlist": [
+      3,
+      4,
+      2
+    ]
   }
 ]

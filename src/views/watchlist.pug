@@ -1,6 +1,21 @@
-extends layout.pug 
+extends layout.pug
 
 block content
-  div.body_container
-    h1 Watchlist
-    p This is the watchlist page for CineCanvas.
+    h2.whiteFontColor Deine Watchlist
+
+    if watchlist && watchlist.length > 0
+        ul.movie-list
+            each movie in watchlist
+                li.movie-item(data-movie=JSON.stringify(movie))
+                    .movie-cover
+                        img.media_cover(src=movie.image, alt=movie.title)
+                    .movie-details
+                        h3= movie.title
+                        p= movie.description
+                        p Genre: #{movie.genre}
+                        p Ranking: #{movie.ranking}
+                        button.bookmarkButton(data-movie=JSON.stringify(movie))
+                            img(src="/img/bookmark.png", alt="Watchlist")
+
+    else
+        p.whiteFontColor Deine Watchlist ist leer.

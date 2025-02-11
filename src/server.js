@@ -15,7 +15,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(session({
     secret: 'secret-key',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: { secure: false }
 }));
 
 app.get('/login', (req, res) => {
@@ -60,7 +61,7 @@ app.get('/series', (req, res) => {
         }
 
         let series = JSON.parse(serieData);
-        const groupedSeries = []; // Korrigiere den Namen zu 'groupedSeries'
+        const groupedSeries = [];
         var letters = new Set();
         series.forEach((serie) => {
             const firstLetter = serie.title.charAt(0).toUpperCase();
@@ -72,12 +73,8 @@ app.get('/series', (req, res) => {
             groupedSeries.push({ letter, series: seriesInGroup });
         });
 
-        res.render('series', { title: 'Series', groupedSerie: groupedSeries, active_tab: 'series' }); // 'groupedSerie' korrekt übergeben
+        res.render('series', { title: 'Series', groupedSerie: groupedSeries, active_tab: 'series' });
     });
-});
-
-app.get('/watchlist', (req, res) => {
-    res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist' });
 });
 
 
@@ -116,7 +113,7 @@ app.post('/register', (req, res) => {
             errorMessage: 'Benutzername oder E-Mail bereits vergeben. Bitte versuche es erneut.' 
         });
     } else {
-        const newUser = users.push({ firstName, lastName, gender, email, username, password });
+        const newUser = users.push({ firstName, lastName, gender, email, username, password, watchlist: [] });
 
         fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2));
 
@@ -168,7 +165,6 @@ app.get('/', (req, res) => {
 
         let movies = JSON.parse(movieData);
         let series = JSON.parse(seriesData);
-
         movies.sort((a, b) => a.ranking - b.ranking);
         series.sort((a, b) => a.ranking - b.ranking);
         
@@ -177,6 +173,89 @@ app.get('/', (req, res) => {
     });
 });
 
+
+app.post('/watchlist', (req, res) => {
+    const { movie } = req.body;
+    const user = req.session.user;
+    if (!user) {
+        return res.status(401).send({ error: 'User not logged in' });
+    }
+    const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
+    const currentUserIndex = users.findIndex(u => u.username === user.username);
+    const movieIndex = users[currentUserIndex].watchlist.findIndex((m) => m.id === movie.id);
+    if (movieIndex !== -1) {
+        users[currentUserIndex].watchlist.splice(movieIndex, 1);
+    } else {
+        users[currentUserIndex].watchlist.push({ id: movie.id });
+    }
+    fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2));
+    res.json({ success: true, watchlist: users[currentUserIndex].watchlist });
+});
+
+
+app.get('/watchlist', (req, res) => {
+    const user = req.session.user;
+    if (!user || !user.watchlist) {
+        return res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist', watchlist: [] });
+    }
+    const userWatchlistIds = user.watchlist;
+    const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
+
+    fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
+        if (err) {
+            console.error("Fehler beim Laden der Filme:", err);
+            return res.status(500).send('Fehler beim Laden der Filme');
+        }
+        const movies = JSON.parse(movieData);
+        const userWatchlistMovies = movies.filter(movie => userWatchlistIds.includes(movie.id));
+
+        res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist', watchlist: userWatchlistMovies });
+    });
+});
+
+
+app.get('/get-user-watchlist', (req, res) => {
+    if (req.session.user) {
+        const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
+        const currentUser = users.find(u => u.username === req.session.user.username);
+        
+        if (currentUser) {
+            res.json({ user: currentUser });
+        } else {
+            res.status(404).send({ error: 'Benutzer nicht gefunden' });
+        }
+    } else {
+        res.status(401).send({ error: 'Nicht eingeloggt' });
+    }
+});
+
+app.post('/toggle-watchlist', (req, res) => {
+    if (req.session.user) {
+        const movieId = parseInt(req.body.movieId);
+        const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
+        const currentUserIndex = users.findIndex(u => u.username === req.session.user.username);
+
+        if (currentUserIndex !== -1) {
+            const currentUser = users[currentUserIndex];
+            const index = currentUser.watchlist.indexOf(movieId);
+
+            if (index === -1) {
+                currentUser.watchlist.push(movieId);
+            } else {
+                currentUser.watchlist.splice(index, 1);
+            }
+
+            users[currentUserIndex] = currentUser;
+            fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2));
+
+            res.json({ watchlist: currentUser.watchlist });
+        } else {
+            res.status(404).send({ error: 'Benutzer nicht gefunden' });
+        }
+    } else {
+        res.status(401).send({ error: 'Nicht eingeloggt' });
+    }
+});
 
 
 

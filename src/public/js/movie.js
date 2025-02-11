@@ -1,6 +1,7 @@
 function showMovieDetails(event) {
-    const movieElement = event.target.closest('li');;
+    const movieElement = event.target.closest('li');
     const movieData = JSON.parse(movieElement.getAttribute("data-movie"));
+    const movieId = movieData.id;
 
     const movieTitle = movieData.title;
     const movieDescription = movieData.description;
@@ -15,11 +16,37 @@ function showMovieDetails(event) {
     document.getElementById("media-description").textContent = movieDescription;
     document.getElementById("media-genre").textContent = "Genre: " + movieGenre;
     document.getElementById("media-ranking").textContent = "Ranking: " + movieData.ranking;
-    
+
     const bookmarkButton = modal.querySelector('.bookmarkButton');
     const bookmarkImg = bookmarkButton.querySelector('img');
     bookmarkButton.setAttribute('data-movie', JSON.stringify(movieData));
-    bookmarkImg.src = movieData.watchlist === 1 ? "/img/selected_bookmark.png" : "/img/bookmark.png";
+
+    fetch('/get-user-watchlist', { method: 'GET' })
+        .then(response => response.json())
+        .then(data => {
+            const user = data.user;
+            if (user && user.watchlist) {
+                const isInWatchlist = user.watchlist.includes(movieId);
+                bookmarkImg.src = isInWatchlist ? "/img/selected_bookmark.png" : "/img/bookmark.png";
+            } else {
+                bookmarkImg.src = "/img/bookmark.png";
+            }
+        })
+        .catch(error => console.error("Fehler beim Abrufen der Watchlist:", error));
+
+    bookmarkButton.onclick = function () {
+        fetch('/toggle-watchlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ movieId: movieId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const isInWatchlist = data.watchlist.includes(movieId);
+            bookmarkImg.src = isInWatchlist ? "/img/selected_bookmark.png" : "/img/bookmark.png";
+        })
+        .catch(error => console.error("Fehler beim Aktualisieren der Watchlist:", error));
+    };
 
     modal.style.display = "block";
 
