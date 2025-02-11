@@ -132,6 +132,7 @@ app.get('/logout', (req, res) => {
     });
 });
 
+
 app.post('/delete-account', (req, res) => {
     if (req.session.user) {
         const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
@@ -149,6 +150,7 @@ app.post('/delete-account', (req, res) => {
         res.redirect('/login');
     }
 });
+
 
 app.get('/', (req, res) => {
     const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
@@ -194,24 +196,32 @@ app.post('/watchlist', (req, res) => {
 
 
 app.get('/watchlist', (req, res) => {
-    const user = req.session.user;
-    if (!user || !user.watchlist) {
+    if (!req.session.user) {
+        return res.redirect('/login');
+    }
+
+    const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'));
+    const currentUser = users.find(user => user.username === req.session.user.username);
+
+    if (!currentUser || !currentUser.watchlist) {
         return res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist', watchlist: [] });
     }
-    const userWatchlistIds = user.watchlist;
-    const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
 
+    const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json');
     fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
         if (err) {
             console.error("Fehler beim Laden der Filme:", err);
             return res.status(500).send('Fehler beim Laden der Filme');
         }
+
         const movies = JSON.parse(movieData);
-        const userWatchlistMovies = movies.filter(movie => userWatchlistIds.includes(movie.id));
+        const userWatchlistMovies = movies.filter(movie => currentUser.watchlist.includes(movie.id));
+        req.session.user.watchlist = currentUser.watchlist;
 
         res.render('watchlist', { title: 'Watchlist', active_tab: 'watchlist', watchlist: userWatchlistMovies });
     });
 });
+
 
 
 app.get('/get-user-watchlist', (req, res) => {
@@ -228,6 +238,7 @@ app.get('/get-user-watchlist', (req, res) => {
         res.status(401).send({ error: 'Nicht eingeloggt' });
     }
 });
+
 
 app.post('/toggle-watchlist', (req, res) => {
     if (req.session.user) {
