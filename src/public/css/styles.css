@@ -25,7 +25,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: fixed;
     padding: 2vh 5vw;
     background-color: #000000;
     color: var(--fontColor3);
@@ -178,6 +178,7 @@ a.active {
 } */
 
 body {
+    margin-top: 10vh;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-image: url(/img/bg_black_curtain.avif);
     background-size: cover;
@@ -196,6 +197,7 @@ body {
     z-index: 2;
     background: rgba(0, 0, 0, 0.1);
 }
+
 
 .button {
     background-color: #1e90ff;
@@ -418,6 +420,7 @@ form {
     gap: 2vw;
     list-style: none;
     padding: 0;
+    justify-content: space-evenly;
 }
 
 .popup {
@@ -561,8 +564,4 @@ form {
 
 .marginTop {
     margin-top: 20px;
-}
-
-.marginLeft {
-    margin-left: 3vw;
 }
