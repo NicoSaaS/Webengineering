@@ -63,6 +63,7 @@ a,
     text-decoration: none;
 }
 
+
 .nav_left li a.back-btn:hover {
     color: var(--fontColor3);
 }

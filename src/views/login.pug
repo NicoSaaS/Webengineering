@@ -11,20 +11,20 @@ html(lang="de")
     
     main
       .form-container
-        h2 Willkommen zurück!
+        h2 Welcome back!
         form(action="/login", method="POST")
           .input-container
-            label(for="username") Benutzername:
+            label(for="username") Username:
             input(type="text", id="username", name="username", class="input-field", required)
           
           .input-container
-            label(for="password") Passwort:
+            label(for="password") Password:
             input(type="password", id="password", name="password", class="input-field", required)
           
           .form-actions
-            button(type="submit", class="btn") Einloggen
+            button(type="submit", class="btn") Login
         
-        p.marginBottom Noch kein Konto? 
-          a.register-link(href="/register") Registriere dich hier.
+        p.marginBottom Don't have an account yet?
+          a.register-link(href="/register") Sign up here.
         
-        a.back-btn(href="/") Zurück zur Startseite
+        a.back-btn(href="/") Return to home page.
