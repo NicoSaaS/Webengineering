@@ -19,8 +19,6 @@
 }
 
 
-/* HEADER */
-
 header {
     display: flex;
     justify-content: space-between;
@@ -37,7 +35,7 @@ header {
 }
 
 .logo {
-    height: 70px;
+    height: 9vh;
     width: auto;
     margin-right: 10px;
     vertical-align: middle;

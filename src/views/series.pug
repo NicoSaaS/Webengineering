@@ -1,9 +1,9 @@
 extends layout.pug
 
 block content
-  div.body_container
+  div.body_container.marginLeft
     each group in groupedSerie 
-        h4.whiteFontColor= group.letter
+        h4.whiteFontColor.marginTop= group.letter
         ul.media_list
           each serie in group.series 
             li

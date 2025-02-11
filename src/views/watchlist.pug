@@ -4,16 +4,34 @@ block content
     div.body_container
         h2.whiteFontColor Deine Watchlist
 
-        if watchlist && watchlist.length > 0
-            ul.media_list
-                each movie in watchlist
-                    li.movie-item(data-movie=JSON.stringify(movie))
-                        h3= movie.title
-                        .movie-cover
-                            img.media_cover(src=movie.image, alt=movie.title)
-                            
-                            button.bookmarkButton(data-movie=JSON.stringify(movie))
-                                img(src="/img/bookmark.png", alt="Watchlist")
+        if movies.length > 0 || series.length > 0
+            if movies.length > 0
+                h3.whiteFontColor Filme
+                ul.movie-list
+                    each movie in movies
+                        li.movie-item(data-movie=JSON.stringify(movie))
+                            .media_cover
+                                img.media_cover(src=movie.image, alt=movie.title)
+                            .movie-details
+                                h3= movie.title
+                                p= movie.description
+                                p Genre: #{movie.genre}
+                                button.bookmarkButton(data-movie=JSON.stringify(movie))
+                                    img(src="/img/bookmark.png", alt="Watchlist")
 
+
+            if series.length > 0
+                h3.whiteFontColor Serien
+                ul.serie-list
+                    each serie in series
+                        li.serie-item(data-serie=JSON.stringify(serie))
+                            .media_cover
+                                img.media_cover(src=serie.image, alt=serie.title)
+                            .media_details
+                                h3= serie.title
+                                p= serie.description
+                                p Genre: #{serie.genre}
+                                button.bookmarkButton(data-serie=JSON.stringify(serie))
+                                    img(src="/img/bookmark.png", alt="Watchlist")
         else
             p.whiteFontColor Deine Watchlist ist leer.
