@@ -25,9 +25,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: fixed;
     padding: 2vh 5vw;
-    background-color: #333;
+    background-color: #000000;
     color: var(--fontColor3);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -186,13 +186,14 @@ a.active {
 } */
 
 body {
+    margin-top: 10vh;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-image: url(/img/bg_cinema.jpg);
+    background-image: url(/img/bg_black_curtain.avif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #333;
+    background-color: var(--backgroundColor1);
     color: #333;
     line-height: 1.6;
 }
@@ -204,6 +205,7 @@ body {
     z-index: 2;
     background: rgba(0, 0, 0, 0.1);
 }
+
 
 .button {
     background-color: #1e90ff;
@@ -405,9 +407,13 @@ form {
 .media_cover {
     width: 100%;
     max-width: clamp(100px, 15vw, 170px);
+
+    height: auto;
+    margin-top: 0.5vh;
     aspect-ratio: 170 / 250;
     object-fit: cover;
     display: block;
+
 }
 
 
@@ -450,6 +456,7 @@ form {
     max-width: 800px;
     max-height: 40vh;
     position: relative;
+    top: 18vh;
 }
 
 .popup-content {
@@ -565,4 +572,8 @@ form {
 
 .marginTop {
     margin-top: 20px;
+}
+
+.marginLeft {
+    margin-left: 5vh;
 }
