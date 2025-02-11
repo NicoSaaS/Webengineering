@@ -420,7 +420,6 @@ form {
     gap: 2vw;
     list-style: none;
     padding: 0;
-    justify-content: space-evenly;
 }
 
 .popup {
@@ -449,6 +448,7 @@ form {
     max-width: 800px;
     max-height: 40vh;
     position: relative;
+    top: 18vh;
 }
 
 .popup-content {
@@ -564,4 +564,8 @@ form {
 
 .marginTop {
     margin-top: 20px;
+}
+
+.marginLeft {
+    margin-left: 5vh;
 }
