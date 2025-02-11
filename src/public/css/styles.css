@@ -58,13 +58,11 @@ a,
 .profile-icon {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
     color: white;
     text-decoration: none;
-    padding-left: 10px;
-    padding-top: 5px;
-
 }
+
 
 .nav_left li a.back-btn:hover {
     color: var(--fontColor3);
@@ -100,6 +98,26 @@ a.active {
     right: 20px;
 }
 
+.nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.back-btn {
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--fontColor3);
+    background-color: #333;
+    padding: 1.2vh 3vw;
+    border-radius: 30px;
+}
+
+.back-btn:hover {
+    background-color: var(--buttonBackgroundColor1);
+    color: var(--fontColor3);
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 768px) {
     .nav_left {
         display: none;
@@ -124,7 +142,24 @@ a.active {
     #menu-checkbox:checked~.nav_left {
         display: flex;
     }
+
+    .nav_right {
+        display: flex;
+        align-items: center;
+    }
+
+    .features {
+        flex-direction: column;
+        gap: 2vh;
+    }
 }
+
+@media screen and (min-width: 769px) {
+    .nav_left {
+        display: flex !important; /* Sicherstellen, dass die Navbar immer sichtbar ist */
+    }
+}
+
 
 /* .searchField_placement {
   a {
@@ -218,13 +253,6 @@ main {
     color: #666;
 }
 
-@media screen and (max-width: 768px) {
-    .features {
-        flex-direction: column;
-        gap: 2vh;
-    }
-}
-
 .form-container {
     background-color: white;
     padding: 5%;
@@ -311,22 +339,6 @@ main {
     opacity: 0.9;
 }
 
-.back-btn {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 16px;
-    color: var(--fontColor3);
-    background-color: #333;
-    padding: 12px 30px;
-    border-radius: 30px;
-}
-
-.back-btn:hover {
-    background-color: var(--buttonBackgroundColor1);
-    color: var(--fontColor3);
-    opacity: 0.8;
-}
-
 .register-link {
     color: #1e90ff;
     text-decoration: none;
@@ -383,11 +395,13 @@ form {
 }
 
 .media_cover {
-    max-width: 170px;
-    min-width: 170px;
-    max-height: 250px;
-    min-height: 250px;
+    width: 100%;
+    max-width: clamp(100px, 15vw, 170px);
+    aspect-ratio: 170 / 250;
+    object-fit: cover;
+    display: block;
 }
+
 
 .media_cover:hover {
     transform: scale(1.05);
@@ -539,4 +553,8 @@ form {
 
 .marginBottom {
     margin-bottom: 20px;
+}
+
+.marginTop {
+    margin-top: 20px;
 }
