@@ -44,7 +44,12 @@ function showMovieDetails(event) {
         .then(data => {
             const isInWatchlist = data.watchlist.includes(movieId);
             bookmarkImg.src = isInWatchlist ? "/img/selected_bookmark.png" : "/img/bookmark.png";
+
+            if (window.location.pathname === '/watchlist') {
+                window.location.reload();
+            }
         })
+        
         .catch(error => console.error("Fehler beim Aktualisieren der Watchlist:", error));
     };
 
