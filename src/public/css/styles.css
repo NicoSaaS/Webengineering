@@ -124,7 +124,7 @@ a.active {
     opacity: 0.8;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
     .nav_left {
         display: none;
         flex-direction: column;
@@ -160,28 +160,11 @@ a.active {
     }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 841px) {
     .nav_left {
-        display: flex !important; /* Sicherstellen, dass die Navbar immer sichtbar ist */
+        display: flex !important;
     }
 }
-
-
-/* .searchField_placement {
-  a {
-      color: var(--fontColor3);
-      text-decoration: none;
-      font-size: 16px;
-      padding: 10px 8px;
-  }
-
-  .searchField_placement input[type="text"]{
-      padding: 0.2rem 1rem;
-      width: 40%;
-      box-sizing: border-box;
-      text-align: left;
-  }
-} */
 
 body {
     margin-top: 10vh;
@@ -201,9 +184,7 @@ body {
     padding: 10px;
     padding-left: 25px;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.1);
 }
-
 
 .button {
     background-color: #1e90ff;
@@ -406,7 +387,6 @@ form {
 .media_cover {
     width: 100%;
     max-width: clamp(100px, 15vw, 170px);
-
     height: auto;
     margin-top: 0.5vh;
     aspect-ratio: 170 / 250;
@@ -427,6 +407,7 @@ form {
     gap: 2vw;
     list-style: none;
     padding: 0;
+    margin-top: 2vh;
 }
 
 .popup {
@@ -575,12 +556,16 @@ form {
     color: var(--fontColor3)
 }
 
+.blueFontColor {
+    color: var(--fontColor4)
+}
+
 .marginBottom {
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
 }
 
 .marginTop {
-    margin-top: 20px;
+    margin-top: 5vh;
 }
 
 .marginLeft {

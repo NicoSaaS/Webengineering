@@ -16,5 +16,19 @@
       3,
       1
     ]
+  },
+  {
+    "firstName": "user1",
+    "lastName": "user1",
+    "gender": "male",
+    "email": "user1@sample.com",
+    "username": "user1",
+    "password": "user1",
+    "movie-watchlist": [
+      28
+    ],
+    "series-watchlist": [
+      3
+    ]
   }
 ]

@@ -6,5 +6,28 @@ block content
         h4.whiteFontColor.marginTop= group.letter
         ul.media_list
           each movie in group.movies
-            li
-              img.media_cover(src=movie.image, alt=movie.title)
+            li.movie-item(data-movie=JSON.stringify(movie))
+              img.media_cover(src=movie.image, alt=movie.title, onclick="showMovieDetails(event)")
+
+  div.popup(id="mediaPopup")
+        div.popup-body
+            div(id="movieModal", style="display: none;")
+            div.modal-content
+                span.close-btn &times;
+                .popup-content
+                    img.media_image(id="media-image", src="")
+                    .media-information
+                        .media-general
+                            .media-header
+                                h2(id="media-title")
+                                button.bookmarkButton(data-movie=JSON.stringify(movie))
+                                    img(src="/img/bookmark.png", alt="Bookmark")
+                            p(id="media-description")
+                            .media-specific-info
+                                p(id="media-genre")
+                                p(id="media-ranking")
+                                p(id="media-director")
+                                p(id="media-released")
+
+  script(src="/js/movie.js")
+  script(src="/js/serie.js")

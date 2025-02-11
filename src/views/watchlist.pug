@@ -2,36 +2,42 @@ extends layout.pug
 
 block content
     div.body_container
-        h2.whiteFontColor Deine Watchlist
-
+        h1.blueFontColor.marginTop Watchlist
         if movies.length > 0 || series.length > 0
             if movies.length > 0
-                h3.whiteFontColor Filme
-                ul.movie-list
+                h3.whiteFontColor.marginTop Movies
+                ul.media_list
                     each movie in movies
                         li.movie-item(data-movie=JSON.stringify(movie))
-                            .media_cover
-                                img.media_cover(src=movie.image, alt=movie.title)
-                            .movie-details
-                                h3= movie.title
-                                p= movie.description
-                                p Genre: #{movie.genre}
-                                button.bookmarkButton(data-movie=JSON.stringify(movie))
-                                    img(src="/img/bookmark.png", alt="Watchlist")
-
-
+                            img.media_cover(src=movie.image, alt=movie.title, onclick="showMovieDetails(event)")
             if series.length > 0
-                h3.whiteFontColor Serien
-                ul.serie-list
+                h3.whiteFontColor.marginTop Series
+                ul.media_list
                     each serie in series
                         li.serie-item(data-serie=JSON.stringify(serie))
-                            .media_cover
-                                img.media_cover(src=serie.image, alt=serie.title)
-                            .media_details
-                                h3= serie.title
-                                p= serie.description
-                                p Genre: #{serie.genre}
-                                button.bookmarkButton(data-serie=JSON.stringify(serie))
-                                    img(src="/img/bookmark.png", alt="Watchlist")
+                            img.media_cover(src=serie.image, alt=serie.title, onclick="showSerieDetails(event)")
         else
-            p.whiteFontColor Deine Watchlist ist leer.
+            p.whiteFontColor You have no movies or series in your watchlist yet.
+
+    div.popup(id="mediaPopup")
+        div.popup-body
+            div(id="movieModal", style="display: none;")
+            div.modal-content
+                span.close-btn &times;
+                .popup-content
+                    img.media_image(id="media-image", src="")
+                    .media-information
+                        .media-general
+                            .media-header
+                                h2(id="media-title")
+                                button.bookmarkButton(data-movie=JSON.stringify(movie))
+                                    img(src="/img/bookmark.png", alt="Bookmark")
+                            p(id="media-description")
+                            .media-specific-info
+                                p(id="media-genre")
+                                p(id="media-ranking")
+                                p(id="media-director")
+                                p(id="media-released")
+
+    script(src="/js/movie.js")
+    script(src="/js/serie.js")
