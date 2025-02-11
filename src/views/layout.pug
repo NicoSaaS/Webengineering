@@ -11,25 +11,28 @@ html(lang="de")
     link(rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png")
     link(rel="manifest" href="/icon/site.webmanifest")
   body
-    header
-        h1 CineCanvas
-        button.menu-toggle(onclick="toggleMenu()") ☰
-        input#menu-checkbox(type="checkbox" hidden)
-        nav
-          ul.nav_left
-            li 
-              a(href="/" class=active_tab === 'home' ? 'active' : '') Home
-            li
-              a(href="/movies" class=active_tab === 'movies' ? 'active' : '') Movies
-            li
-              a(href="/series" class=active_tab === 'series' ? 'active' : '') Series
-            li
-              a(href="/watchlist" class=active_tab === 'watchlist' ? 'active' : '') Watchlist
-              //- block searchField
-            li
-              a.profile-icon(href="/profile")
-                i.fas.fa-user
+header
+  h1
+    a.logo-container(href="/")
+      img.logo(src="/icon/favicon.png" alt="Logo")
+    span.site-title CineCanvas
+  button.menu-toggle(onclick="toggleMenu()") ☰
+  input#menu-checkbox(type="checkbox" hidden)
+  nav
+    ul.nav_left
+      li 
+        a(href="/" class=active_tab === 'home' ? 'active' : '') Home
+      li
+        a(href="/movies" class=active_tab === 'movies' ? 'active' : '') Movies
+      li
+        a(href="/series" class=active_tab === 'series' ? 'active' : '') Series
+      li
+        a(href="/watchlist" class=active_tab === 'watchlist' ? 'active' : '') Watchlist
+      li
+        a.profile-icon(href="/profile")
+          i.fas.fa-user
 
-    block content
+block content
+
 
     script(src="/js/header.js")

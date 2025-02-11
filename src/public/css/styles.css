@@ -36,6 +36,14 @@ header {
     z-index: 1000;
 }
 
+.logo {
+    height: 70px;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+
 .nav_left {
     list-style: none;
 }
