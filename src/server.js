@@ -97,7 +97,7 @@ app.post('/login', (req, res) => {
         req.session.user = user;
         res.redirect('/profile');
     } else {
-        res.send('Ungültiger Benutzername oder Passwort');
+        res.render('login', { error: 'Falsches Passwort oder Benutzername!' });
     }
 });
 

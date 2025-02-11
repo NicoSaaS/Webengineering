@@ -12,6 +12,10 @@ html(lang="de")
     main
       .form-container
         h2 Welcome back!
+
+        if error
+          p.error-message= error
+          
         form(action="/login", method="POST")
           .input-container
             label(for="username") Username:
