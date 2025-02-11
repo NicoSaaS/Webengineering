@@ -3,49 +3,49 @@ html(lang="de")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Registrieren
+    title Register
     link(rel="stylesheet", href="/css/styles.css")
   body
     header
-      h2 Registriere dich
+      h2 Register!
     
     main
       .form-container
-        h2 Erstelle ein neues Konto
+        h2 Create a new account
         if errorMessage
           p.error-message(style="color: red;") #{errorMessage}
         form(action="/register", method="POST")
           .input-container
-            label(for="firstName") Vorname:
+            label(for="firstName") Firstname:
             input(type="text", id="firstName", name="firstName", class="input-field", required)
           
           .input-container
-            label(for="lastName") Nachname:
+            label(for="lastName") Lastname:
             input(type="text", id="lastName", name="lastName", class="input-field", required)
           
           .input-container
-            label(for="gender") Geschlecht:
+            label(for="gender") Gender:
             select(id="gender", name="gender", class="input-field", required)
-              option(value="male") Männlich
-              option(value="female") Weiblich
-              option(value="other") Andere
+              option(value="male") Male
+              option(value="female") Female
+              option(value="other") other
           
           .input-container
             label(for="email") E-Mail:
             input(type="email", id="email", name="email", class="input-field", required)
           
           .input-container
-            label(for="username") Benutzername:
+            label(for="username") Username:
             input(type="text", id="username", name="username", class="input-field", required)
           
           .input-container
-            label(for="password") Passwort:
+            label(for="password") Password:
             input(type="password", id="password", name="password", class="input-field", required)
           
           .form-actions
-            button(type="submit", class="btn") Registrieren
+            button(type="submit", class="btn") Register
 
-        p.marginBottom Hast du schon ein Konto? 
-          a.register-link(href="/login") Melde dich hier an.
+        p.marginBottom Already have an account?
+          a.register-link(href="/login") Login here.
         
-        a.back-btn(href="/") Zurück zur Startseite
+        a.back-btn(href="/") Return to home page.
