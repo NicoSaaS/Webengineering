@@ -34,11 +34,22 @@ header {
     z-index: 1000;
 }
 
+header h1 {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     height: 9vh;
     width: auto;
     margin-right: 10px;
     vertical-align: middle;
+}
+
+@media screen and (max-width: 330px) {
+    .logo {
+        display: none;
+    }
 }
 
 
@@ -100,7 +111,6 @@ a.active {
     border: none;
     color: white;
     position: absolute;
-    top: 3.5vh;
     right: 4vw;
 }
 
@@ -143,6 +153,7 @@ a.active {
 
     .menu-toggle {
         display: block;
+        align-items: center;
     }
 
     #menu-checkbox:checked~.nav_left {
