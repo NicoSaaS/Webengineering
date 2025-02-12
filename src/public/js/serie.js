@@ -21,7 +21,7 @@ function showSerieDetails(event) {
   const serieImage = serieData.image;
 
   const modal = document.getElementById('mediaPopup');
-  const closeButton = document.querySelector('.closeBtn');
+  const closeButton = document.querySelector('.closeButton');
 
   document.getElementById('mediaTitle').textContent = serieTitle;
   document.getElementById('mediaImage').src = serieImage;

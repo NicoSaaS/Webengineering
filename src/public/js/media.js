@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const movieDetails = new MediaDetails(
     "mediaPopup",
-    ".closeBtn",
+    ".closeButton",
     "mediaTitle",
     "mediaImage",
     "mediaDescription",
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const serieDetails = new MediaDetails(
     "mediaPopup",
-    ".closeBtn",
+    ".closeButton",
     "mediaTitle",
     "mediaImage",
     "mediaDescription",

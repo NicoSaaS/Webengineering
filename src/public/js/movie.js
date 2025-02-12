@@ -2,15 +2,15 @@ function showMovieDetails(event) {
     const movieElement = event.target.closest("li");
     const movieData = JSON.parse(movieElement.getAttribute("data-movie"));
     const movieId = movieData.id;
-  
+
     const movieTitle = movieData.title;
     const movieDescription = movieData.description;
     const movieGenre = movieData.genre;
     const movieImage = movieData.image;
-  
+
     const modal = document.getElementById("mediaPopup");
-    const closeButton = document.querySelector(".closeBtn");
-  
+    const closeButton = document.querySelector(".closeButton");
+
     document.getElementById("mediaTitle").textContent = movieTitle;
     document.getElementById("mediaImage").src = movieImage;
     document.getElementById("mediaDescription").textContent = movieDescription;
@@ -18,13 +18,13 @@ function showMovieDetails(event) {
     document.getElementById("mediaRanking").textContent = "Ranking: " + movieData.ranking;
     document.getElementById("mediaDirector").textContent = "Director: " + movieData.director;
     document.getElementById("mediaReleased").textContent = "Released: " + movieData.released;
-  
+
     const bookmarkButton = modal.querySelector(".bookmarkButton");
     const bookmarkImg = bookmarkButton.querySelector("img");
     bookmarkButton.setAttribute("data-movie", JSON.stringify(movieData));
-  
+
     document.body.style.overflow = "hidden";
-  
+
     fetch("/get-user-watchlist", { method: "GET" })
       .then((response) => response.json())
       .then((data) => {
@@ -43,7 +43,7 @@ function showMovieDetails(event) {
       .catch((error) =>
         console.error("Fehler beim Abrufen der Watchlist:", error),
       );
-  
+
     bookmarkButton.onclick = function () {
       fetch("/toggle-movies-watchlist", {
         method: "POST",
@@ -56,21 +56,21 @@ function showMovieDetails(event) {
           bookmarkImg.src = isInWatchlist
             ? "/img/selected_bookmark.png"
             : "/img/bookmark.png";
-  
+
           if (window.location.pathname === "/watchlist") {
             window.location.reload();
           }
         })
         .catch(() => alert("Log in to add Movies to the watchlist"));
     };
-  
+
     modal.style.display = "block";
-  
+
     closeButton.onclick = function () {
       modal.style.display = "none";
       document.body.style.overflow = "auto";
     };
-  
+
     window.onclick = function (event) {
       if (event.target === modal) {
         modal.style.display = "none";

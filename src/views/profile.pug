@@ -9,7 +9,7 @@ html(lang='de')
     header
       h2 Profile from #{firstName}
       .navRight
-        a.backBtn(href='/') Return to home
+        a.returnHomeButton(href='/') Return to home
 
     main
       .profileContainer
@@ -37,7 +37,7 @@ html(lang='de')
         .formActions
           a.btn(href='/logout') Logout
           form(action='/delete-account', method='POST')
-            button.deleteBtn(
+            button.deleteButton(
               type='submit',
               onclick='return confirm(\'Bist du sicher, dass du deinen Account löschen möchtest?\')'
             ) Account löschen

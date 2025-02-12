@@ -78,7 +78,7 @@ a,
   text-decoration: none;
 }
 
-.navLeft li a.backBtn:hover {
+.navLeft li a.returnHomeButton:hover {
   color: var(--fontColor3);
 }
 
@@ -100,7 +100,7 @@ a.active {
 }
 
 /* For Mobile */
-.menuToggle {
+.toggleMenu {
   display: none;
   font-size: 2rem;
   cursor: pointer;
@@ -116,7 +116,7 @@ a.active {
   align-items: center;
 }
 
-.backBtn {
+.returnHomeButton {
   text-decoration: none;
   font-size: 16px;
   color: var(--fontColor3);
@@ -125,7 +125,7 @@ a.active {
   border-radius: 30px;
 }
 
-.backBtn:hover {
+.returnHomeButton:hover {
   background-color: var(--buttonBackgroundColor1);
   color: var(--fontColor3);
   opacity: 0.8;
@@ -148,7 +148,7 @@ a.active {
     padding: 1.5vh 0;
   }
 
-  .menuToggle {
+  .toggleMenu {
     display: block;
     align-items: center;
   }
@@ -160,11 +160,6 @@ a.active {
   .navRight {
     display: flex;
     align-items: center;
-  }
-
-  .features {
-    flex-direction: column;
-    gap: 2vh;
   }
 }
 
@@ -193,62 +188,9 @@ body {
   z-index: 2;
 }
 
-.button {
-  background-color: #1e90ff;
-}
-
-.button.primary {
-  background-color: #333;
-  color: var(--fontColor3);
-}
-
 main {
   padding: 5vh 2vw;
   text-align: center;
-}
-
-.intro h2 {
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
-  margin-bottom: 2vh;
-  color: #333;
-}
-
-.intro p {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: #666;
-}
-
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 4vw;
-  margin-top: 4vh;
-}
-
-.featureCard {
-  background-color: white;
-  padding: 5%;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: clamp(200px, 20vw, 300px);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.featureCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.featureCard h3 {
-  font-size: clamp(1.2rem, 1.8vw, 2rem);
-  margin-bottom: 1vh;
-  color: #333;
-}
-
-.featureCard p {
-  color: #666;
 }
 
 .formContainer {
@@ -295,29 +237,7 @@ main {
   outline: none;
 }
 
-.btn {
-  background-color: var(--buttonBackgroundColor1);
-  padding: 1.5vh 3vw;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: var(--fontColor3);
-  border-radius: 30px;
-  width: 100%;
-  text-align: center;
-  border: none;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background-color: #1c7ed6;
-  opacity: 0.9;
-}
-
-.deleteBtn {
+.deleteButton {
   background-color: var(--buttonBackgroundColor2);
   padding: 12px 30px;
   font-size: 18px;
@@ -334,7 +254,7 @@ main {
   text-decoration: none;
 }
 
-.deleteBtn:hover {
+.deleteButton:hover {
   background-color: var(--buttonBackgroundColor2);
   opacity: 0.9;
 }
@@ -433,7 +353,7 @@ form {
   padding: 2vh;
 }
 
-.popupBody {
+.popupContainer {
   display: flex;
   flex-direction: column;
   background-color: #fefefe;
@@ -458,6 +378,7 @@ form {
   width: auto;
   height: 100%;
   max-height: 40vh;
+  aspect-ratio: 170 / 250;
   object-fit: cover;
   border-radius: 8px;
   flex: 1;
@@ -474,7 +395,7 @@ form {
   margin-right: 2vh;
 }
 
-.mediaHeader {
+.mediaGeneral {
   display: flex;
   flex-direction: row;
   height: fit-content;
@@ -547,7 +468,7 @@ form {
   width: fit-content;
 }
 
-.closeBtn {
+.closeButton {
   color: var(--buttonBackgroundColor2);
   position: absolute;
   top: 0px;
@@ -556,8 +477,8 @@ form {
   font-weight: bold;
 }
 
-.closeBtn:hover,
-.closeBtn:focus {
+.closeButton:hover,
+.closeButton:focus {
   color: var(--buttonBackgroundColor2);
   text-decoration: none;
   cursor: pointer;
@@ -585,8 +506,12 @@ form {
   margin-top: 5vh;
 }
 
-.marginLeft {
+.marginLeftLarge {
   margin-left: 4vw;
+}
+
+.marginLeftSmall {
+    margin-left: 0.5vw;
 }
 
 .errorMessage {
@@ -607,6 +532,6 @@ footer {
   align-items: center;
 }
 
-.footerAuthor {
+.ownerFooter {
   margin-left: auto;
 }
