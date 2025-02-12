@@ -32,5 +32,17 @@
       3,
       2
     ]
+  },
+  {
+    "firstName": "00",
+    "lastName": "00",
+    "gender": "male",
+    "email": "00@de",
+    "username": "00",
+    "password": "00",
+    "movie-watchlist": [
+      4
+    ],
+    "series-watchlist": []
   }
 ]
