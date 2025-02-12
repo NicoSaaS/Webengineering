@@ -9,8 +9,7 @@ block content
           h4= movie.ranking + '. '
           img.mediaCover(
             src=movie.image,
-            alt=movie.title,
-            onclick='showMovieDetails(event)'
+            alt=movie.title
           )
 
     h2.blueFontColor.marginTop Series Ranking of the Month
@@ -20,11 +19,9 @@ block content
           h4= serie.ranking + '. '
           img.mediaCover(
             src=serie.image,
-            alt=serie.title,
-            onclick='showSerieDetails(event)'
+            alt=serie.title
           )
 
   include modal.pug
 
-  script(src='/js/movie.js')
-  script(src='/js/serie.js')
+  script(src='/js/media.js')
