@@ -3,25 +3,10 @@ extends layout.pug
 block content
   .bodyContainer.marginLeft
     h2.blueFontColor.marginTop Movie Ranking of the Month
-    ul.mediaList
-      each movie in movies
-        li(data-movie=JSON.stringify(movie))
-          h4= movie.ranking + '. '
-          img.mediaCover(
-            src=movie.image,
-            alt=movie.title
-          )
-
+    - var showRanking = true
+    include movie.pug
     h2.blueFontColor.marginTop Series Ranking of the Month
-    ul.mediaList
-      each serie in series
-        li(data-serie=JSON.stringify(serie))
-          h4= serie.ranking + '. '
-          img.mediaCover(
-            src=serie.image,
-            alt=serie.title
-          )
+    - var showRanking = true
+    include serie.pug
 
   include modal.pug
-
-  script(src='/js/media.js')

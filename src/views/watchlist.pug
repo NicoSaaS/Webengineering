@@ -6,27 +6,11 @@ block content
     if movies.length > 0 || series.length > 0
       if movies.length > 0
         h3.whiteFontColor.marginTop Movies
-        ul.mediaList
-          each movie in movies
-            li.movieItem(data-movie=JSON.stringify(movie))
-              img.mediaCover(
-                src=movie.image,
-                alt=movie.title,
-                onclick='showMovieDetails(event)'
-              )
+        include movie.pug
       if series.length > 0
         h3.whiteFontColor.marginTop Series
-        ul.mediaList
-          each serie in series
-            li.serieItem(data-serie=JSON.stringify(serie))
-              img.mediaCover(
-                src=serie.image,
-                alt=serie.title,
-                onclick='showSerieDetails(event)'
-              )
+        include serie.pug
     else
       p.whiteFontColor You have no movies or series in your watchlist yet.
 
   include modal.pug
-
-  script(src='/js/media.js')

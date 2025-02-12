@@ -9,8 +9,7 @@ block content
           li(data-serie=JSON.stringify(serie))
             img.mediaCover(
               src=serie.image,
-              alt=serie.title,
-              onclick='showSerieDetails(event)'
+              alt=serie.title
             )
 
   include modal.pug
