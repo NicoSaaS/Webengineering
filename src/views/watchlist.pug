@@ -1,26 +1,33 @@
 extends layout.pug
 
 block content
-    div.body_container.marginLeft
-        h1.blueFontColor.marginTop Watchlist
-        if movies.length > 0 || series.length > 0
-            if movies.length > 0
-                h3.whiteFontColor.marginTop Movies
-                ul.media_list
-                    each movie in movies
-                        li.movie-item(data-movie=JSON.stringify(movie))
-                            img.media_cover(src=movie.image, alt=movie.title, onclick="showMovieDetails(event)")
-            if series.length > 0
-                h3.whiteFontColor.marginTop Series
-                ul.media_list
-                    each serie in series
-                        li.serie-item(data-serie=JSON.stringify(serie))
-                            img.media_cover(src=serie.image, alt=serie.title, onclick="showSerieDetails(event)")
-        else
-            p.whiteFontColor You have no movies or series in your watchlist yet.
+  .bodyContainer.marginLeft
+    h1.blueFontColor.marginTop Watchlist
+    if movies.length > 0 || series.length > 0
+      if movies.length > 0
+        h3.whiteFontColor.marginTop Movies
+        ul.mediaList
+          each movie in movies
+            li.movieItem(data-movie=JSON.stringify(movie))
+              img.mediaCover(
+                src=movie.image,
+                alt=movie.title,
+                onclick='showMovieDetails(event)'
+              )
+      if series.length > 0
+        h3.whiteFontColor.marginTop Series
+        ul.mediaList
+          each serie in series
+            li.serieItem(data-serie=JSON.stringify(serie))
+              img.mediaCover(
+                src=serie.image,
+                alt=serie.title,
+                onclick='showSerieDetails(event)'
+              )
+    else
+      p.whiteFontColor You have no movies or series in your watchlist yet.
 
-    include modal.pug
+  include modal.pug
 
-
-    script(src="/js/movie.js")
-    script(src="/js/serie.js")
+  script(src='/js/movie.js')
+  script(src='/js/serie.js')

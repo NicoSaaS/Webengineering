@@ -1,18 +1,18 @@
-div.popup(id="mediaPopup")
-    div.popup-body
-        div(id="movieModal", style="display: none;")
-        div.modal-content
-            span.close-btn &times;
-            .popup-content
-                img.media_image(id="media-image", src="")
-                .media-information
-                    .media-header
-                        button.bookmarkButton
-                            img(src="/img/bookmark.png", alt="Bookmark")
-                        h2(id="media-title")
-                    p(id="media-description")
-                    .media-specific-info
-                        p(id="media-genre")
-                        p(id="media-ranking")
-                        p(id="media-director")
-                        p(id="media-released")
+#mediaPopup.popup
+  .popupBody
+    #movieModal(style='display: none')
+    .modalContent
+      span.closeBtn &times;
+      .popupContent
+        img#mediaImage.mediaImage(src='')
+        .mediaInformation
+          .mediaHeader
+            button.bookmarkButton
+              img(src='/img/bookmark.png', alt='Bookmark')
+            h2#mediaTitle
+          p#mediaDescription
+          .mediaSpecificInfo
+            p#mediaGenre
+            p#mediaRanking
+            p#mediaDirector
+            p#mediaReleased
