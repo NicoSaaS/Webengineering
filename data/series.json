@@ -188,5 +188,65 @@
         "genre": "Crime, Drama",
         "director": "Sylvester Stallone",
         "released": "2022"
-    }
+    },
+    {
+        "id": 19,
+        "title": "Bluey",
+        "image": "/img/seriescovers/bluey.jpg",
+        "ranking": 20,
+        "description": "An animated series about a Blue Heeler puppy and her adventures with family and friends.",
+        "genre": "Animation",
+        "director": "Joe Brumm",
+        "released": "2018"
+      },
+      {
+        "id": 20,
+        "title": "Chernobyl",
+        "image": "/img/seriescovers/chernobyl.jpg",
+        "ranking": 21,
+        "description": "A gripping historical drama about the 1986 nuclear disaster and its aftermath.",
+        "genre": "Drama",
+        "director": "Johan Renck",
+        "released": "2019"
+      },
+      {
+        "id": 21,
+        "title": "Das Boot",
+        "image": "/img/seriescovers/dasboot.jpg",
+        "ranking": 22,
+        "description": "A war drama following the crew of a German U-boat during World War II.",
+        "genre": "Drama",
+        "director": "Andreas Prochaska",
+        "released": "2018"
+      },
+      {
+        "id": 22,
+        "title": "Dr. House",
+        "image": "/img/seriescovers/drhouse.jpg",
+        "ranking": 23,
+        "description": "A medical drama about a brilliant but misanthropic doctor solving complex cases.",
+        "genre": "Drama",
+        "director": "David Shore",
+        "released": "2004"
+      },
+      {
+        "id": 23,
+        "title": "Impractical Jokers",
+        "image": "/img/seriescovers/impracticaljokers.jpg",
+        "ranking": 24,
+        "description": "A comedy reality show where four lifelong friends challenge each other to hilarious dares.",
+        "genre": "Comedy",
+        "director": "Peter Fowkes",
+        "released": "2011"
+      },
+      {
+        "id": 24,
+        "title": "Severance",
+        "image": "/img/seriescovers/severance.jpg",
+        "ranking": 25,
+        "description": "A mind-bending thriller about employees who undergo a procedure to separate their work and personal memories.",
+        "genre": "Sci-Fi",
+        "director": "Ben Stiller, Aoife McArdle",
+        "released": "2022"
+      }
 ]
