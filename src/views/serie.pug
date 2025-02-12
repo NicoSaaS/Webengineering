@@ -1,9 +1,6 @@
 ul.mediaList
-      each serie in series
-        li(data-serie=JSON.stringify(serie))
-          if(showRanking)
-            h4= serie.ranking + '. '
-          img.mediaCover(
-            src=serie.image,
-            alt=serie.title
-          )
+  each serie in series
+    li(data-serie=JSON.stringify(serie))
+      if (showRanking)
+        h4= serie.ranking + '. '
+      img.mediaCover(src=serie.image, alt=serie.title)
