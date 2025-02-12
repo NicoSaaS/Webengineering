@@ -55,6 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 class MediaDetails {
+  /**
+  * @param {string} modalId - ID des Modals.
+  * @param {string} closeButtonClass - Klasse des Schließen-Buttons.
+  * @param {string} titleId - ID des Titels.
+  * @param {string} imageId - ID des Bildes.
+  * @param {string} descriptionId - ID der Beschreibung.
+  * @param {string} genreId - ID des Genres.
+  * @param {string} rankingId - ID der Bewertung.
+  * @param {string} directorId - ID des Regisseurs.
+  * @param {string} releasedId - ID des Veröffentlichungsdatums.
+  * @param {string} bookmarkButtonClass - Klasse des Bookmark-Buttons.
+  */
   constructor(
     modalId,
     closeButtonClass,
@@ -79,6 +91,18 @@ class MediaDetails {
     this.bookmarkButton = document.querySelector(bookmarkButtonClass)
     this.bookmarkImg = this.bookmarkButton.querySelector('img')
   }
+
+  /**
+   * @param {Object} mediaData - Daten des Mediums.
+   * @param {string} mediaData.title - Titel des Mediums.
+   * @param {string} mediaData.image - Bild-URL des Mediums.
+   * @param {string} mediaData.description - Beschreibung des Mediums.
+   * @param {string} mediaData.genre - Genre des Mediums.
+   * @param {number} mediaData.ranking - Ranking des Mediums.
+   * @param {string} mediaData.director - Regisseur des Mediums.
+   * @param {string} mediaData.released - Veröffentlichungsdatum des Mediums.
+   * @param {string} mediaType - Typ des Mediums (movie oder serie).
+   */
 
   showDetails(mediaData, mediaType) {
     this.titleElement.textContent = mediaData.title
@@ -111,6 +135,11 @@ class MediaDetails {
     }
   }
 
+  /**
+   * @param {number} mediaId - ID des Mediums.
+   * @param {string} mediaType - Typ des Mediums (movie oder serie).
+   */
+
   fetchWatchlist(mediaId, mediaType) {
     const watchlistKey =
       mediaType === 'movie' ? 'movie-watchlist' : 'series-watchlist'
@@ -131,6 +160,11 @@ class MediaDetails {
         console.error('Fehler beim Abrufen der Watchlist:', error),
       )
   }
+
+  /**
+   * @param {number} mediaId - ID des Mediums.
+   * @param {string} mediaType - Typ des Mediums (movie oder serie).
+   */
 
   toggleWatchlist(mediaId, mediaType) {
     const endpoint =
