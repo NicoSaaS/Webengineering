@@ -16,24 +16,7 @@ block content
                         h4= serie.ranking + ". "
                         img.media_cover(src=serie.image, alt=serie.title, onclick="showSerieDetails(event)")
 
-    div.popup(id="mediaPopup")
-        div.popup-body
-            div(id="movieModal", style="display: none;")
-            div.modal-content
-                span.close-btn &times;
-                .popup-content
-                    img.media_image(id="media-image", src="")
-                    .media-information
-                        .media-header
-                            button.bookmarkButton(data-movie=JSON.stringify(movie))
-                                img(src="/img/bookmark.png", alt="Bookmark")
-                            h2(id="media-title")
-                        p(id="media-description")
-                        .media-specific-info
-                            p(id="media-genre")
-                            p(id="media-ranking")
-                            p(id="media-director")
-                            p(id="media-released")
+    include modal.pug
 
 
     script(src="/js/movie.js")
