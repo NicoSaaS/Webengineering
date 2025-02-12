@@ -30,7 +30,7 @@ app.get('/register', (req, res) => {
 })
 
 app.get('/movies', (req, res) => {
-  const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json')
+  const moviesFilePath = path.join(__dirname, 'data', 'movies.json')
 
   fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
     if (err) {
@@ -61,7 +61,7 @@ app.get('/movies', (req, res) => {
 })
 
 app.get('/series', (req, res) => {
-  const serieFilePath = path.join(__dirname, '..', 'data', 'series.json')
+  const serieFilePath = path.join(__dirname, 'data', 'series.json')
 
   fs.readFile(serieFilePath, 'utf8', (err, serieData) => {
     if (err) {
@@ -103,7 +103,6 @@ app.get('/profile', (req, res) => {
 app.post('/login', (req, res) => {
   const { username, password } = req.body
   const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
-
   const user = users.find(
     (u) => u.username === username && u.password === password,
   )
@@ -177,8 +176,8 @@ app.post('/delete-account', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json')
-  const seriesFilePath = path.join(__dirname, '..', 'data', 'series.json')
+  const moviesFilePath = path.join(__dirname, 'data', 'movies.json')
+  const seriesFilePath = path.join(__dirname, 'data', 'series.json')
   fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
     if (err) {
       return res.status(500).send('Fehler beim Laden der Filme')
@@ -245,8 +244,8 @@ app.get('/watchlist', (req, res) => {
     })
   }
 
-  const moviesFilePath = path.join(__dirname, '..', 'data', 'movies.json')
-  const seriesFilePath = path.join(__dirname, '..', 'data', 'series.json')
+  const moviesFilePath = path.join(__dirname, 'data', 'movies.json')
+  const seriesFilePath = path.join(__dirname, 'data', 'series.json')
 
   fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
     if (err) {
