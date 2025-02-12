@@ -39,8 +39,8 @@ header {
     width: auto;
     margin-right: 10px;
     vertical-align: middle;
-  }
-  
+}
+
 
 .nav_left {
     list-style: none;
@@ -100,8 +100,8 @@ a.active {
     border: none;
     color: white;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 3.5vh;
+    right: 4vw;
 }
 
 .nav_right {
@@ -555,7 +555,7 @@ form {
     cursor: pointer;
 }
 
-@media (max-width: 440px){
+@media (max-width: 440px) {
     .media_image {
         display: none;
     }
