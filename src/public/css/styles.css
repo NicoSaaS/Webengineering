@@ -1,6 +1,6 @@
 :root {
     --backgroundColor1: #000000;
-    --backgroundColor2: #5c6268;
+    --backgroundColor2: #333333;
     --backgroundColor3: #a1a1a1;
     --backgroundColor4: #1e90ff;
     --fontColor1: blue;
@@ -599,37 +599,18 @@ form {
 }
 
 footer {
-    background-color: #222; /* Dunkler Hintergrund für den Footer */
-    color: #fff; /* Weiße Schrift */
+    background-color: var(--backgroundColor2);
+    color: var(--fontColor3);
     padding: 20px;
     width: auto;
-    font-size: 14px; /* Kleinere Schriftgröße für den Footer */
-    display: flex;
-    justify-content: space-between; /* Abstand zwischen Links und Copyright */
-    flex-wrap: wrap; /* Ermöglicht Flexbox in mehreren Reihen bei kleinen Bildschirmen */
-  }
-  
-  .footer-container {
-    width: 100%; /* Maximalbreite für besseren Inhalt auf größeren Bildschirmen */
-    margin: 0; /* Zentriert den Footer */
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
-    align-content: space-between;
     flex-wrap: wrap;
-  }
-  
-  .footer-nav li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: normal;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-nav li a:hover {
-    color: #1e90ff; /* Hover-Farbe für Links */
-  }
-  
-  .footer-nav li a:active {
-    color: #ff6347; /* Aktive Link-Farbe */
-  }
+    align-items:center;
+}
+
+.footer-author{
+    margin-left: auto;
+}
   
