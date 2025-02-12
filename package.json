@@ -7,5 +7,8 @@
   "devDependencies": {
     "@prettier/plugin-pug": "^3.2.1",
     "prettier": "^3.5.0"
+  },
+  "scripts": {
+    "start": "cd src && node server.js"
   }
 }
