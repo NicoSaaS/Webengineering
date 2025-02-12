@@ -8,36 +8,36 @@ html(lang='de')
   body
     header
       h2 Profile from #{firstName}
-      .nav_right
-        a.back-btn(href='/') Return to home
+      .navRight
+        a.backBtn(href='/') Return to home
 
     main
-      .profile-container
-        section.profile-info
-          .profile-item
+      .profileContainer
+        section.profileInfo
+          .profileItem
             strong First Name:
             p #{firstName}
 
-          .profile-item
+          .profileItem
             strong Last Name:
             p #{lastName}
 
-          .profile-item
+          .profileItem
             strong Username:
             p #{username}
 
-          .profile-item
+          .profileItem
             strong Email:
             p #{email}
 
-          .profile-item
+          .profileItem
             strong Gender:
             p #{gender}
 
-        .form-actions
+        .formActions
           a.btn(href='/logout') Logout
           form(action='/delete-account', method='POST')
-            button.delete-btn(
+            button.deleteBtn(
               type='submit',
               onclick='return confirm(\'Bist du sicher, dass du deinen Account löschen möchtest?\')'
             ) Account löschen

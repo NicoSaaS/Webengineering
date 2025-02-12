@@ -8,31 +8,31 @@ html(lang='de')
   body
     header
       h2 Login
-      nav_right
-        a.back-btn(href='/') Return to home
+      navRight
+        a.backBtn(href='/') Return to home
 
     main
-      .form-container
+      .formContainer
         h2 Welcome back!
 
         if error
-          p.error-message= error
+          p.errorMessage= error
 
         form(action='/login', method='POST')
-          .input-container
+          .inputContainer
             label(for='username') Username:
-            input#username.input-field(type='text', name='username', required)
+            input#username.inputField(type='text', name='username', required)
 
-          .input-container
+          .inputContainer
             label(for='password') Password:
-            input#password.input-field(
+            input#password.inputField(
               type='password',
               name='password',
               required
             )
 
-          .form-actions
+          .formActions
             button.btn(type='submit') Login
 
         p.marginBottom Don't have an account yet?
-          a.register-link(href='/register') Sign up here
+          a.registerLink(href='/register') Sign up here

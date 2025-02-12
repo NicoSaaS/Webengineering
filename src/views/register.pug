@@ -10,50 +10,50 @@ html(lang='de')
       h2 Register!
 
     main
-      .form-container
+      .formContainer
         h2 Create a new account
         if errorMessage
-          p.error-message(style='color: red') #{errorMessage}
+          p.errorMessage(style='color: red') #{errorMessage}
         form(action='/register', method='POST')
-          .input-container
+          .inputContainer
             label(for='firstName') Firstname:
-            input#firstName.input-field(
+            input#firstName.inputField(
               type='text',
               name='firstName',
               required
             )
 
-          .input-container
+          .inputContainer
             label(for='lastName') Lastname:
-            input#lastName.input-field(type='text', name='lastName', required)
+            input#lastName.inputField(type='text', name='lastName', required)
 
-          .input-container
+          .inputContainer
             label(for='gender') Gender:
-            select#gender.input-field(name='gender', required)
+            select#gender.inputField(name='gender', required)
               option(value='male') Male
               option(value='female') Female
               option(value='other') other
 
-          .input-container
+          .inputContainer
             label(for='email') E-Mail:
-            input#email.input-field(type='email', name='email', required)
+            input#email.inputField(type='email', name='email', required)
 
-          .input-container
+          .inputContainer
             label(for='username') Username:
-            input#username.input-field(type='text', name='username', required)
+            input#username.inputField(type='text', name='username', required)
 
-          .input-container
+          .inputContainer
             label(for='password') Password:
-            input#password.input-field(
+            input#password.inputField(
               type='password',
               name='password',
               required
             )
 
-          .form-actions
+          .formActions
             button.btn(type='submit') Register
 
         p.marginBottom Already have an account?
-          a.register-link(href='/login') Login here.
+          a.registerLink(href='/login') Login here.
 
-        a.back-btn(href='/') Return to home page.
+        a.backBtn(href='/') Return to home page.

@@ -1,13 +1,13 @@
 extends layout.pug
 
 block content
-  .body_container.marginLeft
-    each group in groupedSerie 
+  .bodyContainer.marginLeft
+    each group in groupedSerie
       h4.whiteFontColor.marginTop= group.letter
-      ul.media_list
-        each serie in group.series 
+      ul.mediaList
+        each serie in group.series
           li(data-serie=JSON.stringify(serie))
-            img.media_cover(
+            img.mediaCover(
               src=serie.image,
               alt=serie.title,
               onclick='showSerieDetails(event)'

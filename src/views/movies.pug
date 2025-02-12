@@ -1,13 +1,13 @@
 extends layout.pug
 
 block content
-  .body_container.marginLeft
+  .bodyContainer.marginLeft
     each group in groupedMovies
       h4.whiteFontColor.marginTop= group.letter
-      ul.media_list
+      ul.mediaList
         each movie in group.movies
-          li.movie-item(data-movie=JSON.stringify(movie))
-            img.media_cover(
+          li.movieItem(data-movie=JSON.stringify(movie))
+            img.mediaCover(
               src=movie.image,
               alt=movie.title,
               onclick='showMovieDetails(event)'
