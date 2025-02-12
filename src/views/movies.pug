@@ -9,8 +9,7 @@ block content
           li.movieItem(data-movie=JSON.stringify(movie))
             img.mediaCover(
               src=movie.image,
-              alt=movie.title,
-              onclick='showMovieDetails(event)'
+              alt=movie.title
             )
 
   include modal.pug
