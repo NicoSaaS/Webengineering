@@ -5,10 +5,9 @@
     "image": "/img/moviecovers/inception.jpg",
     "ranking": 1,
     "description": "A thrilling sci-fi film by Christopher Nolan.",
-    "genre": "Sci-Fi" ,
+    "genre": "Sci-Fi",
     "director": "Christopher Nolan",
-    "released": "2010",
-    "watchlist": 0
+    "released": "2010"
   },
   {
     "id": 1,
@@ -18,8 +17,7 @@
     "description": "A groundbreaking sci-fi classic.",
     "genre": "Sci-Fi",
     "director": "Lana Wachowski, Lilly Wachowski",
-    "released": "1999",
-    "watchlist": 0
+    "released": "1999"
   },
   {
     "id": 2,
@@ -29,8 +27,7 @@
     "description": "A dark Batman film by Christopher Nolan.",
     "genre": "Action",
     "director": "Christopher Nolan",
-    "released": "2008",
-    "watchlist": 0
+    "released": "2008"
   },
   {
     "id": 3,
@@ -40,8 +37,7 @@
     "description": "A complex time-bending thriller by Christopher Nolan.",
     "genre": "Thriller",
     "director": "Christopher Nolan",
-    "released": "2020",
-    "watchlist": 0
+    "released": "2020"
   },
   {
     "id": 4,
@@ -51,8 +47,7 @@
     "description": "Paddington's adventure in Peru.",
     "genre": "Family",
     "director": "Paul King",
-    "released": "2023",
-    "watchlist": 0
+    "released": "2023"
   },
   {
     "id": 5,
@@ -62,8 +57,7 @@
     "description": "A Star Wars story about the mission to steal the Death Star plans.",
     "genre": "Sci-Fi",
     "director": "Gareth Edwards",
-    "released": "2016",
-    "watchlist": 0
+    "released": "2016"
   },
   {
     "id": 6,
@@ -73,8 +67,7 @@
     "description": "A German comedy film parodying Westerns.",
     "genre": "Comedy",
     "director": "Michael Herbig",
-    "released": "2001",
-    "watchlist": 0
+    "released": "2001"
   },
   {
     "id": 7,
@@ -84,8 +77,7 @@
     "description": "A horror film that revitalized the slasher genre.",
     "genre": "Horror",
     "director": "Wes Craven",
-    "released": "1996",
-    "watchlist": 0
+    "released": "1996"
   },
   {
     "id": 8,
@@ -95,8 +87,7 @@
     "description": "A film adaptation of the popular video game series.",
     "genre": "Adventure",
     "director": "Shigeru Miyamoto, Chris Meledandri",
-    "released": "2023",
-    "watchlist": 0
+    "released": "2023"
   },
   {
     "id": 9,
@@ -106,8 +97,7 @@
     "description": "A Pixar film about a small waste-collecting robot.",
     "genre": "Animation",
     "director": "Jim Morris, John Lasseter, Lindsey Collins",
-    "released": "2008",
-    "watchlist": 0
+    "released": "2008"
   },
   {
     "id": 10,
@@ -117,8 +107,7 @@
     "description": "A space exploration epic by Christopher Nolan.",
     "genre": "Sci-Fi",
     "director": "Christopher Nolan",
-    "released": "2014",
-    "watchlist": 0
+    "released": "2014"
   },
   {
     "id": 11,
@@ -128,8 +117,7 @@
     "description": "A visually stunning sequel to the original Blade Runner.",
     "genre": "Sci-Fi",
     "director": "Denis Villeneuve",
-    "released": "2017",
-    "watchlist": 0
+    "released": "2017"
   },
   {
     "id": 12,
@@ -139,8 +127,7 @@
     "description": "A thought-provoking alien contact film directed by Denis Villeneuve.",
     "genre": "Sci-Fi",
     "director": "Denis Villeneuve",
-    "released": "2016",
-    "watchlist": 0
+    "released": "2016"
   },
   {
     "id": 13,
@@ -150,8 +137,7 @@
     "description": "A high-octane action film starring Keanu Reeves.",
     "genre": "Action",
     "director": "Chad Stahelski, David Leitch",
-    "released": "2014",
-    "watchlist": 0
+    "released": "2014"
   },
   {
     "id": 14,
@@ -161,8 +147,7 @@
     "description": "A post-apocalyptic action masterpiece.",
     "genre": "Action",
     "director": "George Miller",
-    "released": "2015",
-    "watchlist": 0
+    "released": "2015"
   },
   {
     "id": 15,
@@ -172,8 +157,7 @@
     "description": "A stylish James Bond film with intense action.",
     "genre": "Action",
     "director": "Sam Mendes",
-    "released": "2012",
-    "watchlist": 0
+    "released": "2012"
   },
   {
     "id": 16,
@@ -183,8 +167,7 @@
     "description": "A vibrant Pixar film exploring Mexican traditions.",
     "genre": "Animation",
     "director": "Lee Unkrich, Adrian Molina",
-    "released": "2017",
-    "watchlist": 0
+    "released": "2017"
   },
   {
     "id": 17,
@@ -194,8 +177,7 @@
     "description": "A fun animated film with a clever detective storyline.",
     "genre": "Animation",
     "director": "Byron Howard, Rich Moore, Jared Bush",
-    "released": "2016",
-    "watchlist": 0
+    "released": "2016"
   },
   {
     "id": 18,
@@ -205,8 +187,7 @@
     "description": "A playful adventure with humor for all ages.",
     "genre": "Animation",
     "director": "Phil Lord, Christopher Miller",
-    "released": "2014",
-    "watchlist": 0
+    "released": "2014"
   },
   {
     "id": 19,
@@ -216,8 +197,7 @@
     "description": "A British action-comedy with sharp wit.",
     "genre": "Comedy",
     "director": "Edgar Wright",
-    "released": "2007",
-    "watchlist": 0
+    "released": "2007"
   },
   {
     "id": 20,
@@ -227,8 +207,7 @@
     "description": "A quirky Wes Anderson film full of charm.",
     "genre": "Comedy",
     "director": "Wes Anderson",
-    "released": "2014",
-    "watchlist": 0
+    "released": "2014"
   },
   {
     "id": 21,
@@ -238,8 +217,7 @@
     "description": "A hilarious coming-of-age teen comedy.",
     "genre": "Comedy",
     "director": "Greg Mottola",
-    "released": "2007",
-    "watchlist": 0
+    "released": "2007"
   },
   {
     "id": 22,
@@ -249,8 +227,7 @@
     "description": "A smart, socially conscious horror film.",
     "genre": "Horror",
     "director": "Jordan Peele",
-    "released": "2017",
-    "watchlist": 0
+    "released": "2017"
   },
   {
     "id": 23,
@@ -260,8 +237,7 @@
     "description": "A chilling psychological horror film.",
     "genre": "Horror",
     "director": "Ari Aster",
-    "released": "2018",
-    "watchlist": 0
+    "released": "2018"
   },
   {
     "id": 24,
@@ -271,8 +247,7 @@
     "description": "A suspenseful thriller about survival in silence.",
     "genre": "Horror",
     "director": "John Krasinski",
-    "released": "2018",
-    "watchlist": 0
+    "released": "2018"
   },
   {
     "id": 25,
@@ -282,8 +257,7 @@
     "description": "An epic fantasy journey.",
     "genre": "Fantasy",
     "director": "Peter Jackson",
-    "released": "2001",
-    "watchlist": 0
+    "released": "2001"
   },
   {
     "id": 26,
@@ -293,8 +267,7 @@
     "description": "A swashbuckling adventure.",
     "genre": "Adventure",
     "director": "Gore Verbinski",
-    "released": "2003",
-    "watchlist": 0
+    "released": "2003"
   },
   {
     "id": 27,
@@ -304,8 +277,7 @@
     "description": "A thrilling dinosaur-filled classic.",
     "genre": "Adventure",
     "director": "Steven Spielberg",
-    "released": "1993",
-    "watchlist": 0
+    "released": "1993"
   },
   {
     "id": 28,
@@ -315,8 +287,7 @@
     "description": "A comedy about two cops who go undercover in a Highschool.",
     "genre": "Comedy",
     "director": "Phil Lord, Christopher Miller",
-    "released": "2012",
-    "watchlist": 0
+    "released": "2012"
   },
   {
     "id": 29,
@@ -326,8 +297,7 @@
     "description": "A film adaptation of the popular video game series.",
     "genre": "Action",
     "director": "Jeff Fowler",
-    "released": "2022",
-    "watchlist": 0
+    "released": "2022"
   },
   {
     "id": 30,
@@ -337,10 +307,9 @@
     "description": "A film adaptation of the popular book by Andy Weir.",
     "genre": "Action",
     "director": "Ridley Scott",
-    "released": "2015",
-    "watchlist": 0
+    "released": "2015"
   },
-  { 
+  {
     "id": 31,
     "title": "2012",
     "image": "/img/moviecovers/2012.jpg",
@@ -348,8 +317,7 @@
     "description": "An apocalyptic Story about Humanity.",
     "genre": "Apocalyptic",
     "director": "Roland Emmerich",
-    "released": "2009",
-    "watchlist": 0
+    "released": "2009"
   },
   {
     "id": 32,
@@ -359,8 +327,7 @@
     "description": "A film adaptation of the popular comics.",
     "genre": "Action",
     "director": "Jon Favreau",
-    "released": "2008",
-    "watchlist": 0
+    "released": "2008"
   },
   {
     "id": 33,
@@ -370,8 +337,7 @@
     "description": "A film adaptation of the popular book.",
     "genre": "Action",
     "director": "Steven Spielberg",
-    "released": "2018",
-    "watchlist": 0
+    "released": "2018"
   },
   {
     "id": 34,
@@ -381,8 +347,7 @@
     "description": "A film adaptation of the popular book.",
     "genre": "Action",
     "director": "Anthony Russo, Joe Russo",
-    "released": "2019",
-    "watchlist": 0
+    "released": "2019"
   },
   {
     "id": 35,
@@ -392,8 +357,7 @@
     "description": "An animated adventure about a race car named Lightning McQueen.",
     "genre": "Animation",
     "director": "John Lasseter",
-    "released": "2006",
-    "watchlist": 0
+    "released": "2006"
   },
   {
     "id": 36,
@@ -403,8 +367,7 @@
     "description": "A Disney adventure about the search for the lost city of Atlantis.",
     "genre": "Animation",
     "director": "Gary Trousdale, Kirk Wise",
-    "released": "2001",
-    "watchlist": 0
+    "released": "2001"
   },
   {
     "id": 37,
@@ -414,8 +377,7 @@
     "description": "A hilarious crime comedy starring Leslie Nielsen.",
     "genre": "Comedy",
     "director": "David Zucker",
-    "released": "1988",
-    "watchlist": 0
+    "released": "1988"
   },
   {
     "id": 38,
@@ -425,8 +387,7 @@
     "description": "A biographical drama about Ford's battle against Ferrari at Le Mans.",
     "genre": "Drama",
     "director": "James Mangold",
-    "released": "2019",
-    "watchlist": 0
+    "released": "2019"
   },
   {
     "id": 39,
@@ -436,7 +397,6 @@
     "description": "The story of Ray Kroc and the rise of McDonald's.",
     "genre": "Drama",
     "director": "John Lee Hancock",
-    "released": "2016",
-    "watchlist": 0
+    "released": "2016"
   }
 ]

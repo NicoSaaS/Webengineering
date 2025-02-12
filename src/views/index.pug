@@ -2,47 +2,22 @@ extends layout.pug
 
 block content
     div.body_container.marginLeft
-        h3.whiteFontColor.marginTop Movie Ranking of the Month 
-            br
+        h2.blueFontColor.marginTop Movie Ranking of the Month 
             ul.media_list
                 each movie in movies
                     li(data-movie=JSON.stringify(movie))
                         h4= movie.ranking + ". "
                         img.media_cover(src=movie.image, alt=movie.title, onclick="showMovieDetails(event)")
-
-        h3.whiteFontColor.marginTop Series Ranking of the Month
-            br
+                    
+        h2.blueFontColor.marginTop Series Ranking of the Month
             ul.media_list
                 each serie in series
-                    li(data-movie=JSON.stringify(serie))
+                    li(data-serie=JSON.stringify(serie))
                         h4= serie.ranking + ". "
-                        img.media_cover(
-                            src=serie.image, 
-                            alt=serie.title, 
-                            data-serie=JSON.stringify(serie),
-                            onclick="showSerieDetails(event)")
+                        img.media_cover(src=serie.image, alt=serie.title, onclick="showSerieDetails(event)")
 
-    div.popup(id="mediaPopup")
-        div.popup-body
-            div(id="movieModal", style="display: none;")
-            div.modal-content
-                span.close-btn &times;
-                .popup-content
-                    img.media_image(id="media-image", src="")
-                    .media-information
-                        .media-general
-                            .media-header
-                                h2(id="media-title")
-                                button.bookmarkButton(data-movie=JSON.stringify(movie))
-                                    img(src="/img/bookmark.png", alt="Bookmark")
-                            p(id="media-description")
-                            .media-specific-info
-                                p(id="media-genre")
-                                p(id="media-ranking")
-                                p(id="media-director")
-                                p(id="media-released")
+    include modal.pug
 
 
     script(src="/js/movie.js")
     script(src="/js/serie.js")
-    script(src="/js/header.js")

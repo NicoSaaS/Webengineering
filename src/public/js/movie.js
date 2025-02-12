@@ -23,12 +23,14 @@ function showMovieDetails(event) {
     const bookmarkImg = bookmarkButton.querySelector('img');
     bookmarkButton.setAttribute('data-movie', JSON.stringify(movieData));
 
+    document.body.style.overflow = "hidden";
+
     fetch('/get-user-watchlist', { method: 'GET' })
         .then(response => response.json())
         .then(data => {
             const user = data.user;
-            if (user && user.watchlist) {
-                const isInWatchlist = user.watchlist.includes(movieId);
+            if (user && user["movie-watchlist"]) {
+                const isInWatchlist = user["movie-watchlist"].some(movie => movie === movieId);
                 bookmarkImg.src = isInWatchlist ? "/img/selected_bookmark.png" : "/img/bookmark.png";
             } else {
                 bookmarkImg.src = "/img/bookmark.png";
@@ -37,32 +39,34 @@ function showMovieDetails(event) {
         .catch(error => console.error("Fehler beim Abrufen der Watchlist:", error));
 
     bookmarkButton.onclick = function () {
-        fetch('/toggle-watchlist', {
+        fetch('/toggle-movies-watchlist', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ movieId: movieId })
         })
         .then(response => response.json())
         .then(data => {
-            const isInWatchlist = data.watchlist.includes(movieId);
+            const isInWatchlist = data["movie-watchlist"].includes(movieId);
             bookmarkImg.src = isInWatchlist ? "/img/selected_bookmark.png" : "/img/bookmark.png";
 
             if (window.location.pathname === '/watchlist') {
                 window.location.reload();
             }
         })
-        .catch(alert("Log in to add Movies to the watchlist"));
+        .catch(() => alert("Log in to add Movies to the watchlist"));
     };
 
     modal.style.display = "block";
 
     closeButton.onclick = function () {
         modal.style.display = "none";
+        document.body.style.overflow = "auto";
     };
 
     window.onclick = function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
+            document.body.style.overflow = "auto";
         }
     };
 }

@@ -1,10 +1,17 @@
 extends layout.pug
 
 block content
-  div.body_container
+  div.body_container.marginLeft
     each group in groupedMovies
-        h4.whiteFontColor= group.letter
+        h4.whiteFontColor.marginTop= group.letter
         ul.media_list
           each movie in group.movies
-            li
-              img.media_cover(src=movie.image, alt=movie.title)
+            li.movie-item(data-movie=JSON.stringify(movie))
+              img.media_cover(src=movie.image, alt=movie.title, onclick="showMovieDetails(event)")
+
+  include modal.pug
+
+
+  script(src="/js/movie.js")
+  script(src="/js/serie.js")
+
