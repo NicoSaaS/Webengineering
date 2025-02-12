@@ -23,7 +23,7 @@ html(lang='de')
         a.logoContainer(href='/')
           img.logo(src='/icon/favicon.png', alt='Logo')
         span.siteTitle CineCanvas
-      button.menuToggle(onclick='toggleMenu()') ☰
+      button.toggleMenu(onclick='toggleMenu()') ☰
       input#menu-checkbox(type='checkbox', hidden)
       nav
         ul.navLeft
@@ -38,14 +38,14 @@ html(lang='de')
           li
             a.profileIcon(href='/profile')
               i.fas.fa-user
-
+ 
     block content
-
+ 
     footer
       p &copy; 2025 CineCanvas. All rights reserved.
-      .footerAuthor
+      .ownerFooter
         p Hannes Klas
         p Tobias Weihing
         p Nico Prang
-
+ 
     script(src='/js/header.js')

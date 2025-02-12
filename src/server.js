@@ -102,7 +102,7 @@ app.get('/profile', (req, res) => {
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body
-  const users = JSON.parse(fs.readFileSync('../data/users.json', 'utf8'))
+  const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
 
   const user = users.find(
     (u) => u.username === username && u.password === password,
@@ -118,7 +118,7 @@ app.post('/login', (req, res) => {
 
 app.post('/register', (req, res) => {
   const { firstName, lastName, gender, email, username, password } = req.body
-  const users = JSON.parse(fs.readFileSync('../data/users.json', 'utf8'))
+  const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
   const userExists = users.some(
     (user) => user.username === username || user.email === email,
   )
@@ -141,7 +141,7 @@ app.post('/register', (req, res) => {
       'series-watchlist': [],
     }
     users.push(newUser)
-    fs.writeFileSync('../data/users.json', JSON.stringify(users, null, 2))
+    fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2))
     req.session.user = newUser
     res.render('profile', { firstName, lastName, username, email, gender })
   }
@@ -158,7 +158,7 @@ app.get('/logout', (req, res) => {
 
 app.post('/delete-account', (req, res) => {
   if (req.session.user) {
-    const users = JSON.parse(fs.readFileSync('../data/users.json', 'utf8'))
+    const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
     const updatedUsers = users.filter(
       (user) => user.username !== req.session.user.username,
     )
@@ -209,7 +209,7 @@ app.post('/watchlist', (req, res) => {
   if (!user) {
     return res.status(401).send({ error: 'User not logged in' })
   }
-  const users = JSON.parse(fs.readFileSync('../data/users.json', 'utf8'))
+  const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
   const currentUserIndex = users.findIndex((u) => u.username === user.username)
   const movieIndex = users[currentUserIndex]['movie-watchlist'].findIndex(
     (m) => m.id === movie.id,
@@ -231,7 +231,7 @@ app.get('/watchlist', (req, res) => {
     return res.redirect('/login')
   }
 
-  const users = JSON.parse(fs.readFileSync('../data/users.json', 'utf8'))
+  const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
   const currentUser = users.find(
     (user) => user.username === req.session.user.username,
   )
@@ -282,7 +282,7 @@ app.get('/watchlist', (req, res) => {
 
 app.get('/get-user-watchlist', (req, res) => {
   if (req.session.user) {
-    const users = JSON.parse(fs.readFileSync('../data/users.json', 'utf8'))
+    const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
     const currentUser = users.find(
       (u) => u.username === req.session.user.username,
     )
@@ -300,7 +300,7 @@ app.get('/get-user-watchlist', (req, res) => {
 app.post('/toggle-movies-watchlist', (req, res) => {
   if (req.session.user) {
     const movieId = parseInt(req.body.movieId)
-    const users = JSON.parse(fs.readFileSync('../data/users.json', 'utf8'))
+    const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
     const currentUserIndex = users.findIndex(
       (u) => u.username === req.session.user.username,
     )
@@ -319,7 +319,7 @@ app.post('/toggle-movies-watchlist', (req, res) => {
       }
 
       users[currentUserIndex] = currentUser
-      fs.writeFileSync('../data/users.json', JSON.stringify(users, null, 2))
+      fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2))
 
       res.json({ 'movie-watchlist': currentUser['movie-watchlist'] })
     } else {
@@ -333,7 +333,7 @@ app.post('/toggle-movies-watchlist', (req, res) => {
 app.post('/toggle-series-watchlist', (req, res) => {
   if (req.session.user) {
     const serieId = parseInt(req.body.serieId)
-    const users = JSON.parse(fs.readFileSync('../data/users.json', 'utf8'))
+    const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
     const currentUserIndex = users.findIndex(
       (u) => u.username === req.session.user.username,
     )
@@ -352,7 +352,7 @@ app.post('/toggle-series-watchlist', (req, res) => {
       }
 
       users[currentUserIndex] = currentUser
-      fs.writeFileSync('../data/users.json', JSON.stringify(users, null, 2))
+      fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2))
 
       res.json({ 'series-watchlist': currentUser['series-watchlist'] })
     } else {

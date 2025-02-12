@@ -9,20 +9,20 @@ html(lang='de')
     header
       h2 Login
       navRight
-        a.backBtn(href='/') Return to home
-
+        a.returnHomeButton(href='/') Return to home
+ 
     main
       .formContainer
         h2 Welcome back!
-
+ 
         if error
           p.errorMessage= error
-
+ 
         form(action='/login', method='POST')
           .inputContainer
             label(for='username') Username:
             input#username.inputField(type='text', name='username', required)
-
+ 
           .inputContainer
             label(for='password') Password:
             input#password.inputField(
@@ -30,9 +30,9 @@ html(lang='de')
               name='password',
               required
             )
-
+ 
           .formActions
-            button.btn(type='submit') Login
-
+            button.authentificationButton(type='submit') Login
+ 
         p.marginBottom Don't have an account yet?
-          a.registerLink(href='/register') Sign up here
+          a.registerLink.marginLeftSmall(href='/register') Sign up here

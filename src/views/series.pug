@@ -1,14 +1,17 @@
 extends layout.pug
-
+ 
 block content
-  .bodyContainer.marginLeft
+  .bodyContainer.marginLeftLarge
     each group in groupedSerie
       h4.whiteFontColor.marginTop= group.letter
       ul.mediaList
         each serie in group.series
           li(data-serie=JSON.stringify(serie))
-            img.mediaCover(src=serie.image, alt=serie.title)
-
+            img.mediaCover(
+              src=serie.image,
+              alt=serie.title
+            )
+ 
   include modal.pug
-
+ 
   script(src='/js/media.js')
