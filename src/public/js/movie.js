@@ -9,15 +9,15 @@ function showMovieDetails(event) {
     const movieImage = movieData.image;
   
     const modal = document.getElementById("mediaPopup");
-    const closeButton = document.querySelector(".closeBtn"); // Changed here
+    const closeButton = document.querySelector(".closeBtn");
   
-    document.getElementById("mediaTitle").textContent = movieTitle; // Changed here
-    document.getElementById("mediaImage").src = movieImage; // Changed here
-    document.getElementById("mediaDescription").textContent = movieDescription; // Changed here
-    document.getElementById("mediaGenre").textContent = "Genre: " + movieGenre; // Changed here
-    document.getElementById("mediaRanking").textContent = "Ranking: " + movieData.ranking; // Changed here
-    document.getElementById("mediaDirector").textContent = "Director: " + movieData.director; // Changed here
-    document.getElementById("mediaReleased").textContent = "Released: " + movieData.released; // Changed here
+    document.getElementById("mediaTitle").textContent = movieTitle;
+    document.getElementById("mediaImage").src = movieImage;
+    document.getElementById("mediaDescription").textContent = movieDescription;
+    document.getElementById("mediaGenre").textContent = "Genre: " + movieGenre;
+    document.getElementById("mediaRanking").textContent = "Ranking: " + movieData.ranking;
+    document.getElementById("mediaDirector").textContent = "Director: " + movieData.director;
+    document.getElementById("mediaReleased").textContent = "Released: " + movieData.released;
   
     const bookmarkButton = modal.querySelector(".bookmarkButton");
     const bookmarkImg = bookmarkButton.querySelector("img");

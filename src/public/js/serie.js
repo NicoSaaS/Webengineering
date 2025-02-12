@@ -21,15 +21,15 @@ function showSerieDetails(event) {
   const serieImage = serieData.image;
 
   const modal = document.getElementById('mediaPopup');
-  const closeButton = document.querySelector('.closeBtn'); // Changed here
+  const closeButton = document.querySelector('.closeBtn');
 
-  document.getElementById('mediaTitle').textContent = serieTitle; // Changed here
-  document.getElementById('mediaImage').src = serieImage; // Changed here
-  document.getElementById('mediaDescription').textContent = 'Description: ' + serieDescription; // Changed here
-  document.getElementById('mediaGenre').textContent = 'Genre: ' + serieGenre; // Changed here
-  document.getElementById('mediaRanking').textContent = 'Ranking: ' + serieData.ranking; // Changed here
-  document.getElementById('mediaDirector').textContent = 'Director: ' + serieData.director; // Changed here
-  document.getElementById('mediaReleased').textContent = 'Released: ' + serieData.released; // Changed here
+  document.getElementById('mediaTitle').textContent = serieTitle;
+  document.getElementById('mediaImage').src = serieImage;
+  document.getElementById('mediaDescription').textContent = 'Description: ' + serieDescription;
+  document.getElementById('mediaGenre').textContent = 'Genre: ' + serieGenre;
+  document.getElementById('mediaRanking').textContent = 'Ranking: ' + serieData.ranking;
+  document.getElementById('mediaDirector').textContent = 'Director: ' + serieData.director;
+  document.getElementById('mediaReleased').textContent = 'Released: ' + serieData.released;
 
 
   const bookmarkButton = modal.querySelector('.bookmarkButton');
