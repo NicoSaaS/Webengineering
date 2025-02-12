@@ -53,3 +53,5 @@ Darauf achten:
 
 npm install express pug
 npm install express-session
+
+npm start 
