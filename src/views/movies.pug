@@ -7,10 +7,7 @@ block content
       ul.mediaList
         each movie in group.movies
           li.movieItem(data-movie=JSON.stringify(movie))
-            img.mediaCover(
-              src=movie.image,
-              alt=movie.title
-            )
+            img.mediaCover(src=movie.image, alt=movie.title)
 
   include modal.pug
 

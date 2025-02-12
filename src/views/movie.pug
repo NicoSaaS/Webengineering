@@ -1,10 +1,7 @@
 ul.mediaList
-      each movie in movies
-        li(data-movie=JSON.stringify(movie))
-          if(showRanking)
-            h4= movie.ranking + '. '
-          img.mediaCover(
-            src=movie.image,
-            alt=movie.title
-          )
+  each movie in movies
+    li(data-movie=JSON.stringify(movie))
+      if (showRanking)
+        h4= movie.ranking + '. '
+      img.mediaCover(src=movie.image, alt=movie.title)
 script(src='/js/media.js')
