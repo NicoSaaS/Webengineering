@@ -1,192 +1,252 @@
 [
-  {
-    "id": 0,
-    "title": "F.R.I.E.N.D.S",
-    "image": "/img/seriescovers/friends.jpg",
-    "ranking": 1,
-    "description": "A classic sitcom about six friends in New York navigating life, love, and hilarious misadventures.",
-    "genre": "Comedy",
-    "director": "Marta Kauffman, David Crane",
-    "released": "1994"
-  },
-  {
-    "id": 1,
-    "title": "Squid Game",
-    "image": "/img/seriescovers/squid_game.jpg",
-    "ranking": 2,
-    "description": "A South Korean thriller where financially desperate individuals compete in deadly children's games for a massive cash prize.",
-    "genre": "Thriller",
-    "director": "Hwang Dong-hyuk",
-    "released": "2021"
-  },
-  {
-    "id": 2,
-    "title": "The Rookie",
-    "image": "/img/seriescovers/the_rookie.jpg",
-    "ranking": 3,
-    "description": "A crime drama about a 40-year-old man who becomes the oldest rookie in the Los Angeles police force.",
-    "genre": "Crime, Drama",
-    "director": "Alexi Hawley",
-    "released": "2018"
-  },
-  {
-    "id": 3,
-    "title": "Arcane",
-    "image": "/img/seriescovers/arcane.jpg",
-    "ranking": 4,
-    "description": "A visually stunning animated series exploring the origins of League of Legends champions in the city of Piltover and the undercity Zaun.",
-    "genre": "Animation, Fantasy",
-    "director": "Christian Linke, Alex Yee, JB Blanc",
-    "released": "2021"
-  },
-  {
-    "id": 4,
-    "title": "Black Mirror",
-    "image": "/img/seriescovers/blackmirror.jpg",
-    "ranking": 5,
-    "description": "A thought-provoking anthology series exploring the dark side of technology and human nature.",
-    "genre": "Sci-Fi, Thriller",
-    "director": "Charlie Brooker",
-    "released": "2011"
-  },
-  {
-    "id": 5,
-    "title": "Breaking Bad",
-    "image": "/img/seriescovers/breakingbad.jpg",
-    "ranking": 6,
-    "description": "A gripping drama following a high school chemistry teacher turned methamphetamine producer.",
-    "genre": "Crime, Drama",
-    "director": "Vince Gilligan",
-    "released": "2008"
-  },
-  {
-    "id": 6,
-    "title": "Community",
-    "image": "/img/seriescovers/community.jpg",
-    "ranking": 7,
-    "description": "A meta-humor-filled sitcom about an unlikely group of students at a community college.",
-    "genre": "Comedy",
-    "director": "Dan Harmon",
-    "released": "2009"
-  },
-  {
-    "id": 7,
-    "title": "Doctor Who",
-    "image": "/img/seriescovers/drwho.jpg",
-    "ranking": 8,
-    "description": "A long-running sci-fi series following the adventures of the Doctor, a time-traveling alien exploring the universe.",
-    "genre": "Sci-Fi, Adventure",
-    "director": "Sydney Newman, C. E. Webber, Donald Wilson",
-    "released": "1963"
-  },
-  {
-    "id": 8,
-    "title": "DuckTales",
-    "image": "/img/seriescovers/ducktales.jpg",
-    "ranking": 9,
-    "description": "An animated adventure following Scrooge McDuck and his nephews on treasure-hunting quests.",
-    "genre": "Animation, Adventure",
-    "director": "Jymn Magon, Bob Hathcock, Alan Zaslove",
-    "released": "1987"
-  },
-  {
-    "id": 9,
-    "title": "Family Guy",
-    "image": "/img/seriescovers/familyguy.jpg",
-    "ranking": 10,
-    "description": "An animated sitcom about the Griffin family and their satirical take on American life.",
-    "genre": "Animation, Comedy",
-    "director": "Seth MacFarlane, David Zuckerman",
-    "released": "1999"
-  },
-  {
-    "id": 10,
-    "title": "For All Mankind",
-    "image": "/img/seriescovers/forallmankind.jpg",
-    "ranking": 11,
-    "description": "An alternate history drama exploring what would have happened if the Soviet Union had landed on the Moon first.",
-    "genre": "Sci-Fi, Drama",
-    "director": "Ronald D. Moore, Ben Nedivi, Matt Wolpert",
-    "released": "2019"
-  },
-  {
-    "id": 11,
-    "title": "Game of Thrones",
-    "image": "/img/seriescovers/gameofthrones.jpg",
-    "ranking": 12,
-    "description": "A fantasy epic based on George R.R. Martin's novels, depicting the power struggles between noble families.",
-    "genre": "Fantasy, Drama",
-    "director": "David Benioff, D.B. Weiss, George R.R. Martin, etc.",
-    "released": "2011"
-  },
-  {
-    "id": 12,
-    "title": "Gravity Falls",
-    "image": "/img/seriescovers/gravityfalls.jpg",
-    "ranking": 13,
-    "description": "A mystery-filled animated series following twins Dipper and Mabel in a strange Oregon town.",
-    "genre": "Animation, Adventure",
-    "director": "Alex Hirsch",
-    "released": "2012"
-  },
-  {
-    "id": 13,
-    "title": "Police Squad!",
-    "image": "/img/seriescovers/policesquad.jpg",
-    "ranking": 14,
-    "description": "A hilarious parody of police procedurals starring Leslie Nielsen.",
-    "genre": "Comedy",
-    "director": "Jim Abrahams, David Zucker, Jerry Zucker",
-    "released": "1982"
-  },
-  {
-    "id": 14,
-    "title": "Stranger Things",
-    "image": "/img/seriescovers/strangerthings.jpg",
-    "ranking": 15,
-    "description": "A supernatural thriller about a group of kids uncovering government secrets and strange occurrences in their town.",
-    "genre": "Sci-Fi, Horror",
-    "director": "The Duffer Brothers",
-    "released": "2016"
-  },
-  {
-    "id": 15,
-    "title": "The Mandalorian",
-    "image": "/img/seriescovers/themandalorian.jpg",
-    "ranking": 16,
-    "description": "A Star Wars series following the journey of a lone bounty hunter in the galaxy's outer reaches.",
-    "genre": "Sci-Fi, Adventure",
-    "director": "Jon Favreau, Dave Filoni, Rick Famuyiwa, etc.",
-    "released": "2019"
-  },
-  {
-    "id": 16,
-    "title": "The Simpsons",
-    "image": "/img/seriescovers/thesimpsons.jpg",
-    "ranking": 17,
-    "description": "A satirical animated sitcom about the everyday lives of the Simpson family.",
-    "genre": "Animation, Comedy",
-    "director": "Matt Groening, James L. Brooks, Sam Simon",
-    "released": "1989"
-  },
-  {
-    "id": 17,
-    "title": "The Witcher",
-    "image": "/img/seriescovers/thewitcher.jpg",
-    "ranking": 18,
-    "description": "A fantasy series following the monster hunter Geralt of Rivia as he navigates a war-torn world.",
-    "genre": "Fantasy, Adventure",
-    "director": "Alik Sakharov, Alex Garcia Lopez, Charlotte Brändström, etc.",
-    "released": "2019"
-  },
-  {
-    "id": 18,
-    "title": "Tulsa King",
-    "image": "/img/seriescovers/tulsaking.jpg",
-    "ranking": 19,
-    "description": "A crime drama starring Sylvester Stallone as a mob boss rebuilding his empire in Tulsa.",
-    "genre": "Crime, Drama",
-    "director": "Sylvester Stallone",
-    "released": "2022"
-  }
+    {
+        "id": 0,
+        "title": "F.R.I.E.N.D.S",
+        "image": "/img/seriescovers/friends.jpg",
+        "ranking": 1,
+        "description": "A classic sitcom about six friends in New York navigating life, love, and hilarious misadventures.",
+        "genre": "Comedy",
+        "director": "Marta Kauffman, David Crane",
+        "released": "1994"
+    },
+    {
+        "id": 1,
+        "title": "Squid Game",
+        "image": "/img/seriescovers/squid_game.jpg",
+        "ranking": 2,
+        "description": "A South Korean thriller where financially desperate individuals compete in deadly children's games for a massive cash prize.",
+        "genre": "Thriller",
+        "director": "Hwang Dong-hyuk",
+        "released": "2021"
+    },
+    {
+        "id": 2,
+        "title": "The Rookie",
+        "image": "/img/seriescovers/the_rookie.jpg",
+        "ranking": 3,
+        "description": "A crime drama about a 40-year-old man who becomes the oldest rookie in the Los Angeles police force.",
+        "genre": "Crime, Drama",
+        "director": "Alexi Hawley",
+        "released": "2018"
+    },
+    {
+        "id": 3,
+        "title": "Arcane",
+        "image": "/img/seriescovers/arcane.jpg",
+        "ranking": 4,
+        "description": "A visually stunning animated series exploring the origins of League of Legends champions in the city of Piltover and the undercity Zaun.",
+        "genre": "Animation, Fantasy",
+        "director": "Christian Linke, Alex Yee, JB Blanc",
+        "released": "2021"
+    },
+    {
+        "id": 4,
+        "title": "Black Mirror",
+        "image": "/img/seriescovers/blackmirror.jpg",
+        "ranking": 5,
+        "description": "A thought-provoking anthology series exploring the dark side of technology and human nature.",
+        "genre": "Sci-Fi, Thriller",
+        "director": "Charlie Brooker",
+        "released": "2011"
+    },
+    {
+        "id": 5,
+        "title": "Breaking Bad",
+        "image": "/img/seriescovers/breakingbad.jpg",
+        "ranking": 6,
+        "description": "A gripping drama following a high school chemistry teacher turned methamphetamine producer.",
+        "genre": "Crime, Drama",
+        "director": "Vince Gilligan",
+        "released": "2008"
+    },
+    {
+        "id": 6,
+        "title": "Community",
+        "image": "/img/seriescovers/community.jpg",
+        "ranking": 7,
+        "description": "A meta-humor-filled sitcom about an unlikely group of students at a community college.",
+        "genre": "Comedy",
+        "director": "Dan Harmon",
+        "released": "2009"
+    },
+    {
+        "id": 7,
+        "title": "Doctor Who",
+        "image": "/img/seriescovers/drwho.jpg",
+        "ranking": 8,
+        "description": "A long-running sci-fi series following the adventures of the Doctor, a time-traveling alien exploring the universe.",
+        "genre": "Sci-Fi, Adventure",
+        "director": "Sydney Newman, C. E. Webber, Donald Wilson",
+        "released": "1963"
+    },
+    {
+        "id": 8,
+        "title": "DuckTales",
+        "image": "/img/seriescovers/ducktales.jpg",
+        "ranking": 9,
+        "description": "An animated adventure following Scrooge McDuck and his nephews on treasure-hunting quests.",
+        "genre": "Animation, Adventure",
+        "director": "Jymn Magon, Bob Hathcock, Alan Zaslove",
+        "released": "1987"
+    },
+    {
+        "id": 9,
+        "title": "Family Guy",
+        "image": "/img/seriescovers/familyguy.jpg",
+        "ranking": 10,
+        "description": "An animated sitcom about the Griffin family and their satirical take on American life.",
+        "genre": "Animation, Comedy",
+        "director": "Seth MacFarlane, David Zuckerman",
+        "released": "1999"
+    },
+    {
+        "id": 10,
+        "title": "For All Mankind",
+        "image": "/img/seriescovers/forallmankind.jpg",
+        "ranking": 11,
+        "description": "An alternate history drama exploring what would have happened if the Soviet Union had landed on the Moon first.",
+        "genre": "Sci-Fi, Drama",
+        "director": "Ronald D. Moore, Ben Nedivi, Matt Wolpert",
+        "released": "2019"
+    },
+    {
+        "id": 11,
+        "title": "Game of Thrones",
+        "image": "/img/seriescovers/gameofthrones.jpg",
+        "ranking": 12,
+        "description": "A fantasy epic based on George R.R. Martin's novels, depicting the power struggles between noble families.",
+        "genre": "Fantasy, Drama",
+        "director": "David Benioff, D.B. Weiss, George R.R. Martin, etc.",
+        "released": "2011"
+    },
+    {
+        "id": 12,
+        "title": "Gravity Falls",
+        "image": "/img/seriescovers/gravityfalls.jpg",
+        "ranking": 13,
+        "description": "A mystery-filled animated series following twins Dipper and Mabel in a strange Oregon town.",
+        "genre": "Animation, Adventure",
+        "director": "Alex Hirsch",
+        "released": "2012"
+    },
+    {
+        "id": 13,
+        "title": "Police Squad!",
+        "image": "/img/seriescovers/policesquad.jpg",
+        "ranking": 14,
+        "description": "A hilarious parody of police procedurals starring Leslie Nielsen.",
+        "genre": "Comedy",
+        "director": "Jim Abrahams, David Zucker, Jerry Zucker",
+        "released": "1982"
+    },
+    {
+        "id": 14,
+        "title": "Stranger Things",
+        "image": "/img/seriescovers/strangerthings.jpg",
+        "ranking": 15,
+        "description": "A supernatural thriller about a group of kids uncovering government secrets and strange occurrences in their town.",
+        "genre": "Sci-Fi, Horror",
+        "director": "The Duffer Brothers",
+        "released": "2016"
+    },
+    {
+        "id": 15,
+        "title": "The Mandalorian",
+        "image": "/img/seriescovers/themandalorian.jpg",
+        "ranking": 16,
+        "description": "A Star Wars series following the journey of a lone bounty hunter in the galaxy's outer reaches.",
+        "genre": "Sci-Fi, Adventure",
+        "director": "Jon Favreau, Dave Filoni, Rick Famuyiwa, etc.",
+        "released": "2019"
+    },
+    {
+        "id": 16,
+        "title": "The Simpsons",
+        "image": "/img/seriescovers/thesimpsons.jpg",
+        "ranking": 17,
+        "description": "A satirical animated sitcom about the everyday lives of the Simpson family.",
+        "genre": "Animation, Comedy",
+        "director": "Matt Groening, James L. Brooks, Sam Simon",
+        "released": "1989"
+    },
+    {
+        "id": 17,
+        "title": "The Witcher",
+        "image": "/img/seriescovers/thewitcher.jpg",
+        "ranking": 18,
+        "description": "A fantasy series following the monster hunter Geralt of Rivia as he navigates a war-torn world.",
+        "genre": "Fantasy, Adventure",
+        "director": "Alik Sakharov, Alex Garcia Lopez, Charlotte Brändström, etc.",
+        "released": "2019"
+    },
+    {
+        "id": 18,
+        "title": "Tulsa King",
+        "image": "/img/seriescovers/tulsaking.jpg",
+        "ranking": 19,
+        "description": "A crime drama starring Sylvester Stallone as a mob boss rebuilding his empire in Tulsa.",
+        "genre": "Crime, Drama",
+        "director": "Sylvester Stallone",
+        "released": "2022"
+    },
+    {
+        "id": 19,
+        "title": "Bluey",
+        "image": "/img/seriescovers/bluey.jpg",
+        "ranking": 20,
+        "description": "An animated series about a Blue Heeler puppy and her adventures with family and friends.",
+        "genre": "Animation",
+        "director": "Joe Brumm",
+        "released": "2018"
+      },
+      {
+        "id": 20,
+        "title": "Chernobyl",
+        "image": "/img/seriescovers/chernobyl.jpg",
+        "ranking": 21,
+        "description": "A gripping historical drama about the 1986 nuclear disaster and its aftermath.",
+        "genre": "Drama",
+        "director": "Johan Renck",
+        "released": "2019"
+      },
+      {
+        "id": 21,
+        "title": "Das Boot",
+        "image": "/img/seriescovers/dasboot.jpg",
+        "ranking": 22,
+        "description": "A war drama following the crew of a German U-boat during World War II.",
+        "genre": "Drama",
+        "director": "Andreas Prochaska",
+        "released": "2018"
+      },
+      {
+        "id": 22,
+        "title": "Dr. House",
+        "image": "/img/seriescovers/drhouse.jpg",
+        "ranking": 23,
+        "description": "A medical drama about a brilliant but misanthropic doctor solving complex cases.",
+        "genre": "Drama",
+        "director": "David Shore",
+        "released": "2004"
+      },
+      {
+        "id": 23,
+        "title": "Impractical Jokers",
+        "image": "/img/seriescovers/impracticaljokers.jpg",
+        "ranking": 24,
+        "description": "A comedy reality show where four lifelong friends challenge each other to hilarious dares.",
+        "genre": "Comedy",
+        "director": "Peter Fowkes",
+        "released": "2011"
+      },
+      {
+        "id": 24,
+        "title": "Severance",
+        "image": "/img/seriescovers/severance.jpg",
+        "ranking": 25,
+        "description": "A mind-bending thriller about employees who undergo a procedure to separate their work and personal memories.",
+        "genre": "Sci-Fi",
+        "director": "Ben Stiller, Aoife McArdle",
+        "released": "2022"
+      }
 ]

@@ -398,5 +398,105 @@
     "genre": "Drama",
     "director": "John Lee Hancock",
     "released": "2016"
+  },
+  {
+    "id": 40,
+    "title": "Alles steht Kopf",
+    "image": "/img/moviecovers/allesstehtkopf.jpg",
+    "ranking": 41,
+    "description": "A heartwarming animated film about the emotions of a young girl.",
+    "genre": "Animation",
+    "director": "Pete Docter",
+    "released": "2015"
+  },
+  {
+    "id": 41,
+    "title": "A World Beyond",
+    "image": "/img/moviecovers/aworldbeyond.jpg",
+    "ranking": 42,
+    "description": "A futuristic adventure about a mysterious parallel world.",
+    "genre": "Sci-Fi",
+    "director": "Brad Bird",
+    "released": "2015"
+  },
+  {
+    "id": 42,
+    "title": "BlackBerry",
+    "image": "/img/moviecovers/blackberry.jpg",
+    "ranking": 43,
+    "description": "The story of the rise and fall of the iconic smartphone.",
+    "genre": "Drama",
+    "director": "Matt Johnson",
+    "released": "2023"
+  },
+  {
+    "id": 43,
+    "title": "Cats",
+    "image": "/img/moviecovers/cats.jpg",
+    "ranking": 44,
+    "description": "The film adaptation of the famous musical featuring CGI cats.",
+    "genre": "Musical",
+    "director": "Tom Hooper",
+    "released": "2019"
+  },
+  {
+    "id": 44,
+    "title": "DuckTales: Der Film – Jäger der verlorenen Lampe",
+    "image": "/img/moviecovers/ducktalesderfilmjaegerderverlorenenlampe.jpg",
+    "ranking": 45,
+    "description": "An exciting adventure with Scrooge McDuck and his nephews.",
+    "genre": "Animation",
+    "director": "Bob Hathcock",
+    "released": "1990"
+  },
+  {
+    "id": 45,
+    "title": "Jojo Rabbit",
+    "image": "/img/moviecovers/jojorabbit.jpg",
+    "ranking": 46,
+    "description": "A satirical dramedy about a boy in Nazi Germany.",
+    "genre": "Drama",
+    "director": "Taika Waititi",
+    "released": "2019"
+  },
+  {
+    "id": 46,
+    "title": "Kingsman: The Secret Service",
+    "image": "/img/moviecovers/kingsmanthesecretservice.jpg",
+    "ranking": 47,
+    "description": "An action-packed spy film with British charm.",
+    "genre": "Action",
+    "director": "Matthew Vaughn",
+    "released": "2014"
+  },
+  {
+    "id": 47,
+    "title": "Minecraft",
+    "image": "/img/moviecovers/minecraft.jpg",
+    "ranking": 48,
+    "description": "The film adaptation of the popular sandbox game.",
+    "genre": "Adventure",
+    "director": "Jared Hess",
+    "released": "2025"
+  },
+  {
+    "id": 48,
+    "title": "Ratatouille",
+    "image": "/img/moviecovers/ratatouille.jpg",
+    "ranking": 49,
+    "description": "A heartwarming animated film about a rat who dreams of being a chef.",
+    "genre": "Animation",
+    "director": "Brad Bird",
+    "released": "2007"
+  },
+  {
+    "id": 49,
+    "title": "Der Schatzplanet",
+    "image": "/img/moviecovers/schatzplanet.jpg",
+    "ranking": 50,
+    "description": "A sci-fi adaptation of the classic adventure 'Treasure Island'.",
+    "genre": "Animation",
+    "director": "Ron Clements, John Musker",
+    "released": "2002"
   }
 ]
