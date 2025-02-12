@@ -1,4 +1,5 @@
 ### Grober Ablauf
+
 1. Ideensammlung: Was für eine Web-Applikation wollen wir bauen?
 2. Konzeptüberlegung und Featureauswahl
 3. Ordnerstruktur erstellen

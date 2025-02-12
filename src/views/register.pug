@@ -1,51 +1,59 @@
 doctype html
-html(lang="de")
+html(lang='de')
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Register
-    link(rel="stylesheet", href="/css/styles.css")
+    link(rel='stylesheet', href='/css/styles.css')
   body
     header
       h2 Register!
-    
+
     main
-      .form-container
+      .formContainer
         h2 Create a new account
         if errorMessage
-          p.error-message(style="color: red;") #{errorMessage}
-        form(action="/register", method="POST")
-          .input-container
-            label(for="firstName") Firstname:
-            input(type="text", id="firstName", name="firstName", class="input-field", required)
-          
-          .input-container
-            label(for="lastName") Lastname:
-            input(type="text", id="lastName", name="lastName", class="input-field", required)
-          
-          .input-container
-            label(for="gender") Gender:
-            select(id="gender", name="gender", class="input-field", required)
-              option(value="male") Male
-              option(value="female") Female
-              option(value="other") other
-          
-          .input-container
-            label(for="email") E-Mail:
-            input(type="email", id="email", name="email", class="input-field", required)
-          
-          .input-container
-            label(for="username") Username:
-            input(type="text", id="username", name="username", class="input-field", required)
-          
-          .input-container
-            label(for="password") Password:
-            input(type="password", id="password", name="password", class="input-field", required)
-          
-          .form-actions
-            button(type="submit", class="btn") Register
+          p.errorMessage(style='color: red') #{errorMessage}
+        form(action='/register', method='POST')
+          .inputContainer
+            label(for='firstName') Firstname:
+            input#firstName.inputField(
+              type='text',
+              name='firstName',
+              required
+            )
+
+          .inputContainer
+            label(for='lastName') Lastname:
+            input#lastName.inputField(type='text', name='lastName', required)
+
+          .inputContainer
+            label(for='gender') Gender:
+            select#gender.inputField(name='gender', required)
+              option(value='male') Male
+              option(value='female') Female
+              option(value='other') other
+
+          .inputContainer
+            label(for='email') E-Mail:
+            input#email.inputField(type='email', name='email', required)
+
+          .inputContainer
+            label(for='username') Username:
+            input#username.inputField(type='text', name='username', required)
+
+          .inputContainer
+            label(for='password') Password:
+            input#password.inputField(
+              type='password',
+              name='password',
+              required
+            )
+
+          .formActions
+            button.btn(type='submit') Register
 
         p.marginBottom Already have an account?
-          a.register-link(href="/login") Login here.
-        
-        a.back-btn(href="/") Return to home page.
+          a.registerLink(href='/login') Login here.
+
+        a.backBtn(href='/') Return to home page.

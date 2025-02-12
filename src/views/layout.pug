@@ -1,44 +1,51 @@
 doctype html
-html(lang="de")
+html(lang='de')
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title CineCanvas
-    link(rel="stylesheet", href="/css/styles.css")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
-    link(rel="icon" type="image/png" href="/icon/favicon.png")
-    link(rel="icon" type="image/x-icon" href="/icon/favicon.ico")
-    link(rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png")
-    link(rel="manifest" href="/icon/site.webmanifest")
+    link(rel='stylesheet', href='/css/styles.css')
+    link(
+      rel='stylesheet',
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'
+    )
+    link(rel='icon', type='image/png', href='/icon/favicon.png')
+    link(rel='icon', type='image/x-icon', href='/icon/favicon.ico')
+    link(
+      rel='apple-touch-icon',
+      sizes='180x180',
+      href='/icon/apple-touch-icon.png'
+    )
+    link(rel='manifest', href='/icon/site.webmanifest')
   body
-header
-  h1
-    a.logo-container(href="/")
-      img.logo(src="/icon/favicon.png" alt="Logo")
-    span.site-title CineCanvas
-  button.menu-toggle(onclick="toggleMenu()") ☰
-  input#menu-checkbox(type="checkbox" hidden)
-  nav
-    ul.nav_left
-      li 
-        a(href="/" class=active_tab === 'home' ? 'active' : '') Home
-      li
-        a(href="/movies" class=active_tab === 'movies' ? 'active' : '') Movies
-      li
-        a(href="/series" class=active_tab === 'series' ? 'active' : '') Series
-      li
-        a(href="/watchlist" class=active_tab === 'watchlist' ? 'active' : '') Watchlist
-      li
-        a.profile-icon(href="/profile")
-          i.fas.fa-user
+    header
+      h1
+        a.logoContainer(href='/')
+          img.logo(src='/icon/favicon.png', alt='Logo')
+        span.siteTitle CineCanvas
+      button.menuToggle(onclick='toggleMenu()') ☰
+      input#menu-checkbox(type='checkbox', hidden)
+      nav
+        ul.navLeft
+          li
+            a(href='/', class=active_tab === 'home' ? 'active' : '') Home
+          li
+            a(href='/movies', class=active_tab === 'movies' ? 'active' : '') Movies
+          li
+            a(href='/series', class=active_tab === 'series' ? 'active' : '') Series
+          li
+            a(href='/watchlist', class=active_tab === 'watchlist' ? 'active' : '') Watchlist
+          li
+            a.profileIcon(href='/profile')
+              i.fas.fa-user
 
-block content
+    block content
 
-footer
-    p &copy; 2025 CineCanvas. All rights reserved.
-        div.footer-author
-          p Hannes Klas
-          p Tobias Weihing
-          p Nico Prang
+    footer
+      p &copy; 2025 CineCanvas. All rights reserved.
+      .footerAuthor
+        p Hannes Klas
+        p Tobias Weihing
+        p Nico Prang
 
-script(src="/js/header.js")
+    script(src='/js/header.js')
