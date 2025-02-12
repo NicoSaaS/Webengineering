@@ -597,3 +597,39 @@ form {
     font-size: 1rem;
     margin-bottom: 1rem;
 }
+
+footer {
+    background-color: #222; /* Dunkler Hintergrund für den Footer */
+    color: #fff; /* Weiße Schrift */
+    padding: 20px;
+    width: auto;
+    font-size: 14px; /* Kleinere Schriftgröße für den Footer */
+    display: flex;
+    justify-content: space-between; /* Abstand zwischen Links und Copyright */
+    flex-wrap: wrap; /* Ermöglicht Flexbox in mehreren Reihen bei kleinen Bildschirmen */
+  }
+  
+  .footer-container {
+    width: 100%; /* Maximalbreite für besseren Inhalt auf größeren Bildschirmen */
+    margin: 0; /* Zentriert den Footer */
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-nav li a:hover {
+    color: #1e90ff; /* Hover-Farbe für Links */
+  }
+  
+  .footer-nav li a:active {
+    color: #ff6347; /* Aktive Link-Farbe */
+  }
+  
