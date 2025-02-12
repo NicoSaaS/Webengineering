@@ -1,15 +1,15 @@
 doctype html
-html(lang="de")
+html(lang='de')
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Profile
-    link(rel="stylesheet", href="/css/styles.css")
+    link(rel='stylesheet', href='/css/styles.css')
   body
-    header 
+    header
       h2 Profile from #{firstName}
       .nav_right
-        a.back-btn(href="/") Return to home
+        a.back-btn(href='/') Return to home
 
     main
       .profile-container
@@ -17,24 +17,27 @@ html(lang="de")
           .profile-item
             strong First Name:
             p #{firstName}
-          
+
           .profile-item
             strong Last Name:
             p #{lastName}
-          
+
           .profile-item
             strong Username:
             p #{username}
-          
+
           .profile-item
             strong Email:
             p #{email}
-          
+
           .profile-item
             strong Gender:
             p #{gender}
 
         .form-actions
-          a.btn(href="/logout") Logout
-          form(action="/delete-account", method="POST")
-            button(type="submit", class="delete-btn", onclick="return confirm('Bist du sicher, dass du deinen Account löschen möchtest?')") Account löschen
+          a.btn(href='/logout') Logout
+          form(action='/delete-account', method='POST')
+            button.delete-btn(
+              type='submit',
+              onclick='return confirm(\'Bist du sicher, dass du deinen Account löschen möchtest?\')'
+            ) Account löschen

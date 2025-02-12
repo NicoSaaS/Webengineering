@@ -1,35 +1,38 @@
 doctype html
-html(lang="de")
+html(lang='de')
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Login
-    link(rel="stylesheet", href="/css/styles.css")
+    link(rel='stylesheet', href='/css/styles.css')
   body
     header
       h2 Login
       nav_right
-        a.back-btn(href="/") Return to home
-    
+        a.back-btn(href='/') Return to home
+
     main
       .form-container
         h2 Welcome back!
 
         if error
           p.error-message= error
-          
-        form(action="/login", method="POST")
+
+        form(action='/login', method='POST')
           .input-container
-            label(for="username") Username:
-            input(type="text", id="username", name="username", class="input-field", required)
-          
+            label(for='username') Username:
+            input#username.input-field(type='text', name='username', required)
+
           .input-container
-            label(for="password") Password:
-            input(type="password", id="password", name="password", class="input-field", required)
-          
+            label(for='password') Password:
+            input#password.input-field(
+              type='password',
+              name='password',
+              required
+            )
+
           .form-actions
-            button(type="submit", class="btn") Login
-        
+            button.btn(type='submit') Login
+
         p.marginBottom Don't have an account yet?
-          a.register-link(href="/register")  Sign up here
-        
+          a.register-link(href='/register') Sign up here
