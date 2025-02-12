@@ -1,20 +1,20 @@
 extends layout.pug
 
 block content
-    div.body_container.marginLeft
-        h2.blueFontColor.marginTop Movie Ranking of the Month 
-            ul.media_list
+    div.bodyContainer.marginLeftLarge
+        h2.blueFontColor.marginTop Movie Ranking of the Month
+            ul.mediaList
                 each movie in movies
                     li(data-movie=JSON.stringify(movie))
                         h4= movie.ranking + ". "
-                        img.media_cover(src=movie.image, alt=movie.title, onclick="showMovieDetails(event)")
-                    
+                        img.mediaCover(src=movie.image, alt=movie.title, onclick="showMovieDetails(event)")
+
         h2.blueFontColor.marginTop Series Ranking of the Month
-            ul.media_list
+            ul.mediaList
                 each serie in series
                     li(data-serie=JSON.stringify(serie))
                         h4= serie.ranking + ". "
-                        img.media_cover(src=serie.image, alt=serie.title, onclick="showSerieDetails(event)")
+                        img.mediaCover(src=serie.image, alt=serie.title, onclick="showSerieDetails(event)")
 
     include modal.pug
 

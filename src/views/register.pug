@@ -8,44 +8,44 @@ html(lang="de")
   body
     header
       h2 Register!
-    
+      nav_right
+        a.returnHomeButton(href="/") Return to home
+
     main
-      .form-container
+      .formContainer
         h2 Create a new account
         if errorMessage
-          p.error-message(style="color: red;") #{errorMessage}
+          p.authentificationError(style="color: red;") #{errorMessage}
         form(action="/register", method="POST")
-          .input-container
+          .inputContainer
             label(for="firstName") Firstname:
-            input(type="text", id="firstName", name="firstName", class="input-field", required)
-          
-          .input-container
+            input(type="text", id="firstName", name="firstName", class="inputField", required)
+
+          .inputContainer
             label(for="lastName") Lastname:
-            input(type="text", id="lastName", name="lastName", class="input-field", required)
-          
-          .input-container
+            input(type="text", id="lastName", name="lastName", class="inputField", required)
+
+          .inputContainer
             label(for="gender") Gender:
-            select(id="gender", name="gender", class="input-field", required)
+            select(id="gender", name="gender", class="inputField", required)
               option(value="male") Male
               option(value="female") Female
               option(value="other") other
-          
-          .input-container
+
+          .inputContainer
             label(for="email") E-Mail:
-            input(type="email", id="email", name="email", class="input-field", required)
-          
-          .input-container
+            input(type="email", id="email", name="email", class="inputField", required)
+
+          .inputContainer
             label(for="username") Username:
-            input(type="text", id="username", name="username", class="input-field", required)
-          
-          .input-container
+            input(type="text", id="username", name="username", class="inputField", required)
+
+          .inputContainer
             label(for="password") Password:
-            input(type="password", id="password", name="password", class="input-field", required)
-          
-          .form-actions
-            button(type="submit", class="btn") Register
+            input(type="password", id="password", name="password", class="inputField", required)
+
+          .formSubmit
+            button(type="submit", class="authentificationButton") Register
 
         p.marginBottom Already have an account?
-          a.register-link(href="/login") Login here.
-        
-        a.back-btn(href="/") Return to home page.
+          a.registerLink.marginLeftSmall(href="/login") Login here.

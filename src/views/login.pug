@@ -9,27 +9,27 @@ html(lang="de")
     header
       h2 Login
       nav_right
-        a.back-btn(href="/") Return to home
-    
+        a.returnHomeButton(href="/") Return to home
+
     main
-      .form-container
+      .formContainer
         h2 Welcome back!
 
         if error
-          p.error-message= error
-          
+          p.authentificationError= error
+
         form(action="/login", method="POST")
-          .input-container
+          .inputContainer
             label(for="username") Username:
-            input(type="text", id="username", name="username", class="input-field", required)
-          
-          .input-container
+            input(type="text", id="username", name="username", class="inputField", required)
+
+          .inputContainer
             label(for="password") Password:
-            input(type="password", id="password", name="password", class="input-field", required)
-          
-          .form-actions
-            button(type="submit", class="btn") Login
-        
+            input(type="password", id="password", name="password", class="inputField", required)
+
+          .formSubmit
+            button(type="submit", class="authentificationButton") Login
+
         p.marginBottom Don't have an account yet?
-          a.register-link(href="/register")  Sign up here
-        
+          a.registerLink.marginLeftSmall(href="/register") Sign up here
+

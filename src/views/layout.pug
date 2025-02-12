@@ -13,14 +13,14 @@ html(lang="de")
   body
 header
   h1
-    a.logo-container(href="/")
+    a(href="/")
       img.logo(src="/icon/favicon.png" alt="Logo")
     span.site-title CineCanvas
-  button.menu-toggle(onclick="toggleMenu()") ☰
+  button.toggleMenu(onclick="toggleMenu()") ☰
   input#menu-checkbox(type="checkbox" hidden)
   nav
     ul.nav_left
-      li 
+      li
         a(href="/" class=active_tab === 'home' ? 'active' : '') Home
       li
         a(href="/movies" class=active_tab === 'movies' ? 'active' : '') Movies
@@ -29,14 +29,14 @@ header
       li
         a(href="/watchlist" class=active_tab === 'watchlist' ? 'active' : '') Watchlist
       li
-        a.profile-icon(href="/profile")
+        a.profileIcon(href="/profile")
           i.fas.fa-user
 
 block content
 
 footer
     p &copy; 2025 CineCanvas. All rights reserved.
-        div.footer-author
+        div.ownerFooter
           p Hannes Klas
           p Tobias Weihing
           p Nico Prang

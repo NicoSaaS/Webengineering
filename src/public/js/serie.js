@@ -21,15 +21,15 @@ function showSerieDetails(event) {
     const serieImage = serieData.image;
 
     const modal = document.getElementById("mediaPopup");
-    const closeButton = document.querySelector(".close-btn");
+    const closeButton = document.querySelector(".closeButton");
 
-    document.getElementById("media-title").textContent = serieTitle;
-    document.getElementById("media-image").src = serieImage;
-    document.getElementById("media-description").textContent = "Description: " + serieDescription;
-    document.getElementById("media-genre").textContent = "Genre: " + serieGenre;
-    document.getElementById("media-ranking").textContent = "Ranking: " + serieData.ranking;
-    document.getElementById("media-director").textContent = "Director: " + serieData.director;
-    document.getElementById("media-released").textContent = "Released: " + serieData.released;
+    document.getElementById("mediaTitle").textContent = serieTitle;
+    document.getElementById("mediaImage").src = serieImage;
+    document.getElementById("mediaDescription").textContent = "Description: " + serieDescription;
+    document.getElementById("mediaGenre").textContent = "Genre: " + serieGenre;
+    document.getElementById("mediaRanking").textContent = "Ranking: " + serieData.ranking;
+    document.getElementById("mediaDirector").textContent = "Director: " + serieData.director;
+    document.getElementById("mediaReleased").textContent = "Released: " + serieData.released;
 
     const bookmarkButton = modal.querySelector('.bookmarkButton');
     const bookmarkImg = bookmarkButton.querySelector('img');
@@ -65,7 +65,7 @@ function showSerieDetails(event) {
                 window.location.reload();
             }
         })
-        .catch(() => alert("Log in to add Series to the watchlist"));
+        .catch(() => alert("Log in to add series to the watchlist"));
     };
 
     modal.style.display = "block";

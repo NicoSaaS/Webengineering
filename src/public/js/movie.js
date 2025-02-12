@@ -9,15 +9,15 @@ function showMovieDetails(event) {
     const movieImage = movieData.image;
 
     const modal = document.getElementById("mediaPopup");
-    const closeButton = document.querySelector(".close-btn");
+    const closeButton = document.querySelector(".closeButton");
 
-    document.getElementById("media-title").textContent = movieTitle;
-    document.getElementById("media-image").src = movieImage;
-    document.getElementById("media-description").textContent = movieDescription;
-    document.getElementById("media-genre").textContent = "Genre: " + movieGenre;
-    document.getElementById("media-ranking").textContent = "Ranking: " + movieData.ranking;
-    document.getElementById("media-director").textContent = "Director: " + movieData.director;
-    document.getElementById("media-released").textContent = "Released: " + movieData.released;
+    document.getElementById("mediaTitle").textContent = movieTitle;
+    document.getElementById("mediaImage").src = movieImage;
+    document.getElementById("mediaDescription").textContent = movieDescription;
+    document.getElementById("mediaGenre").textContent = "Genre: " + movieGenre;
+    document.getElementById("mediaRanking").textContent = "Ranking: " + movieData.ranking;
+    document.getElementById("mediaDirector").textContent = "Director: " + movieData.director;
+    document.getElementById("mediaReleased").textContent = "Released: " + movieData.released;
 
     const bookmarkButton = modal.querySelector('.bookmarkButton');
     const bookmarkImg = bookmarkButton.querySelector('img');
@@ -53,7 +53,7 @@ function showMovieDetails(event) {
                 window.location.reload();
             }
         })
-        .catch(() => alert("Log in to add Movies to the watchlist"));
+        .catch(() => alert("Log in to add movies to the watchlist"));
     };
 
     modal.style.display = "block";
