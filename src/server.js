@@ -323,85 +323,52 @@ app.get('/get-user-watchlist', (req, res) => {
     if (currentUser) {
       res.json({ user: currentUser })
     } else {
-      res.status(404).send({ error: 'Benutzer nicht gefunden' })
+      res.status(404).json({ user: null })
     }
   } else {
-    res.status(401).send({ error: 'Nicht eingeloggt' })
+    res.json({ user: null })
   }
 })
 
 /**
- * Fügt einen Film zur Watchlist hinzu oder entfernt ihn
- * @route POST /toggle-movies-watchlist
+ * Fügt eine/n Serie/Film zur Watchlist hinzu oder entfernt sie/ihn
+ * @route POST /toggle-watchlist
  */
-app.post('/toggle-movies-watchlist', (req, res) => {
-  if (req.session.user) {
-    const movieId = parseInt(req.body.movieId)
-    const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
-    const currentUserIndex = users.findIndex(
-      (u) => u.username === req.session.user.username,
-    )
-
-    if (currentUserIndex !== -1) {
-      const currentUser = users[currentUserIndex]
-      if (!currentUser['movie-watchlist']) {
-        currentUser['movie-watchlist'] = []
-      }
-      const index = currentUser['movie-watchlist'].indexOf(movieId)
-
-      if (index === -1) {
-        currentUser['movie-watchlist'].push(movieId)
-      } else {
-        currentUser['movie-watchlist'].splice(index, 1)
-      }
-
-      users[currentUserIndex] = currentUser
-      fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2))
-
-      res.json({ 'movie-watchlist': currentUser['movie-watchlist'] })
-    } else {
-      res.status(404).send({ error: 'Benutzer nicht gefunden' })
-    }
-  } else {
-    res.status(401).send({ error: 'Nicht eingeloggt' })
+app.post('/toggle-watchlist', (req, res) => {
+  if (!req.session.user) {
+    return res.json({ success: false, message: 'Nicht eingeloggt' })
   }
-})
 
-/**
- * Fügt eine Serie zur Watchlist hinzu oder entfernt sie
- * @route POST /toggle-series-watchlist
- */
-app.post('/toggle-series-watchlist', (req, res) => {
-  if (req.session.user) {
-    const serieId = parseInt(req.body.serieId)
-    const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
-    const currentUserIndex = users.findIndex(
-      (u) => u.username === req.session.user.username,
-    )
+  const { mediaType, mediaId } = req.body
+  const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
+  const currentUserIndex = users.findIndex(
+    (u) => u.username === req.session.user.username,
+  )
 
-    if (currentUserIndex !== -1) {
-      const currentUser = users[currentUserIndex]
-      if (!currentUser['series-watchlist']) {
-        currentUser['series-watchlist'] = []
-      }
-      const index = currentUser['series-watchlist'].indexOf(serieId)
-
-      if (index === -1) {
-        currentUser['series-watchlist'].push(serieId)
-      } else {
-        currentUser['series-watchlist'].splice(index, 1)
-      }
-
-      users[currentUserIndex] = currentUser
-      fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2))
-
-      res.json({ 'series-watchlist': currentUser['series-watchlist'] })
-    } else {
-      res.status(404).send({ error: 'Benutzer nicht gefunden' })
-    }
-  } else {
-    res.status(401).send({ error: 'Nicht eingeloggt' })
+  if (currentUserIndex === -1) {
+    return res.json({ success: false, message: 'Benutzer nicht gefunden' })
   }
+
+  const currentUser = users[currentUserIndex]
+  const watchlistKey =
+    mediaType === 'movie' ? 'movie-watchlist' : 'series-watchlist'
+
+  if (!currentUser[watchlistKey]) {
+    currentUser[watchlistKey] = []
+  }
+
+  const index = currentUser[watchlistKey].indexOf(mediaId)
+
+  if (index === -1) {
+    currentUser[watchlistKey].push(mediaId)
+  } else {
+    currentUser[watchlistKey].splice(index, 1)
+  }
+
+  users[currentUserIndex] = currentUser
+  fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2))
+
+  res.json({ success: true, [watchlistKey]: currentUser[watchlistKey] })
 })
 
 /**

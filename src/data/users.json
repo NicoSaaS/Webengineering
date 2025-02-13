@@ -7,7 +7,9 @@
     "username": "99",
     "password": "99",
     "movie-watchlist": [
-      0
+      0,
+      2,
+      6
     ],
     "series-watchlist": [
       1,
