@@ -1,3 +1,6 @@
+/**
+ * Importieren der benötigten Module
+ */
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
@@ -6,12 +9,18 @@ const fs = require('fs')
 
 const app = express()
 
+/**
+ * Middleware für das Parsen von Anfragen
+ */
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
 
+/**
+ * Sitzungskonfiguration
+ */
 app.use(
   session({
     secret: 'secret-key',
@@ -21,14 +30,26 @@ app.use(
   }),
 )
 
+/**
+ * Zeigt die Login-Seite an
+ * @route GET /login
+ */
 app.get('/login', (req, res) => {
   res.render('login', { title: 'Login' })
 })
 
+/**
+ * Zeigt die Registrierungsseite an
+ * @route GET /register
+ */
 app.get('/register', (req, res) => {
   res.render('register', { title: 'Register' })
 })
 
+/**
+ * Lädt und zeigt die Filme aus der JSON-Datei an
+ * @route GET /movies
+ */
 app.get('/movies', (req, res) => {
   const moviesFilePath = path.join(__dirname, 'data', 'movies.json')
 
@@ -60,6 +81,10 @@ app.get('/movies', (req, res) => {
   })
 })
 
+/**
+ * Lädt und zeigt die Serien aus der JSON-Datei an
+ * @route GET /series
+ */
 app.get('/series', (req, res) => {
   const serieFilePath = path.join(__dirname, 'data', 'series.json')
 
@@ -91,6 +116,10 @@ app.get('/series', (req, res) => {
   })
 })
 
+/**
+ * Zeigt das Profil des eingeloggten Benutzers an
+ * @route GET /profile
+ */
 app.get('/profile', (req, res) => {
   if (req.session.user) {
     const { firstName, lastName, username, email, gender } = req.session.user
@@ -100,6 +129,10 @@ app.get('/profile', (req, res) => {
   }
 })
 
+/**
+ * Authentifiziert den Benutzer beim Login
+ * @route POST /login
+ */
 app.post('/login', (req, res) => {
   const { username, password } = req.body
   const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
@@ -115,6 +148,10 @@ app.post('/login', (req, res) => {
   }
 })
 
+/**
+ * Registriert einen neuen Benutzer
+ * @route POST /register
+ */
 app.post('/register', (req, res) => {
   const { firstName, lastName, gender, email, username, password } = req.body
   const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
@@ -146,6 +183,10 @@ app.post('/register', (req, res) => {
   }
 })
 
+/**
+ * Meldet den Benutzer ab
+ * @route GET /logout
+ */
 app.get('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -155,6 +196,10 @@ app.get('/logout', (req, res) => {
   })
 })
 
+/**
+ * Löscht das Benutzerkonto
+ * @route POST /delete-account
+ */
 app.post('/delete-account', (req, res) => {
   if (req.session.user) {
     const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
@@ -175,6 +220,10 @@ app.post('/delete-account', (req, res) => {
   }
 })
 
+/**
+ * Zeigt die Startseite mit Filmen und Serien an
+ * @route GET /
+ */
 app.get('/', (req, res) => {
   const moviesFilePath = path.join(__dirname, 'data', 'movies.json')
   const seriesFilePath = path.join(__dirname, 'data', 'series.json')
@@ -202,29 +251,10 @@ app.get('/', (req, res) => {
   })
 })
 
-app.post('/watchlist', (req, res) => {
-  const { movie } = req.body
-  const user = req.session.user
-  if (!user) {
-    return res.status(401).send({ error: 'User not logged in' })
-  }
-  const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
-  const currentUserIndex = users.findIndex((u) => u.username === user.username)
-  const movieIndex = users[currentUserIndex]['movie-watchlist'].findIndex(
-    (m) => m.id === movie.id,
-  )
-  if (movieIndex !== -1) {
-    users[currentUserIndex]['movie-watchlist'].splice(movieIndex, 1)
-  } else {
-    users[currentUserIndex]['movie-watchlist'].push({ id: movie.id })
-  }
-  fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2))
-  res.json({
-    success: true,
-    watchlist: users[currentUserIndex]['movie-watchlist'],
-  })
-})
-
+/**
+ * Zeigt die Watchlist des aktuellen Benutzers an
+ * @route GET /watchlist
+ */
 app.get('/watchlist', (req, res) => {
   if (!req.session.user) {
     return res.redirect('/login')
@@ -279,6 +309,10 @@ app.get('/watchlist', (req, res) => {
   })
 })
 
+/**
+ * Gibt die Watchlist des eingeloggten Benutzers zurück
+ * @route GET /get-user-watchlist
+ */
 app.get('/get-user-watchlist', (req, res) => {
   if (req.session.user) {
     const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
@@ -296,6 +330,10 @@ app.get('/get-user-watchlist', (req, res) => {
   }
 })
 
+/**
+ * Fügt einen Film zur Watchlist hinzu oder entfernt ihn
+ * @route POST /toggle-movies-watchlist
+ */
 app.post('/toggle-movies-watchlist', (req, res) => {
   if (req.session.user) {
     const movieId = parseInt(req.body.movieId)
@@ -329,6 +367,10 @@ app.post('/toggle-movies-watchlist', (req, res) => {
   }
 })
 
+/**
+ * Fügt eine Serie zur Watchlist hinzu oder entfernt sie
+ * @route POST /toggle-series-watchlist
+ */
 app.post('/toggle-series-watchlist', (req, res) => {
   if (req.session.user) {
     const serieId = parseInt(req.body.serieId)
@@ -362,6 +404,9 @@ app.post('/toggle-series-watchlist', (req, res) => {
   }
 })
 
+/**
+ * Startet den Server auf Port 3000
+ */
 app.listen(3000, () => {
   console.log('Server läuft auf http://localhost:3000')
 })
