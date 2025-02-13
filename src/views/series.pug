@@ -1,9 +1,9 @@
 extends layout.pug
- 
+
 block content
   .bodyContainer.marginLeftLarge
     each group in groupedSerie
-      h4.whiteFontColor.marginTop= group.letter
+      h4.whiteFontColor.marginTopLarge= group.letter
       ul.mediaList
         each serie in group.series
           li(data-serie=JSON.stringify(serie))
@@ -11,7 +11,7 @@ block content
               src=serie.image,
               alt=serie.title
             )
- 
+
   include modal.pug
- 
+
   script(src='/js/media.js')

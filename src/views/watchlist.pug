@@ -2,13 +2,13 @@ extends layout.pug
 
 block content
   .bodyContainer.marginLeftLarge
-    h1.blueFontColor.marginTop Watchlist
+    h1.blueFontColor.marginTopLarge Watchlist
     if movies.length > 0 || series.length > 0
       if movies.length > 0
-        h3.whiteFontColor.marginTop Movies
+        h3.whiteFontColor.marginTopLarge Movies
         include movie.pug
       if series.length > 0
-        h3.whiteFontColor.marginTop Series
+        h3.whiteFontColor.marginTopLarge Series
         include serie.pug
     else
       p.whiteFontColor You have no movies or series in your watchlist yet.

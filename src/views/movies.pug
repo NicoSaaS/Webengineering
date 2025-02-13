@@ -1,9 +1,9 @@
 extends layout.pug
- 
+
 block content
   .bodyContainer.marginLeftLarge
     each group in groupedMovies
-      h4.whiteFontColor.marginTop= group.letter
+      h4.whiteFontColor.marginTopLarge= group.letter
       ul.mediaList
         each movie in group.movies
           li.movieItem(data-movie=JSON.stringify(movie))
@@ -13,5 +13,5 @@ block content
             )
 
   include modal.pug
- 
+
   script(src='/js/media.js')

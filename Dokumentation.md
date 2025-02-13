@@ -14,3 +14,4 @@
 12. testen
 13. rework & comments
 14. last finish coding
+15. Dokumentation erstellen

@@ -7,8 +7,10 @@ html(lang='de')
     link(rel='stylesheet', href='/css/styles.css')
   body
     header
-      h2 Register!
- 
+      h2 Register
+      nav_right
+        a.returnHomeButton(href='/') Return to home
+
     main
       .formContainer
         h2 Create a new account
@@ -22,26 +24,26 @@ html(lang='de')
               name='firstName',
               required
             )
- 
+
           .inputContainer
             label(for='lastName') Lastname:
             input#lastName.inputField(type='text', name='lastName', required)
- 
+
           .inputContainer
             label(for='gender') Gender:
             select#gender.inputField(name='gender', required)
               option(value='male') Male
               option(value='female') Female
               option(value='other') other
- 
+
           .inputContainer
             label(for='email') E-Mail:
             input#email.inputField(type='email', name='email', required)
- 
+
           .inputContainer
             label(for='username') Username:
             input#username.inputField(type='text', name='username', required)
- 
+
           .inputContainer
             label(for='password') Password:
             input#password.inputField(
@@ -49,11 +51,9 @@ html(lang='de')
               name='password',
               required
             )
- 
+
           .formActions
             button.authentificationButton(type='submit') Register
- 
-        p.marginBottom Already have an account?
-          a.registerLink(href='/login') Login here.
- 
-        a.returnHomeButton.marginLeftSmall(href='/') Return to home page.
+
+        p.marginBottom.marginTopSmall Already have an account?
+          a.registerLink.marginLeftSmall(href='/login') Login here.
