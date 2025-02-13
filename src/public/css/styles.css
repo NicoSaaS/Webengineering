@@ -45,12 +45,6 @@ header h1 {
   vertical-align: middle;
 }
 
-@media screen and (max-width: 330px) {
-  .logo {
-    display: none;
-  }
-}
-
 .navLeft {
   list-style: none;
 }
@@ -129,44 +123,6 @@ a.active {
   background-color: var(--buttonBackgroundColor1);
   color: var(--fontColor3);
   opacity: 0.8;
-}
-
-@media screen and (max-width: 840px) {
-  .navLeft {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    text-align: center;
-    padding: 2vh 0;
-  }
-
-  .navLeft li {
-    padding: 1.5vh 0;
-  }
-
-  .toggleMenu {
-    display: block;
-    align-items: center;
-  }
-
-  #menu-checkbox:checked ~ .navLeft {
-    display: flex;
-  }
-
-  .navRight {
-    display: flex;
-    align-items: center;
-  }
-}
-
-@media screen and (min-width: 841px) {
-  .navLeft {
-    display: flex !important;
-  }
 }
 
 body {
@@ -374,6 +330,18 @@ form {
   height: 100%;
 }
 
+
+.mediaInformation {
+    width: 100%;
+    height: auto;
+    max-width: auto;
+    max-height: 40vh;
+    text-align: left;
+    margin-top: 5vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+  }
+
 .mediaImage {
   width: auto;
   height: 100%;
@@ -382,21 +350,6 @@ form {
   object-fit: cover;
   border-radius: 8px;
   flex: 1;
-}
-
-.mediaInformation {
-  width: 100%;
-  height: auto;
-  max-width: auto;
-  max-height: 40vh;
-  text-align: left;
-  margin-top: 5vh;
-  margin-left: 2vh;
-  margin-right: 2vh;
-}
-
-.mediaInformation h2 {
-    display: flex
 }
 
 .mediaGeneralInfo {
@@ -488,12 +441,6 @@ form {
   cursor: pointer;
 }
 
-@media (max-width: 440px) {
-  .mediaImage {
-    display: none;
-  }
-}
-
 .whiteFontColor {
   color: var(--fontColor3);
 }
@@ -561,3 +508,53 @@ footer {
   background-color: #1c7ed6;
   opacity: 0.9;
 }
+
+@media screen and (max-width: 330px) {
+    .logo {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 841px) {
+    .navLeft {
+      display: flex !important;
+    }
+  }
+
+  @media screen and (max-width: 840px) {
+    .navLeft {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      text-align: center;
+      padding: 2vh 0;
+    }
+
+    .navLeft li {
+      padding: 1.5vh 0;
+    }
+
+    .toggleMenu {
+      display: block;
+      align-items: center;
+    }
+
+    #menu-checkbox:checked ~ .navLeft {
+      display: flex;
+    }
+
+    .navRight {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .mediaImage {
+      display: none;
+    }
+  }
