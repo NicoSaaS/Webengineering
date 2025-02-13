@@ -506,8 +506,12 @@ form {
   margin-bottom: 2vh;
 }
 
-.marginTop {
+.marginTopLarge {
   margin-top: 5vh;
+}
+
+.marginTopSmall {
+  margin-top: 1.5vh;
 }
 
 .marginLeftLarge {
