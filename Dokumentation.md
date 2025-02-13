@@ -66,14 +66,14 @@ Die `server.js` Datei enthält die gesamte Serverlogik der Applikation:
 ```json
 [
   {
-    "id": 1,
-    "title": "Film Titel",
-    "description": "Kurze Beschreibung des Films",
-    "genre": "Action",
-    "ranking": 8.5,
-    "director": "Regisseur Name",
-    "released": "2023-05-01",
-    "image": "/img/film_titel.jpg"
+    "id": 0,
+    "title": "filmName",
+    "image": "img/moviecovers/filmCover",
+    "ranking": 1,
+    "description": "filmBeschreibung",
+    "genre": "filmGenre",
+    "director": "filmRegisseur",
+    "released": "filmRelease"
   }
 ]
 ```
