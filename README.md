@@ -55,3 +55,8 @@ npm install express pug
 npm install express-session
 
 npm start 
+
+falls :3000 chon läuft bug:
+lsof -i 3000
+dann
+kill -9 <PID>
