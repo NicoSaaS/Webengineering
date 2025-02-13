@@ -56,17 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 class MediaDetails {
   /**
-  * @param {string} modalId - ID des Modals.
-  * @param {string} closeButtonClass - Klasse des Schließen-Buttons.
-  * @param {string} titleId - ID des Titels.
-  * @param {string} imageId - ID des Bildes.
-  * @param {string} descriptionId - ID der Beschreibung.
-  * @param {string} genreId - ID des Genres.
-  * @param {string} rankingId - ID der Bewertung.
-  * @param {string} directorId - ID des Regisseurs.
-  * @param {string} releasedId - ID des Veröffentlichungsdatums.
-  * @param {string} bookmarkButtonClass - Klasse des Bookmark-Buttons.
-  */
+   * @param {string} modalId - ID des Modals.
+   * @param {string} closeButtonClass - Klasse des Schließen-Buttons.
+   * @param {string} titleId - ID des Titels.
+   * @param {string} imageId - ID des Bildes.
+   * @param {string} descriptionId - ID der Beschreibung.
+   * @param {string} genreId - ID des Genres.
+   * @param {string} rankingId - ID der Bewertung.
+   * @param {string} directorId - ID des Regisseurs.
+   * @param {string} releasedId - ID des Veröffentlichungsdatums.
+   * @param {string} bookmarkButtonClass - Klasse des Bookmark-Buttons.
+   */
   constructor(
     modalId,
     closeButtonClass,
@@ -146,15 +146,19 @@ class MediaDetails {
     fetch('/get-user-watchlist', { method: 'GET' })
       .then((response) => response.json())
       .then((data) => {
-        const user = data.user
-        if (user && user[watchlistKey]) {
-          const isInWatchlist = user[watchlistKey].includes(mediaId)
-          this.bookmarkImg.src = isInWatchlist
-            ? '/img/selected_bookmark.png'
-            : '/img/bookmark.png'
-        } else {
-          this.bookmarkImg.src = '/img/bookmark.png'
+        if (!data.user) {
+          console.log(
+            'Benutzer nicht eingeloggt. Watchlist wird nicht geladen.',
+          )
+          return
         }
+
+        const user = data.user
+        const isInWatchlist = user[watchlistKey]?.includes(mediaId)
+
+        this.bookmarkImg.src = isInWatchlist
+          ? '/img/selected_bookmark.png'
+          : '/img/bookmark.png'
       })
       .catch((error) =>
         console.error('Fehler beim Abrufen der Watchlist:', error),
@@ -167,23 +171,23 @@ class MediaDetails {
    */
 
   toggleWatchlist(mediaId, mediaType) {
-    const endpoint =
-      mediaType === 'movie'
-        ? '/toggle-movies-watchlist'
-        : '/toggle-series-watchlist'
-    const body =
-      mediaType === 'movie' ? { movieId: mediaId } : { serieId: mediaId }
-    const watchlistKey =
-      mediaType === 'movie' ? 'movie-watchlist' : 'series-watchlist'
-
-    fetch(endpoint, {
+    fetch('/toggle-watchlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+      body: JSON.stringify({ mediaId, mediaType }),
     })
       .then((response) => response.json())
       .then((data) => {
+        if (!data.success) {
+          console.log(data.message)
+          alert("Log in first!");
+          return
+        }
+
+        const watchlistKey =
+          mediaType === 'movie' ? 'movie-watchlist' : 'series-watchlist'
         const isInWatchlist = data[watchlistKey].includes(mediaId)
+
         this.bookmarkImg.src = isInWatchlist
           ? '/img/selected_bookmark.png'
           : '/img/bookmark.png'
@@ -192,7 +196,7 @@ class MediaDetails {
           window.location.reload()
         }
       })
-      .catch(() => alert('Log in to add Movies/Series to the watchlist'))
+      .catch(() => console.error('Fehler beim Ändern der Watchlist'))
   }
 
   hideModal() {
