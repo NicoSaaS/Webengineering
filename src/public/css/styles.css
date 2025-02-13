@@ -395,7 +395,11 @@ form {
   margin-right: 2vh;
 }
 
-.mediaGeneral {
+.mediaInformation h2 {
+    display: flex
+}
+
+.mediaGeneralInfo {
   display: flex;
   flex-direction: row;
   height: fit-content;
@@ -552,9 +556,8 @@ footer {
   cursor: pointer;
   text-decoration: none;
 }
- 
+
 .authentificationButton:hover {
   background-color: #1c7ed6;
   opacity: 0.9;
 }
- 
