@@ -44,13 +44,13 @@ Die Applikation wurde unter Berücksichtigung der MVC-Architektur (Model-View-Co
 /src
   /data              // JSON-Daten für Filme, Serien und Benutzer
   /public            // Statische Dateien (CSS, Bilder, JavaScript)
-    /icon
-    /img
-      /moviecovers
-      /seriescovers
-    /scripts
-    /styles
-  /views            // Pug-Templates für die Darstellung
+    /icon            // Icon-Dateien (verschiedene Größen)
+    /img             // Bilder für Funktionen & Media
+      /moviecovers      //Cover-Bilder Filme
+      /seriescovers     //Cover-Bilder Serien
+    /scripts            //Javascripte
+    /styles             //CSS Dokument
+  /views             // Pug-Templates für die Darstellung
   server.js          // Haupt-Server-Datei (Controller)
 ```
 
@@ -101,14 +101,14 @@ Die `server.js` Datei enthält die gesamte Serverlogik der Applikation:
 
 ### 3.4 Benutzeroberfläche (Pug, CSS, JavaScript)
 
-- **Pug**: Dynamische HTML-Erzeugung.
-- **CSS**: Gestaltung mit Fokus auf modernes Design.
-- **JavaScript**: Clientseitige Interaktivität (Modal-Fenster, Watchlist-Funktion).
+- **Pug**: Dynamische HTML-Erzeugung
+- **CSS**: Gestaltung mit Fokus auf modernes Design
+- **JavaScript**: Clientseitige Interaktivität (Modal-Fenster, Watchlist-Funktion)
 
 ### 3.5 Interaktive Funktionen (JavaScript, Fetch API)
 
-- **Modal-Fenster**: Anzeige detaillierter Informationen per Klick.
-- **Watchlist-Funktion**: Hinzufügen/Entfernen von Medien mit Fetch API.
+- **Modal-Fenster**: Anzeige detaillierter Informationen per Klick
+- **Watchlist-Funktion**: Hinzufügen/Entfernen von Medien mit Fetch API
 
 ## 4. Testphase und Feedback
 
