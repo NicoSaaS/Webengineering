@@ -148,7 +148,7 @@ class MediaDetails {
       .then((data) => {
         if (!data.user) {
           console.log(
-            'Benutzer nicht eingeloggt. Watchlist wird nicht geladen.',
+            'User not logged in. Watchlist will not be loaded.',
           )
           return
         }
@@ -161,7 +161,7 @@ class MediaDetails {
           : '/img/bookmark.png'
       })
       .catch((error) =>
-        console.error('Fehler beim Abrufen der Watchlist:', error),
+        console.error('Error retrieving the watchlist:', error),
       )
   }
 
@@ -196,7 +196,7 @@ class MediaDetails {
           window.location.reload()
         }
       })
-      .catch(() => console.error('Fehler beim Ändern der Watchlist'))
+      .catch(() => console.error('Error modifying the watchlist.'))
   }
 
   hideModal() {

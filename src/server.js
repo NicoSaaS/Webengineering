@@ -55,7 +55,7 @@ app.get('/movies', (req, res) => {
 
   fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
     if (err) {
-      return res.status(500).send('Fehler beim Laden der Filme')
+      return res.status(500).send('Error loading movies.')
     }
 
     let movies = JSON.parse(movieData)
@@ -90,7 +90,7 @@ app.get('/series', (req, res) => {
 
   fs.readFile(serieFilePath, 'utf8', (err, serieData) => {
     if (err) {
-      return res.status(500).send('Fehler beim Laden der Serien')
+      return res.status(500).send('Error loading series.')
     }
 
     let series = JSON.parse(serieData)
@@ -144,7 +144,7 @@ app.post('/login', (req, res) => {
     req.session.user = user
     res.redirect('/profile')
   } else {
-    res.render('login', { error: 'Falsches Passwort oder Benutzername!' })
+    res.render('login', { error: 'Incorrect password or username!' })
   }
 })
 
@@ -163,7 +163,7 @@ app.post('/register', (req, res) => {
     return res.render('register', {
       title: 'Register',
       errorMessage:
-        'Benutzername oder E-Mail bereits vergeben. Bitte versuche es erneut.',
+        'Username or email already taken. Please try again.',
     })
   } else {
     const newUser = {
@@ -190,7 +190,7 @@ app.post('/register', (req, res) => {
 app.get('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
-      return res.send('Fehler beim Abmelden')
+      return res.send('Error logging out.')
     }
     res.redirect('/')
   })
@@ -211,7 +211,7 @@ app.post('/delete-account', (req, res) => {
 
     req.session.destroy((err) => {
       if (err) {
-        return res.send('Fehler beim Löschen des Accounts')
+        return res.send('Error deleting the account.')
       }
       res.redirect('/')
     })
@@ -229,12 +229,12 @@ app.get('/', (req, res) => {
   const seriesFilePath = path.join(__dirname, 'data', 'series.json')
   fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
     if (err) {
-      return res.status(500).send('Fehler beim Laden der Filme')
+      return res.status(500).send('Error loading movies.')
     }
 
     fs.readFile(seriesFilePath, 'utf8', (err, seriesData) => {
       if (err) {
-        return res.status(500).send('Fehler beim Laden der Serien')
+        return res.status(500).send('Error loading series.')
       }
 
       let movies = JSON.parse(movieData)
@@ -279,14 +279,14 @@ app.get('/watchlist', (req, res) => {
 
   fs.readFile(moviesFilePath, 'utf8', (err, movieData) => {
     if (err) {
-      console.error('Fehler beim Laden der Filme:', err)
-      return res.status(500).send('Fehler beim Laden der Filme')
+      console.error('Error loading movies:', err)
+      return res.status(500).send('Error loading movies')
     }
 
     fs.readFile(seriesFilePath, 'utf8', (err, seriesData) => {
       if (err) {
-        console.error('Fehler beim Laden der Serien:', err)
-        return res.status(500).send('Fehler beim Laden der Serien')
+        console.error('Error loading series:', err)
+        return res.status(500).send('Error loading series')
       }
 
       const movies = JSON.parse(movieData)
@@ -336,7 +336,7 @@ app.get('/get-user-watchlist', (req, res) => {
  */
 app.post('/toggle-watchlist', (req, res) => {
   if (!req.session.user) {
-    return res.json({ success: false, message: 'Nicht eingeloggt' })
+    return res.json({ success: false, message: 'Not logged in' })
   }
 
   const { mediaType, mediaId } = req.body
@@ -346,7 +346,7 @@ app.post('/toggle-watchlist', (req, res) => {
   )
 
   if (currentUserIndex === -1) {
-    return res.json({ success: false, message: 'Benutzer nicht gefunden' })
+    return res.json({ success: false, message: 'User not found.' })
   }
 
   const currentUser = users[currentUserIndex]
