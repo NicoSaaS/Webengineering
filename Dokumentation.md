@@ -1,10 +1,10 @@
-# Ausführliche Dokumentation: Entwurf und Umsetzung der Web-Applikation "Media Hub"
+# Ausführliche Dokumentation: Entwurf und Umsetzung der Web-Applikation "CineCanvas"
 
-Diese Dokumentation beschreibt detailliert den Entwurf und die technische Umsetzung der Web-Applikation "Media Hub", die es Nutzern ermöglicht, Filme und Serien zu suchen, zu entdecken und ihre persönliche Watchlist zu verwalten.
+Diese Dokumentation beschreibt detailliert den Entwurf und die technische Umsetzung der Web-Applikation "CineCanvas", die es Nutzern ermöglicht, Filme und Serien zu suchen, zu entdecken und ihre persönliche Watchlist zu verwalten.
 
 ## 1. Einleitung
 
-"CineCanvas" ist eine Web-Applikation, die entwickelt wurde, um Nutzern eine zentrale Plattform für die Verwaltung ihrer Film- und Serieninteressen zu bieten. Die Applikation bietet eine benutzerfreundliche Oberfläche zum Durchsuchen und Entdecken von Medien, die Möglichkeit, persönliche Watchlists zu erstellen und zu verwalten, sowie eine einfache Benutzerverwaltung.
+"CineCanvas" ist eine Web-Applikation, die entwickelt wurde, um Nutzern eine zentrale Plattform für die Verwaltung ihrer Film- und Serieninteressen zu bieten. Die Applikation bietet eine benutzerfreundliche Oberfläche zum Durchsuchen und Entdecken von Medien, die Möglichkeit, eine persönliche Watchlist zu erstellen und zu verwalten, sowie eine einfache Benutzerverwaltung.
 
 ## 2. Vorgehensweise beim Entwurf
 
@@ -44,9 +44,13 @@ Die Applikation wurde unter Berücksichtigung der MVC-Architektur (Model-View-Co
 /src
   /data              // JSON-Daten für Filme, Serien und Benutzer
   /public            // Statische Dateien (CSS, Bilder, JavaScript)
-  /views             // Pug-Templates für die Darstellung
-  /scripts           // Zusätzliche JavaScript-Dateien
-  /styles            // CSS-Dateien
+    /icon
+    /img
+      /moviecovers
+      /seriescovers
+    /scripts
+    /styles
+  /views            // Pug-Templates für die Darstellung
   server.js          // Haupt-Server-Datei (Controller)
 ```
 
