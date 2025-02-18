@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -93,7 +97,6 @@ a.active {
   color: var(--fontColor4);
 }
 
-/* For Mobile */
 .toggleMenu {
   display: none;
   font-size: 2rem;
@@ -136,12 +139,16 @@ body {
   background-color: var(--backgroundColor1);
   color: #333;
   line-height: 1.6;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .bodyContainer {
   padding: 10px;
   padding-left: 25px;
-  z-index: 2;
+  z-index: 0;
+  flex: 1;
 }
 
 main {
@@ -479,7 +486,7 @@ footer {
   background-color: var(--backgroundColor2);
   color: var(--fontColor3);
   padding: 20px;
-  width: auto;
+  width: 100%;
   font-size: 14px;
   display: flex;
   justify-content: space-between;

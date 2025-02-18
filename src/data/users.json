@@ -27,13 +27,11 @@
     "password": "user1",
     "movie-watchlist": [
       28,
-      1,
-      2,
-      4
+      31,
+      24
     ],
     "series-watchlist": [
-      3,
-      2
+      3
     ]
   },
   {
