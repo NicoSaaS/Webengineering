@@ -6,7 +6,7 @@ block content
       h4.whiteFontColor.marginTopLarge= group.letter
       ul.mediaList
         each serie in group.series
-          li(data-serie=JSON.stringify(serie))
+          li.seriesItem(data-serie=JSON.stringify(serie))
             img.mediaCover(
               src=serie.image,
               alt=serie.title
