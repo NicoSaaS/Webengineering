@@ -95,6 +95,7 @@ class MediaDetails {
   }
 
   /**
+   * Zeigt Modal mit Mediumdaten an
    * @param {Object} mediaData - Daten des Mediums.
    * @param {string} mediaData.title - Titel des Mediums.
    * @param {string} mediaData.image - Bild-URL des Mediums.
@@ -138,6 +139,7 @@ class MediaDetails {
   }
 
   /**
+   * Aktualisiert die, falls vorhanden, bisherig gesetzen Bookmarks
    * @param {number} mediaId - ID des Mediums.
    * @param {string} mediaType - Typ des Mediums (movie oder serie).
    */
@@ -168,6 +170,7 @@ class MediaDetails {
   }
 
   /**
+   * Aktualisiert die Watchlist und das Bookmark
    * @param {number} mediaId - ID des Mediums.
    * @param {string} mediaType - Typ des Mediums (movie oder serie).
    */
@@ -201,6 +204,7 @@ class MediaDetails {
       .catch(() => console.error('Error modifying the watchlist.'))
   }
 
+  // Ausbldenden des Modals
   hideModal() {
     this.modal.style.display = 'none'
     document.body.style.overflow = 'auto'

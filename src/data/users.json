@@ -47,5 +47,15 @@
     "password": "geheimesPasswort",
     "movie-watchlist": [],
     "series-watchlist": []
+  },
+  {
+    "firstName": "ff",
+    "lastName": "ff",
+    "gender": "male",
+    "email": "ff@de",
+    "username": "ff",
+    "password": "ff",
+    "movie-watchlist": [],
+    "series-watchlist": []
   }
 ]
