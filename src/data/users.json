@@ -35,9 +35,17 @@
     "email": "00@de",
     "username": "00",
     "password": "00",
-    "movie-watchlist": [
-      4
-    ],
+    "movie-watchlist": [],
+    "series-watchlist": []
+  },
+  {
+    "firstName": "Max",
+    "lastName": "Mustermann",
+    "gender": "male",
+    "email": "max.mustermann@example.com",
+    "username": "maxi",
+    "password": "geheimesPasswort",
+    "movie-watchlist": [],
     "series-watchlist": []
   }
 ]

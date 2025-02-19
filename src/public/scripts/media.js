@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   function showMovieDetails(event) {
+    debugger;
     const movieElement = event.target.closest('li')
     if (!movieElement) return
     const movieDataAttr = movieElement.getAttribute('data-movie')
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showSerieDetails(event) {
+    debugger
     const serieElement = event.target.closest('li')
     if (!serieElement) return
     const serieDataAttr = serieElement.getAttribute('data-serie')
@@ -43,12 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '.bookmarkButton',
   )
 
-  const movieElements = document.querySelectorAll('.mediaList li')
+  const movieElements = document.querySelectorAll('.mediaList .movieItem')
   movieElements.forEach((element) => {
     element.addEventListener('click', showMovieDetails)
   })
 
-  const serieElements = document.querySelectorAll('.mediaList li')
+  const serieElements = document.querySelectorAll('.mediaList .seriesItem')
   serieElements.forEach((element) => {
     element.addEventListener('click', showSerieDetails)
   })
