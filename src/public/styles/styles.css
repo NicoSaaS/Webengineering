@@ -117,7 +117,7 @@ a.active {
   text-decoration: none;
   font-size: 16px;
   color: var(--fontColor3);
-  background-color: #333;
+  background-color: var(--backgroundColor2);
   padding: 1.2vh 3vw;
   border-radius: 30px;
 }

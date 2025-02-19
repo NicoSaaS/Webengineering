@@ -25,14 +25,8 @@
     "email": "user1@sample.com",
     "username": "user1",
     "password": "user1",
-    "movie-watchlist": [
-      28,
-      31,
-      24
-    ],
-    "series-watchlist": [
-      3
-    ]
+    "movie-watchlist": [],
+    "series-watchlist": []
   },
   {
     "firstName": "00",
