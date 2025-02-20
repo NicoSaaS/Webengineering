@@ -487,11 +487,14 @@ footer {
   color: var(--fontColor3);
   padding: 20px;
   width: 100%;
+  max-height: 15vh;
+  min-height: 15vh;
   font-size: 14px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  flex: 1;
 }
 
 .ownerFooter {

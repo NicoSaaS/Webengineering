@@ -9,18 +9,23 @@
 3.1 Architektur
 3.2 Ordnerstruktur
 3.3 Implementierung der Serverlogik
-3.4 Datenmodellierung
-3.5 Benutzeroberfläche und Interaktivität
-4. Testphase und Verbesserungen
-4.1 Testphase und Fehlerbehebung
-4.2 Finalisierung
-5. Verwendete Tools und Technologien
+3.4 Benutzeroberfläche und Interaktivität
+4. Quelltext Beispiele
+4.1 Index.pug
+4.2 Datenmodellierung
+4.3 toggle-watchlist API
+5. Testphase und Problembehandlung
+5.1 Testphase und Fehlerbehebung
+5.2 Problembehandlung
+5.3 Finalisierung
 6. Quellen und Hilfsmittel-Verzeichnis
+6.1 Verwendete Hilfsmittel
+6.2 Quellenangabe
 ---
 
 ## 1. Einleitung
 
-Diese Dokumentation beschreibt detailiert den Entwurf und die technische Umsetzung der Web-Applikation "CineCanvas". Die Applikation ermöglicht Nutzern Filme und Serien zu suchen, entdecken und ihre persöhnliche Watchlist zu verwalten - alles in einem Ort. Der Fokus liegt dabei auf einer benutzerfreundlichen und intuitiven Benutzeroberfläche, die auf verschiedenen Geräten nutzbar ist.
+Diese Dokumentation beschreibt detailiert den Entwurf und die technische Umsetzung der Web-Applikation "CineCanvas". Die Applikation ermöglicht Nutzern Filme und Serien zu entdecken und ihre persöhnliche Watchlist zu verwalten - alles in einem Ort. Der Fokus liegt dabei auf einer benutzerfreundlichen und intuitiven Benutzeroberfläche, die auf verschiedenen Geräten nutzbar ist.
 
 ---
 
@@ -28,11 +33,16 @@ Diese Dokumentation beschreibt detailiert den Entwurf und die technische Umsetzu
 ### 2.1 Ideensammlung und Zielsetzung
 
 Zu Beginn des Projekts haben wir ein Brainstorming durchgeführt, um die Kernfunktionen und den Umfang der Applikation zu definieren. Diese sind als folgende Ziele formuliert:
-- **Medienkatalog für Filme und Serien**: Filme und Serien sollen nach Ranking und nach Alphabet sortiert sein
-- **Detailansicht** Beim Klick auf ein Film oder eine Serie öffnet sich eine detaillierte Ansicht mit weiteren Informationen
-- **Benutzerverwaltung**: Registrierung, Anmeldung, Profilansicht und Watchlist
-- **Watchlist-Verwaltung**:Filme & Serien hinzufügen und entfernen und anschlie
-- **Responsive Design**: Web-Applikation passt sich dynamisch an verschiedene Bildschirmgrößen (Laptop, Tablet, Handy) an
+- **Medienkatalog für Filme und Serien**
+Filme und Serien sollen nach Ranking und nach Alphabet sortiert sein
+- **Detailansicht**
+Beim Klick auf ein Film oder eine Serie öffnet sich eine detaillierte Ansicht mit weiteren Informationen
+- **Benutzerverwaltung**
+Registrierung, Anmeldung, Profilansicht und persönliche Watchlist als Funktionen
+- **Watchlist-Verwaltung**
+Filme & Serien hinzufügen und entfernen sowie Detailansicht anzeigen lassen
+- **Responsive Design**
+Web-Applikation passt sich dynamisch an verschiedene Bildschirmgrößen (Laptop, Tablet, Handy) an
 
 ### 2.2 Design
 Das Design von "CineCanvas" setzt auf eine minimalistische und klare Struktur. Mit der übersichtlichen Navigationsbar wird ein schneller Zugriff zur Übersicht, Ranking, Watchlist und zum Profil ermöglicht.
@@ -41,7 +51,7 @@ Erstes Konzept:
 
 
 ```
-CineCanvas              Home Movies Series Watchlist Profile
+Navigationbar
 ```
 ```
 Movies
@@ -54,7 +64,7 @@ Series
 
 ```
 ```
-©CineCanvas                                            Names
+Footer
 ```
 
 ---
@@ -72,14 +82,16 @@ Die Applikation wurde unter Verwendung des Model-View-Controller (MVC)-Architekt
 Die Web-Applikation folgt einer strukturierten Ordnerorganisation, die die Trennung der verschiedenen Bereiche aufzeigt. Die Ordnerstruktur sieht wie folgt aus:
 ```
 /src
-  /data              // JSON-Daten für Filme, Serien und Benutzer
-  /public            // Statische Dateien (CSS, Bilder, JavaScript)
-    /icon            // Icon-Dateien
-    /img             // Medienbilder (Filmcovers, Seriencover)
-    /scripts         // JavaScript für interaktive Funktionen
-    /styles          // CSS-Dokument
-  /views             // Pug-Templates für die HTML-Ausgabe
-  server.js          // Haupt-Server-Datei (Controller)
+  /data                 // JSON-Daten für Filme, Serien und Benutzer
+  /public               // Statische Dateien (CSS, Bilder, JavaScript)
+    /icon               // Icon-Dateien
+    /img                // Medienbilder & ImageViews
+       /moviecovers     // Bilder für Filmcovers
+       /seriescovers    // Bilder für Seriencovers
+    /scripts            // JavaScript für interaktive Funktionen
+    /styles             // CSS-Dokument
+  /views                // Pug-Templates für die HTML-Ausgabe
+  server.js             // Haupt-Server-Datei (Controller)
 ```
 
 ### 3.3 Implementierung der Serverlogik
@@ -97,25 +109,39 @@ Die `server.js`-Datei enthält die komplette Serverlogik und verwendet das **Exp
     + Laden und Speichern von Daten
     + Dynamische Aktualisierung
 
-### 3.4 Datenmodellierung
+### 3.4 Benutzeroberfläche und Interaktivität
 
-Die Medien- und Benutzerdaten werden in JSON-Dateien gespeichert. Beispielstrukturen:
+Die Benutzeroberfläche wurde mit Pug für dynamische HTML-Generierung und CSS für das Design entwickelt. Interaktive Funktionen wurden mit JavaScript umgesetzt. Zu den interaktiven Features gehören:
 
-Struktur der `movies.json`-Datei:
-```
-[
-  {
-    "id": 0,
-    "title": "Filmname",
-    "image": "img/moviecovers/filmCover",
-    "ranking": 1,
-    "description": "Filmbeschreibung",
-    "genre": "Filmgenre",
-    "director": "Filmregisseur",
-    "released": "Filmpublikation"
-  }
-]
-```
+- **Modal-Fenster**: Beim Klicken auf ein Medium wird ein Modal-Fenster mit detaillierten Informationen angezeigt
+- **Watchlist-Verwaltung**: Nutzer können Medien per Klick zur Watchlist hinzufügen oder entfernen, unterstützt durch die Fetch API
+
+---
+
+## 4. Quelltext - Beispiele
+### 4.1 Index.pug
+Index.pug ist die Startseite und lädt die wichtigsten Komponenten für Filme und Serien. PUG ist eine Template-Engine um HTML-Seiten effizient und übersichtlicher zu machen. Index.pug erweitert das Layout aus `layout.pug` um das Grundgerüst der Seite beizubehalten.
+Innerhalb des `content`-Blocks werden die Filme und Serien in Sektionen für monatliches Film- und Serienranking aufgeteilt, wobei die Inhalte aus `movie.pug` und `series.pug` eingebunden.
+Zusätzlich wird ein Modal-Fenster aus `modal.pug`integriert welches Details anzeigt.
+````
+extends layout.pug
+
+block content
+  .bodyContainer.marginLeftLarge
+    h2.blueFontColor.marginTopLarge Movie Ranking of the Month
+    - var showRanking = true
+    include movie.pug
+    h2.blueFontColor.marginTopLarge Series Ranking of the Month
+    - var showRanking = true
+    include serie.pug
+
+  include modal.pug
+````
+
+### 4.2 Datenmodellierung
+
+Medien-, Serien- und Benutzerdaten werden in jeweils unterschiedlichen JSON-Dateien gespeichert. Jede Datei enthält ein Array von Objekten (`[]`) wobei jedes Objekt (`{}`) die passenden Informationen speichert. Bei dem Hinzufügen von Daten werden neue Objekte angelegt und beim Löschen wird das jeweilige Objekt entfernt.
+
 Struktur der `users.json`-Datei:
 ```
 [
@@ -131,16 +157,70 @@ Struktur der `users.json`-Datei:
   }
 ]
 ```
+Struktur der `movies.json` -Datei:
+```
+[
+  {
+    "id": 0,
+    "title": "Filmname",
+    "image": "img/moviecovers/filmCover",
+    "ranking": 1,
+    "description": "Filmbeschreibung",
+    "genre": "Filmgenre",
+    "director": "Filmregisseur",
+    "released": "Filmpublikation"
+  }
+]
+```
 
-### 3.5 Benutzeroberfläche und Interaktivität
+Die Struktur der `series.json`-Datei entspricht der `movei.json`-Datei.
 
-Die Benutzeroberfläche wurde mit Pug für dynamische HTML-Generierung und CSS für das Design entwickelt. Interaktive Funktionen wurden mit JavaScript umgesetzt. Zu den interaktiven Features gehören:
+### 4.3 toggle-watchlist API
+Der Code definiert eine Express-Route (`POST /toggle-watchlist`), die es eingeloggten Nutzern ermöglicht, Filme oder Serien zur persönlichen Watchlist hinzuzufügen oder zu entfernen. Als erstes wird geprüft, ob der Benutzer eingeloggt ist (`req.session.user`), andernfalls wird eine Fehlermeldung zurückgegeben. Anschließend wird die `users.json`-Datei ausgelesen, um den aktuellen Benutzer zu identifizieren. Es wird das passende Watchlist-Array des Nutzers gewählt, und die eindeutige ID des Films oder der Serie wird entweder hinzugefügt oder entfernt. Danach wird die aktualisierte Benutzerliste zurück in die JSON-Datei geschrieben. Die Route gibt eine Antwort mit dem aktuellen Stand der Watchlist zurück, um die Änderungen in der Benutzeroberfläche anzuzeigen.
 
-- **Modal-Fenster**: Beim Klicken auf ein Medium wird ein Modal-Fenster mit detaillierten Informationen angezeigt
-- **Watchlist-Verwaltung**: Nutzer können Medien per Klick zur Watchlist hinzufügen oder entfernen, unterstützt durch die Fetch API
+```
+app.post('/toggle-watchlist', (req, res) => {
+  if (!req.session.user) {
+    return res.json({ success: false, message: 'Not logged in' })
+  }
+
+  const { mediaType, mediaId } = req.body
+  const users = JSON.parse(fs.readFileSync('./data/users.json', 'utf8'))
+  const currentUserIndex = users.findIndex(
+    (u) => u.username === req.session.user.username,
+  )
+
+  if (currentUserIndex === -1) {
+    return res.json({ success: false, message: 'User not found.' })
+  }
+
+  const currentUser = users[currentUserIndex]
+  const watchlistKey =
+    mediaType === 'movie' ? 'movie-watchlist' : 'series-watchlist'
+
+  if (!currentUser[watchlistKey]) {
+    currentUser[watchlistKey] = []
+  }
+
+  const index = currentUser[watchlistKey].indexOf(mediaId)
+
+  if (index === -1) {
+    currentUser[watchlistKey].push(mediaId)
+  } else {
+    currentUser[watchlistKey].splice(index, 1)
+  }
+
+  users[currentUserIndex] = currentUser
+  fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 2))
+
+  res.json({ success: true, [watchlistKey]: currentUser[watchlistKey] })
+})
+```
+
 ---
-## 4. Testphase und Verbesserungen
-### 4.1 Testphase und Fehlerbehebung
+
+## 5. Testphase und Problembehandlung
+### 5.1 Testphase und Fehlerbehebung
 Nach der Implementierung der grundlegenden Funktionen wurde die Applikation einer Testphase unterzogen. Hierbei wurden Fehler identifiziert und behoben. Außerdem wurden verschiedene Optimierungen auf Basis von Feedback umgesetzt:
 
 - **UI-Verbesserungen**: Verbesserung des Layouts und der Benutzerführung
@@ -149,13 +229,25 @@ Nach der Implementierung der grundlegenden Funktionen wurde die Applikation eine
 - **Optimierung der Performance**: Vereinfachung der Benutzerinteraktionen und Verbesserung der Ladezeiten
 - **Clean Code**: Verschönerung des Codes
 
-### 4.2 Finalisierung
-Nach erfolgreichen Tests und dem Implementieren von Verbesserungen wurde die Applikation finalisiert. Es wurden keine Veränderungen mehr am Coding vorgenommen.
+### 5.2 Problembehandlung
+Während der Entwicklung der Web-Applikation kam es durch aus vor, dass wir auf Probleme trafen welche wir nicht ohne weiteres lösen konnten. Folgende Probleme sind unter anderem aufgetreten:
+* **Footer**
+    Der Footer wurde bei einer leeren Watchlist nicht am unteren Ende der Seite angezeigt sondern in der Mitte der Seite.
+    `Lösung:` Den Body als Flexbox mit "column" als Direction. Dementsprechend sowohl dem Content als auch dem Footer das Gewicht 1 geben. Das führt dazu, dass sicher der Footer immer unten an der Seite befindet. Damit der Footer nicht zu groß wird, gaben wir ihm eine maximale Höhe von 15vh.
+* **Navigationbar**:
+    Da wir ein Responsive Design gewähren wollen, standen wir vor der Frage wie wir unsere Navigationbar auch auf kleinen Geräten anzeigen lassen können.
+    `Lösung:` Ab einer bestimmten Größe die "traditionelle" Navigationbar nicht mehr anzeigen. Dafür wird ein "3-Strich" -Menu angezeigt, welches per OnClick ein Dropdown-Menu anzeigt. Dieses hat die gleiche Navigationsoptionen wie die "traditionelle" Navigationsbar.
+* **Z**: abcdefg
+    + Lösung: hijklmnop
+
+### 5.3 Finalisierung
+Nach erfolgreichem Testen und dem Implementieren von Verbesserungen wurde die Applikation finalisiert. Es wurden keine Veränderungen mehr am Coding vorgenommen.
 
 ---
+## 6. Quellen und Hilfsmittel-Verzeichnis
 
-## 5. Verwendete Tools und Technologien
-Für die Entwicklung von "CineCanvas" wurden folgende Tools und Technologien verwendet:
+### 6.1 Verwendete Hilfsmittel
+Für die Entwicklung wurden folgende Tools und Technologien verwendet:
 
 - **Node.js**: Laufzeitumgebung für den Server
 - **Express.js**: Web-Framework zur Erstellung des Servers und der Routen
@@ -164,9 +256,14 @@ Für die Entwicklung von "CineCanvas" wurden folgende Tools und Technologien ver
 - **JavaScript**: Clientseitige Interaktivität
 - **JSON**: Datenmodellierung und Speicherung
 - **Prettier**: Code-Formatierung und -Standardisierung
+- **VS-Code**: Code-Editor
+- **Github**: Versionskontrolle und Code-Hosting
 
----
-
-## 6. Quellen und Hilfsmittel-Verzeichnis
+### 6.2 Quellen
+* **w3Schools - CSS**
+https://www.w3schools.com/css/ (17.02.2025)
+* **Erklärung und Anwendung von PUG**
+    https://how.dev/answers/what-is-pug-syntax (20.02.2025)
+* 
 
 
