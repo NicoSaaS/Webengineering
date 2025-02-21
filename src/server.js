@@ -162,8 +162,7 @@ app.post('/register', (req, res) => {
   if (userExists) {
     return res.render('register', {
       title: 'Register',
-      errorMessage:
-        'Username or email already taken. Please try again.',
+      errorMessage: 'Username or email already taken. Please try again.',
     })
   } else {
     const newUser = {

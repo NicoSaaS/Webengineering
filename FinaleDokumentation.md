@@ -121,7 +121,7 @@ Die Benutzeroberfläche wurde mit Pug für dynamische HTML-Generierung und CSS f
 Index.pug ist die Startseite und lädt die wichtigsten Komponenten für Filme und Serien. PUG ist eine Template-Engine um HTML-Seiten effizient und übersichtlicher zu machen. Index.pug erweitert das Layout aus `layout.pug` um das Grundgerüst der Seite beizubehalten.
 Innerhalb des `content`-Blocks werden die Filme und Serien in Sektionen für monatliches Film- und Serienranking aufgeteilt, wobei die Inhalte aus `movie.pug` und `series.pug` eingebunden.
 Zusätzlich wird ein Modal-Fenster aus `modal.pug`integriert welches Details anzeigt.
-````
+````pug
 extends layout.pug
 
 block content
@@ -141,7 +141,7 @@ block content
 Medien-, Serien- und Benutzerdaten werden in jeweils unterschiedlichen JSON-Dateien gespeichert. Jede Datei enthält ein Array von Objekten (`[]`) wobei jedes Objekt (`{}`) die passenden Informationen speichert. Bei dem Hinzufügen von Daten werden neue Objekte angelegt und beim Löschen wird das jeweilige Objekt entfernt.
 
 Struktur der `users.json`-Datei:
-```
+```json
 [
   {
     "firstName": "Max",
@@ -156,7 +156,7 @@ Struktur der `users.json`-Datei:
 ]
 ```
 Struktur der `movies.json` -Datei:
-```
+```json
 [
   {
     "id": 0,
@@ -176,7 +176,7 @@ Die Struktur der `series.json`-Datei entspricht der `movei.json`-Datei.
 ### 4.3 toggleWatchlist
 Der Code definiert eine Express-Route (`POST /toggle-watchlist`), die es eingeloggten Nutzern ermöglicht, Filme oder Serien zur persönlichen Watchlist hinzuzufügen oder zu entfernen. Als erstes wird geprüft, ob der Benutzer eingeloggt ist (`req.session.user`), andernfalls wird eine Fehlermeldung zurückgegeben. Anschließend wird die `users.json`-Datei ausgelesen, um den aktuellen Benutzer zu identifizieren. Es wird das passende Watchlist-Array des Nutzers gewählt, und die eindeutige ID des Films oder der Serie wird entweder hinzugefügt oder entfernt. Danach wird die aktualisierte Benutzerliste zurück in die JSON-Datei geschrieben. Die Route gibt eine Antwort mit dem aktuellen Stand der Watchlist zurück, um die Änderungen in der Benutzeroberfläche anzuzeigen.
 
-```
+```js
 app.post('/toggle-watchlist', (req, res) => {
   if (!req.session.user) {
     return res.json({ success: false, message: 'Not logged in' })
