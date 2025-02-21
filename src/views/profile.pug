@@ -10,34 +10,34 @@ html(lang='de')
       h2 Profile from #{firstName}
       .navRight
         a.returnHomeButton(href='/') Return to home
- 
+
     main
       .profileContainer
         section.profileInfo
           .profileItem
             strong First Name:
             p #{firstName}
- 
+
           .profileItem
             strong Last Name:
             p #{lastName}
- 
+
           .profileItem
             strong Username:
             p #{username}
- 
+
           .profileItem
             strong Email:
             p #{email}
- 
+
           .profileItem
             strong Gender:
             p #{gender}
- 
+
         .formActions
           a.authentificationButton(href='/logout') Logout
           form(action='/delete-account', method='POST')
             button.deleteButton(
               type='submit',
               onclick='return confirm(\'Are you sure you want to delete your account?\')'
-            ) Delete account.
+            ) Delete account
