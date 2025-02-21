@@ -73,6 +73,9 @@ Die Applikation wurde unter Verwendung des Model-View-Controller (MVC)-Architekt
 **View (Benutzeroberfläche)**: Stellt die Daten unter Verwendung von Pug und CSS dar
 **Controller (Logik)**: Verwaltet die Anfragen des Nutzers, greift auf das Model zu und übergibt die Daten an die View
 
+
+
+
 ### 3.2 Ordnerstruktur
 Die Web-Applikation folgt einer strukturierten Ordnerorganisation, die die Trennung der verschiedenen Bereiche aufzeigt. Die Ordnerstruktur sieht wie folgt aus:
 ```
@@ -214,7 +217,7 @@ app.post('/toggle-watchlist', (req, res) => {
 
 ---
 
-## 5. Testphase und Problembehandlung
+## 5. Problembehandlung und Testphase
 ### 5.1 Problembehandlung
 Während der Entwicklung der Web-Applikation kam es durch aus vor, dass wir auf Probleme trafen welche wir nicht ohne weiteres lösen konnten. Folgende Probleme sind unter anderem aufgetreten:
 
@@ -256,6 +259,5 @@ Für die Entwicklung wurden folgende Tools und Technologien verwendet:
 https://www.w3schools.com/css/ (17.02.2025)
 * **Erklärung und Anwendung von PUG**
     https://how.dev/answers/what-is-pug-syntax (20.02.2025)
-*
 
 
