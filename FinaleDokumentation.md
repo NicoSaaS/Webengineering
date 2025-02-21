@@ -246,7 +246,7 @@ Für die Entwicklung wurden folgende Tools und Technologien verwendet:
 
 - **Node.js**: Laufzeitumgebung für den Server
 - **Express.js**: Web-Framework zur Erstellung des Servers und der Routen
-- **Pug**: Template Engine zur dynamischen HTML-Erstellung
+- **PUG**: Template Engine zur dynamischen HTML-Erstellung
 - **CSS**: Stylesheet-Sprache für das Design
 - **JavaScript**: Clientseitige Interaktivität
 - **JSON**: Datenmodellierung und Speicherung
@@ -255,9 +255,21 @@ Für die Entwicklung wurden folgende Tools und Technologien verwendet:
 - **Github**: Versionskontrolle und Code-Hosting
 
 ### 6.2 Quellen
-* **w3Schools - CSS**
-https://www.w3schools.com/css/ (17.02.2025)
+* **W3Schools - CSS**
+  https://www.w3schools.com/css/ (17.02.2025)
+* **Flexbox Froggy - CSS**
+  https://flexboxfroggy.com/#de (07.02.2025)
+* **MDN Web Docs - CSS**
+  https://developer.mozilla.org/en-US/docs/Web/CSS (17.02.2025)
 * **Erklärung und Anwendung von PUG**
-    https://how.dev/answers/what-is-pug-syntax (20.02.2025)
-
-
+  https://how.dev/answers/what-is-pug-syntax (13.02.2025)
+* **Templates - PUG**
+  https://devhints.io/pug (17.02.2025)
+* **MDN Web Docs - JavaScript**
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript (21.02.2025)
+* **W3Schools - JavaScript**
+  https://www.w3schools.com/js/ (21.02.2025)
+* **MDN Web Docs - Node.js & Express.js**
+  https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs (16.02.2025)
+* **Express JS Crash Kurs**
+  https://www.youtube.com/watch?v=L72fhGm1tfE&ab_channel=TraversyMedia (16.02.2025)
