@@ -133,6 +133,7 @@ Die `server.js`-Datei enthält die komplette Serverlogik und verwendet das **Exp
 Die Benutzeroberfläche wurde mit Pug für dynamische HTML-Generierung und CSS für das Design entwickelt. Interaktive Funktionen wurden mit JavaScript umgesetzt. Zu den interaktiven Features gehören:
 
 - **Modal-Fenster**: Beim Klicken auf ein Medium wird ein Modal-Fenster mit detaillierten Informationen angezeigt
+- **Benutzerverwaltung**: Nutzer können sich registrieren, anmelden und ihr Profil anzeigen lassen. Als angemeldeter Nutzer ist die Funktion der Watchlist-Verwaltung nutzbar.
 - **Watchlist-Verwaltung**: Nutzer können Medien per Klick zur Watchlist hinzufügen oder entfernen, unterstützt durch die Fetch API
 
 ---
