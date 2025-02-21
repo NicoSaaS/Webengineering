@@ -6,17 +6,8 @@
     "email": "99@de",
     "username": "99",
     "password": "99",
-    "movie-watchlist": [
-      0,
-      2,
-      6,
-      1
-    ],
-    "series-watchlist": [
-      1,
-      12,
-      7
-    ]
+    "movie-watchlist": [0, 2, 6, 1],
+    "series-watchlist": [1, 12, 7]
   },
   {
     "firstName": "user1",
@@ -45,8 +36,8 @@
     "email": "max.mustermann@example.com",
     "username": "maxi",
     "password": "geheimesPasswort",
-    "movie-watchlist": [],
-    "series-watchlist": []
+    "movie-watchlist": [1, 7, 4],
+    "series-watchlist": [20, 4]
   },
   {
     "firstName": "ff",
