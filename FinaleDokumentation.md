@@ -14,9 +14,9 @@
 4.1 Index.pug
 4.2 Datenmodellierung
 4.3 toggle-watchlist API
-5. Testphase und Problembehandlung
-5.1 Testphase und Fehlerbehebung
-5.2 Problembehandlung
+5. Problembehandlung und Testphase
+5.1 Problembehandlung
+5.2 Testphase und Fehlerbehebung
 5.3 Finalisierung
 6. Quellen und Hilfsmittel-Verzeichnis
 6.1 Verwendete Hilfsmittel
@@ -33,16 +33,11 @@ Diese Dokumentation beschreibt detailiert den Entwurf und die technische Umsetzu
 ### 2.1 Ideensammlung und Zielsetzung
 
 Zu Beginn des Projekts haben wir ein Brainstorming durchgeführt, um die Kernfunktionen und den Umfang der Applikation zu definieren. Diese sind als folgende Ziele formuliert:
-- **Medienkatalog für Filme und Serien**
-Filme und Serien sollen nach Ranking und nach Alphabet sortiert sein
-- **Detailansicht**
-Beim Klick auf ein Film oder eine Serie öffnet sich eine detaillierte Ansicht mit weiteren Informationen
-- **Benutzerverwaltung**
-Registrierung, Anmeldung, Profilansicht und persönliche Watchlist als Funktionen
-- **Watchlist-Verwaltung**
-Filme & Serien hinzufügen und entfernen sowie Detailansicht anzeigen lassen
-- **Responsive Design**
-Web-Applikation passt sich dynamisch an verschiedene Bildschirmgrößen (Laptop, Tablet, Handy) an
+- **Medienkatalog für Filme und Serien**: Filme und Serien sollen nach Ranking und nach Alphabet sortiert sein
+- **Detailansicht**: Beim Klick auf ein Film oder eine Serie öffnet sich eine detaillierte Ansicht mit weiteren Informationen
+- **Benutzerverwaltung**: Registrierung, Anmeldung, Profilansicht und persönliche Watchlist als Funktionen
+- **Watchlist-Verwaltung**: Filme & Serien hinzufügen und entfernen sowie Detailansicht anzeigen lassen
+- **Responsive Design**: Web-Applikation passt sich dynamisch an verschiedene Bildschirmgrößen (Laptop, Tablet, Handy) an
 
 ### 2.2 Design
 Das Design von "CineCanvas" setzt auf eine minimalistische und klare Struktur. Mit der übersichtlichen Navigationsbar wird ein schneller Zugriff zur Übersicht, Ranking, Watchlist und zum Profil ermöglicht.
@@ -175,7 +170,7 @@ Struktur der `movies.json` -Datei:
 
 Die Struktur der `series.json`-Datei entspricht der `movei.json`-Datei.
 
-### 4.3 toggle-watchlist API
+### 4.3 toggleWatchlist
 Der Code definiert eine Express-Route (`POST /toggle-watchlist`), die es eingeloggten Nutzern ermöglicht, Filme oder Serien zur persönlichen Watchlist hinzuzufügen oder zu entfernen. Als erstes wird geprüft, ob der Benutzer eingeloggt ist (`req.session.user`), andernfalls wird eine Fehlermeldung zurückgegeben. Anschließend wird die `users.json`-Datei ausgelesen, um den aktuellen Benutzer zu identifizieren. Es wird das passende Watchlist-Array des Nutzers gewählt, und die eindeutige ID des Films oder der Serie wird entweder hinzugefügt oder entfernt. Danach wird die aktualisierte Benutzerliste zurück in die JSON-Datei geschrieben. Die Route gibt eine Antwort mit dem aktuellen Stand der Watchlist zurück, um die Änderungen in der Benutzeroberfläche anzuzeigen.
 
 ```
@@ -220,7 +215,15 @@ app.post('/toggle-watchlist', (req, res) => {
 ---
 
 ## 5. Testphase und Problembehandlung
-### 5.1 Testphase und Fehlerbehebung
+### 5.1 Problembehandlung
+Während der Entwicklung der Web-Applikation kam es durch aus vor, dass wir auf Probleme trafen welche wir nicht ohne weiteres lösen konnten. Folgende Probleme sind unter anderem aufgetreten:
+
+* **Navigationbar**:Da wir ein Responsive Design gewähren wollen, standen wir vor der Frage wie wir unsere Navigationbar auch auf kleinen Geräten anzeigen lassen können.
+  + `Lösung:` Ab einer bestimmten Größe die "traditionelle" Navigationbar nicht mehr anzeigen. Dafür wird ein "3-Strich" -Menu angezeigt, welches per OnClick ein Dropdown-Menu anzeigt. Dieses hat die gleiche Navigationsoptionen wie die "traditionelle" Navigationsbar.
+* **Watchlist**: Die Datenspeicherung in der Watchlist funktionierte zunächst nicht wie vorgesehen. Filme und Serien wurden nicht getrennt gespeichert, was dazu führte, dass sie nicht korrekt dargestellt wurden.
+  + `Lösung:` Es wurde eine eindeutige ID für jeden Film und jede Serie hinzugefügt. Diese IDs werden getrennt nach Filmen und Serien als Werte in jeweils eigenen Eigenschaften eines Users gespeichert. Beim Aufruf der Watchlist werden die gespeicherten Film- und Serien-IDs des Nutzers geladen und entsprechend angezeigt. Dadurch wird sichergestellt, dass Filme und Serien korrekt voneinander unterschieden und dargestellt werden.
+
+### 5.2 Testphase und Fehlerbehebung
 Nach der Implementierung der grundlegenden Funktionen wurde die Applikation einer Testphase unterzogen. Hierbei wurden Fehler identifiziert und behoben. Außerdem wurden verschiedene Optimierungen auf Basis von Feedback umgesetzt:
 
 - **UI-Verbesserungen**: Verbesserung des Layouts und der Benutzerführung
@@ -228,17 +231,6 @@ Nach der Implementierung der grundlegenden Funktionen wurde die Applikation eine
 - **Fehlerbehebungen**: Behebung kleinerer Bugs in der Funktionalität
 - **Optimierung der Performance**: Vereinfachung der Benutzerinteraktionen und Verbesserung der Ladezeiten
 - **Clean Code**: Verschönerung des Codes
-
-### 5.2 Problembehandlung
-Während der Entwicklung der Web-Applikation kam es durch aus vor, dass wir auf Probleme trafen welche wir nicht ohne weiteres lösen konnten. Folgende Probleme sind unter anderem aufgetreten:
-* **Footer**
-    Der Footer wurde bei einer leeren Watchlist nicht am unteren Ende der Seite angezeigt sondern in der Mitte der Seite.
-    `Lösung:` Den Body als Flexbox mit "column" als Direction. Dementsprechend sowohl dem Content als auch dem Footer das Gewicht 1 geben. Das führt dazu, dass sicher der Footer immer unten an der Seite befindet. Damit der Footer nicht zu groß wird, gaben wir ihm eine maximale Höhe von 15vh.
-* **Navigationbar**:
-    Da wir ein Responsive Design gewähren wollen, standen wir vor der Frage wie wir unsere Navigationbar auch auf kleinen Geräten anzeigen lassen können.
-    `Lösung:` Ab einer bestimmten Größe die "traditionelle" Navigationbar nicht mehr anzeigen. Dafür wird ein "3-Strich" -Menu angezeigt, welches per OnClick ein Dropdown-Menu anzeigt. Dieses hat die gleiche Navigationsoptionen wie die "traditionelle" Navigationsbar.
-* **Z**: abcdefg
-    + Lösung: hijklmnop
 
 ### 5.3 Finalisierung
 Nach erfolgreichem Testen und dem Implementieren von Verbesserungen wurde die Applikation finalisiert. Es wurden keine Veränderungen mehr am Coding vorgenommen.
@@ -264,6 +256,6 @@ Für die Entwicklung wurden folgende Tools und Technologien verwendet:
 https://www.w3schools.com/css/ (17.02.2025)
 * **Erklärung und Anwendung von PUG**
     https://how.dev/answers/what-is-pug-syntax (20.02.2025)
-* 
+*
 
 
