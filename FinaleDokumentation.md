@@ -73,6 +73,27 @@ Die Applikation wurde unter Verwendung des Model-View-Controller (MVC)-Architekt
 **View (Benutzeroberfläche)**: Stellt die Daten unter Verwendung von Pug und CSS dar
 **Controller (Logik)**: Verwaltet die Anfragen des Nutzers, greift auf das Model zu und übergibt die Daten an die View
 
+`Diagrammbeispiele:`
+<table>
+  <tr>
+    <td>
+      <img src="src/public/img/other/Diagram1.png" alt="Diagram1" width="400" height="auto">
+    </td>
+    <td>
+      <img src="src/public/img/other/Diagram2.jpg" alt="Diagram2" width="400" height="auto">
+    </td>
+  <tr>
+  <tr>
+    <td>
+      <img src="src/public/img/other/Diagram3.png" alt="Diagram3" width="400" height="auto">
+    </td>
+    <td>
+      <img src="src/public/img/other/Diagram4.png" alt="Diagram4" width="400" height="auto">
+    </td>
+  <tr>
+</table>
+
+
 
 
 
