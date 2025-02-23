@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '.bookmarkButton',
   )
 
-  const movieElements = document.querySelectorAll('.mediaList .mediaCover')
+  const movieElements = document.querySelectorAll('.mediaList .movieItem')
   movieElements.forEach((element) => {
     element.addEventListener('click', showMovieDetails)
   })
 
-  const serieElements = document.querySelectorAll('.mediaList .mediaCover')
+  const serieElements = document.querySelectorAll('.mediaList .seriesItem')
   serieElements.forEach((element) => {
     element.addEventListener('click', showSerieDetails)
   })

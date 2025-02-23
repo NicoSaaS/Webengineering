@@ -8,12 +8,14 @@
     "password": "geheimesPasswort",
     "movie-watchlist": [
       7,
-      3
+      3,
+      31
     ],
     "series-watchlist": [
       20,
       4,
-      3
+      1,
+      5
     ]
   }
 ]
