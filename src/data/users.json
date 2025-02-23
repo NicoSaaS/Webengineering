@@ -1,44 +1,5 @@
 [
   {
-    "firstName": "99",
-    "lastName": "99",
-    "gender": "male",
-    "email": "99@de",
-    "username": "99",
-    "password": "99",
-    "movie-watchlist": [
-      0,
-      2,
-      6,
-      1
-    ],
-    "series-watchlist": [
-      1,
-      12,
-      7
-    ]
-  },
-  {
-    "firstName": "user1",
-    "lastName": "user1",
-    "gender": "male",
-    "email": "user1@sample.com",
-    "username": "user1",
-    "password": "user1",
-    "movie-watchlist": [],
-    "series-watchlist": []
-  },
-  {
-    "firstName": "00",
-    "lastName": "00",
-    "gender": "male",
-    "email": "00@de",
-    "username": "00",
-    "password": "00",
-    "movie-watchlist": [],
-    "series-watchlist": []
-  },
-  {
     "firstName": "Max",
     "lastName": "Mustermann",
     "gender": "male",
@@ -46,23 +7,13 @@
     "username": "maxi",
     "password": "geheimesPasswort",
     "movie-watchlist": [
-      7,
-      3
+      31
     ],
     "series-watchlist": [
       20,
       4,
-      3
+      1,
+      5
     ]
-  },
-  {
-    "firstName": "ff",
-    "lastName": "ff",
-    "gender": "male",
-    "email": "ff@de",
-    "username": "ff",
-    "password": "ff",
-    "movie-watchlist": [],
-    "series-watchlist": []
   }
 ]

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const movieDataAttr = movieElement.getAttribute('data-movie')
     if (!movieDataAttr) return
     const movieData = JSON.parse(movieDataAttr)
-    movieDetails.showDetails(movieData, 'movie')
+    mediaDetails.showDetails(movieData, 'movie')
   }
 
   function showSerieDetails(event) {
@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const serieDataAttr = serieElement.getAttribute('data-serie')
     if (!serieDataAttr) return
     const serieData = JSON.parse(serieDataAttr)
-    serieDetails.showDetails(serieData, 'serie')
+    mediaDetails.showDetails(serieData, 'serie')
   }
 
-  const movieDetails = new MediaDetails(
+  const mediaDetails = new MediaDetails(
     'mediaPopup',
     '.closeButton',
     'mediaTitle',
@@ -30,25 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '.bookmarkButton',
   )
 
-  const serieDetails = new MediaDetails(
-    'mediaPopup',
-    '.closeButton',
-    'mediaTitle',
-    'mediaImage',
-    'mediaDescription',
-    'mediaGenre',
-    'mediaRanking',
-    'mediaDirector',
-    'mediaReleased',
-    '.bookmarkButton',
-  )
-
-  const movieElements = document.querySelectorAll('.mediaList .mediaCover')
+  const movieElements = document.querySelectorAll('.mediaList .movieItem')
   movieElements.forEach((element) => {
     element.addEventListener('click', showMovieDetails)
   })
 
-  const serieElements = document.querySelectorAll('.mediaList .mediaCover')
+  const serieElements = document.querySelectorAll('.mediaList .seriesItem')
   serieElements.forEach((element) => {
     element.addEventListener('click', showSerieDetails)
   })
