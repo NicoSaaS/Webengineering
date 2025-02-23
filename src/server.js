@@ -6,7 +6,6 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const fs = require('fs')
-
 const app = express()
 
 /**
@@ -263,15 +262,6 @@ app.get('/watchlist', (req, res) => {
   const currentUser = users.find(
     (user) => user.username === req.session.user.username,
   )
-
-  if (!currentUser) {
-    return res.render('watchlist', {
-      title: 'Watchlist',
-      active_tab: 'watchlist',
-      movies: [],
-      series: [],
-    })
-  }
 
   const moviesFilePath = path.join(__dirname, 'data', 'movies.json')
   const seriesFilePath = path.join(__dirname, 'data', 'series.json')
