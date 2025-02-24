@@ -13,7 +13,8 @@
 4. Quelltext Beispiele
 4.1 Index.pug
 4.2 Datenmodellierung
-4.3 toggle-watchlist API
+4.3 Serverseitige Programmierung
+4.4 Clientseitige Programmierung
 5. Problembehandlung und Testphase
 5.1 Problembehandlung
 5.2 Testphase und Fehlerbehebung
@@ -195,7 +196,7 @@ Struktur der `movies.json` -Datei:
 
 Die Struktur der `series.json`-Datei entspricht der `movei.json`-Datei.
 
-### 4.3 toggleWatchlist
+### 4.3 Serverseitige Programmierung (toggleWatchlist)
 Der Code definiert eine Express-Route (`POST /toggle-watchlist`), die es eingeloggten Nutzern ermöglicht, Filme oder Serien zur persönlichen Watchlist hinzuzufügen oder zu entfernen. Als erstes wird geprüft, ob der Benutzer eingeloggt ist (`req.session.user`), andernfalls wird eine Fehlermeldung zurückgegeben. Anschließend wird die `users.json`-Datei ausgelesen, um den aktuellen Benutzer zu identifizieren. Es wird das passende Watchlist-Array des Nutzers gewählt, und die eindeutige ID des Films oder der Serie wird entweder hinzugefügt oder entfernt. Danach wird die aktualisierte Benutzerliste zurück in die JSON-Datei geschrieben. Die Route gibt eine Antwort mit dem aktuellen Stand der Watchlist zurück, um die Änderungen in der Benutzeroberfläche anzuzeigen.
 
 ```js
@@ -237,6 +238,43 @@ app.post('/toggle-watchlist', (req, res) => {
 })
 ```
 
+### 4.4 Clientseitige Programmierung
+Die Funktion `toggleWatchlist(mediaId, mediaType)` ermöglicht es einem Nutzer, einen Film oder eine Serie zur persönlichen Watchlist hinzuzufügen oder zu entfernen. Dazu sendet sie eine POST-Anfrage an die serverseitige Route /toggle-watchlist.
+Zunächst wird die Anfrage mit fetch() gesendet. Die Antwort des Servers wird als JSON interpretiert. Falls die Aktion nicht erfolgreich war (z.B. weil der Nutzer nicht eingeloggt ist), wird eine Fehlermeldung ausgegeben und eine Alert-Box angezeigt.
+Ist die Aktion erfolgreich, prüft die Funktion, ob der Film oder die Serie in der aktualisierten Watchlist des Nutzers enthalten ist. Entsprechend wird dann das Lesezeichen-Symbol angepasst:
+Wenn der Film oder die Serie hinzugefügt wurde, wird das aktivierte Symbol (/img/selected_bookmark.png) gesetzt.
+Wenn das Medium entfernt wurde, wird das normale Symbol (/img/bookmark.png) angezeigt.
+Falls sich der Nutzer auf der Watchlist-Seite befindet (window.location.pathname === '/watchlist'), wird die Seite neu geladen, um die Änderungen anzuzeigen.
+```js
+  toggleWatchlist(mediaId, mediaType) {
+    fetch('/toggle-watchlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mediaId, mediaType }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data.success) {
+          console.log(data.message)
+          alert("Log in first!");
+          return
+        }
+
+        const watchlistKey =
+          mediaType === 'movie' ? 'movie-watchlist' : 'series-watchlist'
+        const isInWatchlist = data[watchlistKey].includes(mediaId)
+
+        this.bookmarkImg.src = isInWatchlist
+          ? '/img/selected_bookmark.png'
+          : '/img/bookmark.png'
+
+        if (window.location.pathname === '/watchlist') {
+          window.location.reload()
+        }
+      })
+      .catch(() => console.error('Error modifying the watchlist.'))
+  }
+```
 ---
 
 ## 5. Problembehandlung und Testphase
