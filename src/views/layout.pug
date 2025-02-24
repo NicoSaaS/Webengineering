@@ -23,8 +23,7 @@ html(lang='de')
         a.logoContainer(href='/')
           img.logo(src='/icon/favicon.png', alt='Logo')
         span.siteTitle CineCanvas
-      button.toggleMenu(onclick='toggleMenu()') ☰
-      input#menu-checkbox(type='checkbox', hidden)
+      button.toggleMenu(onclick='toggleMenu()', data-menu="0") ☰
       nav
         ul.navLeft
           li
