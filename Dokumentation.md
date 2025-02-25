@@ -78,18 +78,18 @@ Die Applikation wurde unter Verwendung des Model-View-Controller (MVC)-Architekt
 <table>
   <tr>
     <td>
-      <img src="src/public/img/other/Diagram1.png" alt="Diagram1" width="400" height="auto">
+      <img src="documentationDiagrams/Diagram1.png" alt="Diagram1" width="400" height="auto">
     </td>
     <td>
-      <img src="src/public/img/other/Diagram2.jpg" alt="Diagram2" width="400" height="auto">
+      <img src="documentationDiagrams/Diagram2.jpg" alt="Diagram2" width="400" height="auto">
     </td>
   <tr>
   <tr>
     <td>
-      <img src="src/public/img/other/Diagram3.png" alt="Diagram3" width="400" height="auto">
+      <img src="documentationDiagrams/Diagram3.png" alt="Diagram3" width="400" height="auto">
     </td>
     <td>
-      <img src="src/public/img/other/Diagram4.png" alt="Diagram4" width="400" height="auto">
+      <img src="documentationDiagrams/Diagram4.png" alt="Diagram4" width="400" height="auto">
     </td>
   <tr>
 </table>
