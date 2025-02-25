@@ -69,11 +69,36 @@ Footer
 ## 3. Technische Umsetzung
 ### 3.1 Architektur
 
-Die Applikation wurde unter Verwendung des Model-View-Controller (MVC)-Architekturmodells entwickelt. Diese Architektur trennt die Datenlogik (Model), die Darstellung (View) und die Anwendungslogik (Controller), um die Wartbarkeit und Skalierbarkeit der Anwendung zu verbessern.
+Die Applikation wurde unter Verwendung des **Model-View-Controller (MVC)-Architekturmodells** entwickelt. Diese Architektur trennt die Datenlogik (**Model**), die Darstellung (**View**) und die Anwendungslogik (**Controller**), um die **Wartbarkeit** und **Skalierbarkeit** der Anwendung zu verbessern.
 
-**Model (Datenmodell)**: Enthält alle Informationen zu Filmen, Serien und Benutzern, gespeichert in JSON-Dateien
-**View (Benutzeroberfläche)**: Präsentiert die Daten dem Nutzer und sorgt für eine ansprechende Benutzeroberfläche mittels Pug-Templates und CSS.
-**Controller (Logik)**: Verwaltet die Anfragen des Nutzers, greift auf das Model zu und übergibt die Daten an die View
+#### **Model (Datenmodell)**
+Das **Model** ist für die Verwaltung und Verarbeitung der Anwendungsdaten verantwortlich. Die Daten werden in **JSON-Dateien** gespeichert und dynamisch ausgelesen oder aktualisiert.
+
+- `movies.json` & `series.json`: Enthalten alle Filme und Serien inklusive Titel, Beschreibung, Genre und Cover-Bilder.
+- `users.json`: Speichert Benutzerdaten wie Benutzername, Passwort und die persönlichen Watchlists.
+- Alle JSON-Dateien dienen als einfache, **dateibasierte Datenbank**, die durch JavaScript-Funktionen verwaltet wird.
+
+#### **View (Benutzeroberfläche)**
+Die **View** ist für die Darstellung der Inhalte verantwortlich und wurde mit **Pug-Templates** entwickelt. Sie generiert die HTML-Struktur dynamisch auf Basis der übergebenen Daten.
+
+- **Pug-Templates:** Erzeugen HTML basierend auf den Daten des Controllers.
+- **CSS-Styles:** Definiert das Layout und Design der Benutzeroberfläche.
+- **JavaScript (Client-seitig):** Ermöglicht interaktive Funktionen wie das Öffnen von Modalen oder das Verwalten der Watchlist.
+
+**Haupttemplates:**
+- `layout.pug`: Basislayout für alle Seiten.
+- `index.pug`: Startseite mit Listenansicht der Filme und Serien.
+- `profile.pug`: Nutzerprofil mit Watchlist.
+- `login.pug`: Loginseite.
+
+#### **Controller (Anwendungslogik)**
+Der **Controller** verarbeitet die Anfragen des Nutzers, interagiert mit dem **Model**, und gibt die entsprechenden Daten an die **View** weiter. Dies erfolgt über die **server.js**-Datei mithilfe des Express-Frameworks.
+
+**Wichtige Funktionen:**
+- **Routing:** Verarbeitung eingehender HTTP-Anfragen und Bereitstellung der passenden Pug-Templates.
+- **Datenhandling:** Lesen und Schreiben der JSON-Dateien.
+- **Authentifizierung:** Einfache Nutzerverwaltung mit Sitzungsverwaltung via `express-session`.
+- **Watchlist-Management:** Hinzufügen und Entfernen von Medien zur Watchlist.
 
 `Diagrammbeispiele:`
 <table>
