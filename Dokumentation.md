@@ -8,8 +8,9 @@
 3. Technische Umsetzung
 3.1 Architektur
 3.2 Ordnerstruktur
-3.3 Implementierung der Serverlogik
-3.4 Benutzeroberfläche und Interaktivität
+3.3 Server-seitige Logik
+3.4 Client-seitige Interaktion
+3.5 Datenverwaltung
 4. Quelltext Beispiele
 4.1 Index.pug
 4.2 Datenmodellierung
@@ -26,7 +27,7 @@
 
 ## 1. Einleitung
 
-Diese Dokumentation beschreibt detailiert den Entwurf und die technische Umsetzung der Web-Applikation "CineCanvas". Die Applikation ermöglicht Nutzern Filme und Serien zu entdecken und ihre persöhnliche Watchlist zu verwalten - alles in einem Ort. Der Fokus liegt dabei auf einer benutzerfreundlichen und intuitiven Benutzeroberfläche, die auf verschiedenen Geräten nutzbar ist.
+Diese Dokumentation beschreibt detailiert den Entwurf und die technische Umsetzung der Web-Applikation "CineCanvas". Die Applikation ermöglicht Nutzern Filme und Serien zu entdecken und ihre persönliche Watchlist zu verwalten - alles in einem Ort. Der Fokus liegt dabei auf einer benutzerfreundlichen und intuitiven Benutzeroberfläche, die auf verschiedenen Geräten nutzbar ist.
 
 ---
 
@@ -71,7 +72,7 @@ Footer
 Die Applikation wurde unter Verwendung des Model-View-Controller (MVC)-Architekturmodells entwickelt. Diese Architektur trennt die Datenlogik (Model), die Darstellung (View) und die Anwendungslogik (Controller), um die Wartbarkeit und Skalierbarkeit der Anwendung zu verbessern.
 
 **Model (Datenmodell)**: Enthält alle Informationen zu Filmen, Serien und Benutzern, gespeichert in JSON-Dateien
-**View (Benutzeroberfläche)**: Stellt die Daten unter Verwendung von Pug und CSS dar
+**View (Benutzeroberfläche)**: Präsentiert die Daten dem Nutzer und sorgt für eine ansprechende Benutzeroberfläche mittels Pug-Templates und CSS.
 **Controller (Logik)**: Verwaltet die Anfragen des Nutzers, greift auf das Model zu und übergibt die Daten an die View
 
 `Diagrammbeispiele:`
@@ -95,9 +96,6 @@ Die Applikation wurde unter Verwendung des Model-View-Controller (MVC)-Architekt
 </table>
 
 
-
-
-
 ### 3.2 Ordnerstruktur
 Die Web-Applikation folgt einer strukturierten Ordnerorganisation, die die Trennung der verschiedenen Bereiche aufzeigt. Die Ordnerstruktur sieht wie folgt aus:
 ```
@@ -114,28 +112,56 @@ Die Web-Applikation folgt einer strukturierten Ordnerorganisation, die die Trenn
   server.js             // Haupt-Server-Datei (Controller)
 ```
 
-### 3.3 Implementierung der Serverlogik
-Die `server.js`-Datei enthält die komplette Serverlogik und verwendet das **Express.js** Framework für die Erstellung des Webservers. Folgende Funktionalitäten werden umgesetzt:
+### 3.3 Server-seitige Logik (Express-Backend)
 
-* **Routing**: Übersichtliche und strukturierte Definition von Routenwelche auf Pug-Templates zurückgreifen:
-    + Öffentliche Routen
-    + Benutzerauthentifizierung
-    + Watchlist-Verwaltung
-* **Middleware**: Die Middleware ermöglicht eine reibungslose Kommunikation zwischen Client und Server, indem sie Anfragen vor der Verarbeitung vorbereitet und zusätzliche Funktionalitäten bereitzustellen:
-    + Body-Parser
-    + Express-Session
-    + Static Files
-* **Datenbankanbindung**: Die Anwendung verarbeitet Daten und die API-Logik stellt sicher, dass Benutzerinteraktionen direkt reflektiert und in JSON-Dateien gespeichert werden:
-    + Laden und Speichern von Daten
-    + Dynamische Aktualisierung
+Die `server.js`-Datei enthält die komplette Serverlogik und verwendet das **Express.js** Framework für die Erstellung des Webservers.
 
-### 3.4 Benutzeroberfläche und Interaktivität
+#### Routen für Authentifizierung:
 
-Die Benutzeroberfläche wurde mit Pug für dynamische HTML-Generierung und CSS für das Design entwickelt. Interaktive Funktionen wurden mit JavaScript umgesetzt. Zu den interaktiven Features gehören:
+- `/login` → Login-Seite
+- `/register` → Registrierungsseite
+- `/profile` → Profilseite des Nutzers
+- `/logout` → Beenden der Sitzung
+- `/delete-account` → Löscht das Benutzerkonto
 
-- **Modal-Fenster**: Beim Klicken auf ein Medium wird ein Modal-Fenster mit detaillierten Informationen angezeigt
+#### Routen für Medieninhalte:
+
+- `/movies` → Lädt und zeigt Filme
+- `/series` → Lädt und zeigt Serien
+- `/watchlist` → Zeigt die Watchlist des Nutzers
+- `/get-user-watchlist` → Gibt die Watchlist eines Nutzers als JSON zurück
+- `/toggle-watchlist` → Fügt Medien zur Watchlist hinzu oder entfernt sie
+
+#### Middleware:
+
+Die Middleware ermöglicht eine reibungslose Kommunikation zwischen Client und Server, indem sie Anfragen vor der Verarbeitung vorbereitet und zusätzliche Funktionalitäten bereitstellt:
+
+- **Body-Parser** für das Verarbeiten von Formulardaten
+- **Express-Session** für die Sitzungsverwaltung
+- **Static Files** für die Bereitstellung von CSS, Bildern und JavaScript-Dateien
+
+### 3.4 Client-seitige Interaktion (JavaScript)
+
+Die Benutzeroberfläche wurde mit Pug für dynamische HTML-Generierung und CSS für das Design entwickelt. Interaktive Funktionen wurden mit JavaScript umgesetzt.
+
+- **Modal-Fenster**: Beim Klicken auf ein Medium wird ein Modal-Fenster mit detaillierten Informationen angezeigt.
 - **Benutzerverwaltung**: Nutzer können sich registrieren, anmelden und ihr Profil anzeigen lassen. Als angemeldeter Nutzer ist die Funktion der Watchlist-Verwaltung nutzbar.
-- **Watchlist-Verwaltung**: Nutzer können Medien per Klick zur Watchlist hinzufügen oder entfernen, unterstützt durch die Fetch API
+- **Watchlist-Verwaltung**: Nutzer können Medien per Klick zur Watchlist hinzufügen oder entfernen, unterstützt durch die Fetch API.
+
+Das Skript `media.js` verwaltet interaktive Funktionen für die Medienanzeige:
+
+- `showDetails(mediaData, mediaType)`: Zeigt ein Medium mit Details an.
+- `fetchWatchlist(mediaId, mediaType)`: Prüft, ob das Medium in der Watchlist ist.
+- `toggleWatchlist(mediaId, mediaType)`: Fügt ein Medium zur Watchlist hinzu oder entfernt es.
+- `hideModal()`: Schließt das Modal.
+
+### 3.5 Datenverwaltung (JSON-Dateien)
+
+Die Anwendung nutzt JSON-Dateien zur Speicherung von Daten:
+
+- `movies.json` & `series.json`: Enthalten die Filme und Serien mit Metadaten.
+- `users.json`: Speichert Benutzerinformationen inkl. Watchlist.
+
 
 ---
 
