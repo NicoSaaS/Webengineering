@@ -1,18 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   function showMovieDetails(event) {
     const movieElement = event.target.closest('li')
-    if (!movieElement) return
     const movieDataAttr = movieElement.getAttribute('data-movie')
-    if (!movieDataAttr) return
     const movieData = JSON.parse(movieDataAttr)
     mediaDetails.showDetails(movieData, 'movie')
   }
 
   function showSerieDetails(event) {
     const serieElement = event.target.closest('li')
-    if (!serieElement) return
     const serieDataAttr = serieElement.getAttribute('data-serie')
-    if (!serieDataAttr) return
     const serieData = JSON.parse(serieDataAttr)
     mediaDetails.showDetails(serieData, 'serie')
   }
