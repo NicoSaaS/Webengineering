@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '.bookmarkButton',
   )
 
-  const movieElements = document.querySelectorAll('.mediaList .movieItem')
+  const movieElements = document.querySelectorAll('.movieItem .mediaCover')
   movieElements.forEach((element) => {
     element.addEventListener('click', showMovieDetails)
   })
 
-  const serieElements = document.querySelectorAll('.mediaList .seriesItem')
+  const serieElements = document.querySelectorAll('.seriesItem .mediaCover')
   serieElements.forEach((element) => {
     element.addEventListener('click', showSerieDetails)
   })
