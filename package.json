@@ -9,6 +9,7 @@
     "prettier": "^3.5.0"
   },
   "scripts": {
+    "prestart": "npm install",
     "start": "cd src && node server.js"
   }
 }
