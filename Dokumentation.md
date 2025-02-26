@@ -246,7 +246,7 @@ li,a,
 .profileIcon {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: clamp(1rem, 1.2vw, 1.5rem); /*(MIN, IDEAL, MAX) -- Die Schrift bleibt zwischen den angegebenen Grenzen flexibel*/
+  font-size: clamp(1rem, 1.2vw, 1.5rem); /*(MIN, IDEAL, MAX) -- Schrift ist in dem Bereich flexibel*/
   color: var(--fontColor3);
   text-decoration: none;
 }
@@ -257,7 +257,7 @@ Wir haben verschiedene Media Queries genutzt, um das Layout für kleinere Bildsc
 z.B. verstecken wir die Navigationsleiste auf kleinen Bildschirmen und zeigen stattdessen das Menü-Icon.
 Dadurch bleiben wir nutzerfreundlich für mobile Geräte.
 ```css
-@media screen and (max-width: 840px) { /*die enthaltenen CSS-Regeln werden nur auf Geräte mit einer Breite von 840px oder weniger angewendet (z. B. Tablets & Smartphones)*/
+@media screen and (max-width: 840px) { /*Regeln gelten nur für Pixelgröße < 840px*/
   .navLeft {
     display: none;
   }
