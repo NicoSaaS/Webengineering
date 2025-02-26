@@ -4,15 +4,16 @@
 1. Einleitung
 2. Entwurf der Applikation
 2.1 Ideensammlung und Zielsetzung
-2.2 Konzept und Featureauswahl
+2.2 Design
 3. Technische Umsetzung
 3.1 Architektur
 3.2 Ordnerstruktur
 3.3 Server-seitige Logik
 3.4 Client-seitige Interaktion
 3.5 Datenverwaltung
+3.6 Umsetzung des Designs
 4. Quelltext Beispiele
-4.1 Index.pug
+4.1 Startseite
 4.2 Datenmodellierung
 4.3 Serverseitige Programmierung
 4.4 Clientseitige Programmierung
@@ -172,8 +173,30 @@ Die `server.js`-Datei enthält die komplette Serverlogik und verwendet das **Exp
 Die Middleware ermöglicht eine reibungslose Kommunikation zwischen Client und Server, indem sie Anfragen vor der Verarbeitung vorbereitet und zusätzliche Funktionalitäten bereitstellt:
 
 - **Body-Parser** für das Verarbeiten von Formulardaten
+Analysiert eingehende Anfragen und stellt deren Daten als req.body zur Verfügung.
+```js
+app.use(bodyParser.urlencoded({ extended: true })) // Ermöglicht das Parsen von Formular-Daten
+app.use(bodyParser.json()) // Ermöglicht das Parsen von JSON-Daten in POST-Anfragen
+
+```
 - **Express-Session** für die Sitzungsverwaltung
+```js
+app.use(
+  session({
+    secret: 'secret-key', // Um Sitzungsdaten zu verschlüsseln
+    resave: false, // Speichert die Session nicht erneut, wenn sich nichts geändert hat
+    saveUninitialized: false, // Damit keine leeren Sessions gespeichert werden
+    cookie: { secure: false },
+  }),
+)
+
+```
+
 - **Static Files** für die Bereitstellung von CSS, Bildern und JavaScript-Dateien
+```js
+app.use(express.static(path.join(__dirname, 'public'))) //Bereitstellung aus puplic Ordner
+
+```
 
 ### 3.4 Client-seitige Interaktion (JavaScript)
 
@@ -197,11 +220,62 @@ Die Anwendung nutzt JSON-Dateien zur Speicherung von Daten:
 - `movies.json` & `series.json`: Enthalten die Filme und Serien mit Metadaten.
 - `users.json`: Speichert Benutzerinformationen inkl. Watchlist.
 
+### 3.6 Umetzung des Designs
 
+#### :Root
+Für die Umsetzung unseres Design haben wir unsere Hauptfarben (blau, schwarz, grau) in `:root` zentral verwaltet
+```css
+:root {
+  --backgroundColor1: #000000;
+  --backgroundColor2: #333333;
+  --backgroundColor3: #a1a1a1;
+  --backgroundColor4: #1e90ff;
+  --backgroundColor5: #ffffff;
+  --backgroundColor6: #f9f9f9;
+  --fontColor1: blue;
+  --fontColor2: black;
+  --fontColor3: white;
+  --fontColor4: #1e90ff;
+  --fontColor5: #333333;
+  --buttonBackgroundColor1: #1e90ff;
+  --buttonBackgroundColor2: #c0392b;
+  --buttonHoverColor1: #1c7ed6;
+}
+```
+um dann gezielt durch Variableaufrufe (z.B: `background-color: var(--backgroundColor1);`) diese zu anzuwenden um ein einheitliches Design zu gewährleisten. Außerdem kann man dadruch bei Anpassung des Designs nur die Variable ändern ohne jede Stelle im Projekt zu bearbeiten.
+
+#### Clamp()
+Clamp haben wir benutzt um Responsives Design zu gewährleisten, da daruch die Schriftgröße an verschiedene Bildschirmgrößen angepasst wird.
+```css
+li,a,
+.profileIcon {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 1.2vw, 1.5rem); /*(MIN, IDEAL, MAX) -- Die Schrift bleibt zwischen den angegebenen Grenzen flexibel*/
+  color: var(--fontColor3);
+  text-decoration: none;
+}
+```
+
+#### Media
+Wir haben verschiedene Media Queries genutzt, um das Layout für kleinere Bildschirme anzupassen.
+z.B. verstecken wir die Navigationsleiste auf kleinen Bildschirmen und zeigen stattdessen das Menü-Icon.
+Dadurch bleiben wir nutzerfreundlich für mobile Geräte.
+```css
+@media screen and (max-width: 840px) {
+  .navLeft {
+    display: none;
+  }
+
+  .toggleMenu {
+    display: block;
+  }
+}
+```
 ---
 
 ## 4. Quelltext - Beispiele
-### 4.1 Index.pug
+### 4.1 Startseite (Index.pug)
 Index.pug ist die Startseite und lädt die wichtigsten Komponenten für Filme und Serien. PUG ist eine Template-Engine um HTML-Seiten effizient und übersichtlicher zu machen. Index.pug erweitert das Layout aus `layout.pug` um das Grundgerüst der Seite beizubehalten.
 Innerhalb des `content`-Blocks werden die Filme und Serien in Sektionen für monatliches Film- und Serienranking aufgeteilt, wobei die Inhalte aus `movie.pug` und `series.pug` eingebunden.
 Zusätzlich wird ein Modal-Fenster aus `modal.pug`integriert welches Details anzeigt.
@@ -344,8 +418,8 @@ Während der Entwicklung der Web-Applikation kam es durch aus vor, dass wir auf 
 
 * **Navigationsbar**:Da wir ein Responsive Design gewähren wollen, standen wir vor der Frage wie wir unsere Navigationbar auch auf kleinen Geräten anzeigen lassen können.
   + `Lösung:` Ab einer bestimmten Größe die "traditionelle" Navigationbar nicht mehr anzeigen. Dafür wird ein "3-Strich" -Menu angezeigt, welches per OnClick ein Dropdown-Menu anzeigt. Dieses hat die gleiche Navigationsoptionen wie die "traditionelle" Navigationsbar.
-* **Watchlist**: Die Datenspeicherung in der Watchlist funktionierte zunächst nicht wie vorgesehen. Filme und Serien wurden nicht getrennt gespeichert, was dazu führte, dass sie nicht korrekt dargestellt wurden.
-  + `Lösung:` Es wurde eine eindeutige ID für jeden Film und jede Serie hinzugefügt. Diese IDs werden getrennt nach Filmen und Serien als Werte in jeweils eigenen Eigenschaften eines Users gespeichert. Beim Aufruf der Watchlist werden die gespeicherten Film- und Serien-IDs des Nutzers geladen und entsprechend angezeigt. Dadurch wird sichergestellt, dass Filme und Serien korrekt voneinander unterschieden und dargestellt werden.
+* **Watchlist**: Die Datenspeicherung in der Watchlist funktionierte zunächst nicht wie vorgesehen. Wir haben versucht über den session user die film/serien watchlist zu holen, worin aber garnicht die ganzen Benutzer Daten gespeichert waren. Außedem wurden Filme und Serien nicht getrennt gespeichert, was dazu führte, dass sie nicht korrekt dargestellt wurden.
+  + `Lösung:` Es wurde eine eindeutige ID für jeden Film und jede Serie hinzugefügt. Diese IDs werden getrennt nach Filmen und Serien als Werte in jeweils eigenen Eigenschaften eines Users gespeichert. Dadurch wird sichergestellt, dass Filme und Serien korrekt voneinander unterschieden und dargestellt werden. Beim Aufruf der Watchlist werden die gespeicherten Film- und Serien-IDs des Nutzers geladen und entsprechend angezeigt. Dieser Nutzer wird dadurch ermittel dass wir in der gesamten user.json nach dem session user suchen und so die gesamten Nutzerdaten holen können.
 
 ### 5.2 Testphase und Fehlerbehebung
 Nach der Implementierung der grundlegenden Funktionen wurde die Applikation einer Testphase unterzogen. Hierbei wurden Fehler identifiziert und behoben. Außerdem wurden verschiedene Optimierungen auf Basis von Feedback umgesetzt:
@@ -354,7 +428,7 @@ Nach der Implementierung der grundlegenden Funktionen wurde die Applikation eine
 - **Responsive Design**: Kleinere Anpassungen um ein rundum unterstütztes Responsive Design zu gewähren
 - **Fehlerbehebungen**: Behebung kleinerer Bugs in der Funktionalität
 - **Optimierung der Performance**: Vereinfachung der Benutzerinteraktionen und Verbesserung der Ladezeiten
-- **Clean Code**: Verschönerung des Codes
+- **Clean Code**: Verschönerung des Codes durch Prettier
 
 ### 5.3 Finalisierung
 Nach erfolgreichem Testen und dem Implementieren von Verbesserungen wurde die Applikation finalisiert. Es wurden keine Veränderungen mehr am Coding vorgenommen.
