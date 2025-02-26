@@ -104,31 +104,26 @@ Der **Controller** verarbeitet die Anfragen des Nutzers, interagiert mit dem **M
 `Diagrammbeispiele:`
 <table>
   <tr>
-    <td>
-      <img src="documentationDiagrams/mvc_diagram.png" alt="MVC-Diagram" width="400" height="auto">
-      <p style="font-size: 10px;">Diese Diagramm verdeutlicht die oben beschriebene MVC-Architektur</p>
-    </td>
+    <img src="documentationDiagrams/mvc_diagram.png" alt="MVC-Diagram" width="400" height="auto">
+    <p style="font-size: 10px;">Dieses Diagramm verdeutlicht die oben beschriebene MVC-Architektur</p>
   </tr>
   <tr>
-    <td>
-      <img src="documentationDiagrams/Diagram1.png" alt="Diagram1" width="400" height="auto">
-      <p style="font-size: 10px;">Diese Diagramm zeigt die Schritte und möglichen Interaktionen bei dem öffnen des Modals</p>
-    </td>
-    <td>
-      <img src="documentationDiagrams/Diagram2.jpg" alt="Diagram2" width="400" height="auto">
-      <p style="font-size: 10px;">Diese Diagramm zeigt die Schritte und möglichen Interaktionen bei dem klick auf "Watchlist"</p>
-    </td>
+    <img src="documentationDiagrams/Diagram1.png" alt="Diagram1" width="400" height="auto">
+    <p style="font-size: 10px;">Dieses Diagramm zeigt den Prozess, wie ein Benutzer ein Medium zu seiner Watchlist hinzufügt. Nachdem die Webseite geladen wurde und das Mediumcover angezeigt wird, kann der Benutzer auf das Cover klicken, woraufhin die dazugehörigen Mediendaten geladen und angezeigt werden. Klickt der Benutzer anschließend auf das Bookmark-Symbol, überprüft das System, ob er eingeloggt ist. Falls nicht, wird eine Fehlermeldung mit dem Hinweis „Log in first!“ angezeigt. Falls der Benutzer eingeloggt ist, wird das Medium zur Watchlist hinzugefügt, und das Bookmark-Symbol wird ausgefüllt, um die erfolgreiche Speicherung zu visualisieren.
+
+</p>
   <tr>
+    <img src="documentationDiagrams/Diagram2.jpg" alt="Diagram2" width="400" height="auto">
+    <p style="font-size: 10px;">Dieses Diagramm beschreibt den Ablauf, wenn ein Benutzer seine Watchlist einsehen möchte. Nachdem die Webseite geladen wurde und das Mediumcover angezeigt wird, kann der Benutzer im Header auf „Watchlist“ klicken. Das System überprüft daraufhin, ob der Benutzer eingeloggt ist. Falls nicht, wird die Login-Seite geladen. Falls der Benutzer eingeloggt ist, prüft das System, ob sich Medien in der Watchlist befinden. Falls ja, werden die gespeicherten Mediendaten geladen und angezeigt. Falls keine Medien in der Watchlist sind, erhält der Benutzer eine entsprechende Meldung, dass keine Inhalte vorhanden sind.</p>
+  </tr>
   <tr>
-    <td>
-      <img src="documentationDiagrams/Diagram3.png" alt="Diagram3" width="400" height="auto">
-      <p style="font-size: 10px;">Diese Diagramm zeigt die Schritte und möglichen Interaktionen bei dem klick auf das Profil-Icon</p>
-    </td>
-    <td>
-      <img src="documentationDiagrams/Diagram4.png" alt="Diagram4" width="400" height="auto">
-      <p style="font-size: 10px;">Diese Diagramm zeigt die Schritte und möglichen Interaktionen auf der Login Page</p>
-    </td>
+    <img src="documentationDiagrams/Diagram3.png" alt="Diagram3" width="400" height="auto">
+    <p style="font-size: 10px;">Das zweite Diagramm stellt den Prozess der Account-Verwaltung und Löschung dar. Nachdem die Webseite geladen wurde und das Mediumcover angezeigt wird, kann der Benutzer auf das Profil-Icon klicken. Das System überprüft dann, ob der Benutzer eingeloggt ist. Falls nicht, wird er auf die Login-Seite weitergeleitet. Falls er eingeloggt ist, wird die Profilseite angezeigt. Von dort aus hat der Benutzer zwei Optionen: Er kann sich ausloggen, wodurch er zur Login-Seite zurückkehrt, oder er kann seinen Account löschen. Falls er seinen Account löschen möchte, wird zunächst eine Sicherheitsabfrage angezeigt. Wenn er diese bestätigt, wird der Account endgültig gelöscht. Falls er sich dagegen entscheidet, bleibt die Profilseite geöffnet.</p>
+  </tr>
   <tr>
+    <img src="documentationDiagrams/Diagram4.png" alt="Diagram4" width="400" height="auto">
+    <p style="font-size: 10px;">Dieses Diagram beschreibt den Registrierungsprozess eines Benutzers. Zunächst wird die Login-Seite gerendert, von der aus der Benutzer die Möglichkeit hat, auf „Sign Up“ zu klicken. Daraufhin wird die Registrierungsseite geladen, auf der der Benutzer seine Daten eingeben und sich registrieren kann. Sobald er auf „Register“ klickt, überprüft das System, ob der Benutzer bereits existiert. Falls dies der Fall ist, wird eine Fehlermeldung ausgegeben. Falls der Benutzer noch nicht registriert ist, wird die Profilseite geladen, und der Registrierungsprozess ist abgeschlossen.</p>
+  </tr>
 </table>
 
 
@@ -262,7 +257,7 @@ Wir haben verschiedene Media Queries genutzt, um das Layout für kleinere Bildsc
 z.B. verstecken wir die Navigationsleiste auf kleinen Bildschirmen und zeigen stattdessen das Menü-Icon.
 Dadurch bleiben wir nutzerfreundlich für mobile Geräte.
 ```css
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 840px) { /*die enthaltenen CSS-Regeln werden nur auf Geräte mit einer Breite von 840px oder weniger angewendet (z. B. Tablets & Smartphones)*/
   .navLeft {
     display: none;
   }
