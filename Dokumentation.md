@@ -104,18 +104,28 @@ Der **Controller** verarbeitet die Anfragen des Nutzers, interagiert mit dem **M
 <table>
   <tr>
     <td>
+      <img src="documentationDiagrams/mvc_diagram.png" alt="MVC-Diagram" width="400" height="auto">
+      <p style="font-size: 10px;">Diese Diagramm verdeutlicht die oben beschriebene MVC-Architektur</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
       <img src="documentationDiagrams/Diagram1.png" alt="Diagram1" width="400" height="auto">
+      <p style="font-size: 10px;">Diese Diagramm zeigt die Schritte und möglichen Interaktionen bei dem öffnen des Modals</p>
     </td>
     <td>
       <img src="documentationDiagrams/Diagram2.jpg" alt="Diagram2" width="400" height="auto">
+      <p style="font-size: 10px;">Diese Diagramm zeigt die Schritte und möglichen Interaktionen bei dem klick auf "Watchlist"</p>
     </td>
   <tr>
   <tr>
     <td>
       <img src="documentationDiagrams/Diagram3.png" alt="Diagram3" width="400" height="auto">
+      <p style="font-size: 10px;">Diese Diagramm zeigt die Schritte und möglichen Interaktionen bei dem klick auf das Profil-Icon</p>
     </td>
     <td>
       <img src="documentationDiagrams/Diagram4.png" alt="Diagram4" width="400" height="auto">
+      <p style="font-size: 10px;">Diese Diagramm zeigt die Schritte und möglichen Interaktionen auf der Login Page</p>
     </td>
   <tr>
 </table>
